@@ -132,6 +132,20 @@
       ]
     },
     {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "A centered icon, title and description for a list, search or panel that has nothing in it yet. Use it when a view is empty on purpose or because a search matched nothing, and add a button underneath when there is a next step.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "kbd",
       "type": "registry:ui",
       "title": "Kbd",

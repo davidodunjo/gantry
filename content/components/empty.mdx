@@ -1,0 +1,57 @@
+<ComponentPreview name="empty-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/empty
+```
+
+## Usage
+
+```tsx
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from "@/components/ui/empty"
+```
+
+```tsx
+<Empty>
+  <EmptyHeader>
+    <EmptyMedia variant="icon">
+      <SearchLg />
+    </EmptyMedia>
+    <EmptyTitle>No projects found</EmptyTitle>
+    <EmptyDescription>Try a different name.</EmptyDescription>
+  </EmptyHeader>
+  <EmptyContent>
+    <Button variant="outline">Back to components</Button>
+  </EmptyContent>
+</Empty>
+```
+
+A search that turns up nothing keeps the icon and copy quiet, with a plain way back rather than a loud call to action.
+
+## In a card
+
+The same component inside a card, the shape a dashboard panel takes before it holds any data. The button carries the primary color because there is only one thing to do next.
+
+<ComponentPreview name="empty-in-a-card" />
+
+## API Reference
+
+### EmptyMedia
+
+| Prop      | Type                  | Default     |
+| --------- | --------------------- | ----------- |
+| `variant` | `"default" \| "icon"` | `"default"` |
+
+`default` leaves the media unstyled, for an illustration or image. `icon` frames the icon in a 48 pixel rounded square with a hairline ring and a small shadow, and sizes the icon to 24 pixels.
+
+### Empty, EmptyHeader, EmptyTitle, EmptyDescription and EmptyContent
+
+These add no props of their own. `EmptyDescription` renders a `p` and the rest a `div`. Links inside the description are underlined.
