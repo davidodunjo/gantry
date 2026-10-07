@@ -1,0 +1,57 @@
+<ComponentPreview name="toast-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/toast
+```
+
+This also installs [Button](/components/button), which the action and close buttons are built from.
+
+## Usage
+
+Mount `Toaster` once near the root of your app, then call `toast.add` from anywhere.
+
+```tsx
+import { Toaster, toast } from "@/components/ui/toast"
+```
+
+```tsx
+<Toaster>
+  <App />
+</Toaster>
+```
+
+```tsx
+toast.add({ type: "success", title: "Invoice paid" })
+```
+
+Each button fires a toast with an icon that matches its type. Toasts render through a portal straight to the corner of the screen, not into this box, so watch there when you click.
+
+## Action and loading
+
+A toast can carry a button of its own, and `toast.update` swaps a loading toast for a finished one in place instead of stacking a second toast on top.
+
+<ComponentPreview name="toast-action-and-loading" />
+
+## API Reference
+
+### toast.add
+
+| Option        | Type                                                                 | Default |
+| ------------- | -------------------------------------------------------------------- | ------- |
+| `title`       | `ReactNode`                                                          | -       |
+| `description` | `ReactNode`                                                          | -       |
+| `type`        | `"success" \| "info" \| "warning" \| "error" \| "loading" \| string` | -       |
+| `timeout`     | `number`                                                             | `5000`  |
+| `actionProps` | `ButtonHTMLAttributes`                                               | -       |
+
+`type` picks the icon; any other string shows none. `timeout` is in milliseconds and `0` keeps the toast until it is closed. `toast.add` returns an id that `toast.update` and `toast.close` accept.
+
+### Toaster
+
+| Prop           | Type           | Default |
+| -------------- | -------------- | ------- |
+| `toastManager` | `ToastManager` | `toast` |
+
+Pass a manager from `createToastManager()` to keep a separate stack of toasts. `Toaster` renders the viewport and every toast for you; the lower-level parts (`Toast`, `ToastContent`, `ToastTitle`, `ToastDescription`, `ToastAction`, `ToastClose`) are exported for custom layouts. All props pass through to [Base UI's Toast](https://base-ui.com/react/components/toast).

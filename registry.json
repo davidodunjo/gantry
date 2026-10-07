@@ -178,6 +178,20 @@
       ]
     },
     {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "A menu summoned by right-click or long press at the pointer, with no visible trigger of its own. Use it for shortcuts on a region such as a canvas, file row or table cell; it supports groups, labels, shortcuts, checkbox and radio items, submenus and a destructive item style.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "dialog",
       "type": "registry:ui",
       "title": "Dialog",
@@ -201,6 +215,20 @@
       "files": [
         {
           "path": "registry/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "A menu of actions anchored to a visible trigger button and opened by a click. Use it for account, row and toolbar menus; it supports groups, labels, shortcuts, checkbox and radio items, submenus and a destructive item style.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/dropdown-menu.tsx",
           "type": "registry:ui"
         }
       ]
@@ -296,6 +324,38 @@
       "files": [
         {
           "path": "registry/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "A persistent horizontal bar of menus, like a desktop app's menu bar. Use it for the top-level File, Edit and View style commands of an application; arrow keys move between menus, and each menu supports shortcuts, checkbox and radio items, submenus and a destructive item style.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/dropdown-menu"],
+      "files": [
+        {
+          "path": "registry/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "A horizontal menu bar where items can open a dropdown panel of grouped links. Use it for a site's primary navigation; plain links sit beside triggers, the active link keeps a highlight, and one shared panel animates between the open items.",
+      "dependencies": [
+        "@base-ui/react",
+        "@untitledui/icons",
+        "class-variance-authority"
+      ],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/navigation-menu.tsx",
           "type": "registry:ui"
         }
       ]
@@ -471,6 +531,20 @@
       ]
     },
     {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Switches between panels of content using a row of labelled tabs. Use it to split one view into peer sections the reader flips between; it comes in four styles (default, line, gray, minimal), two sizes and a vertical orientation.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "textarea",
       "type": "registry:ui",
       "title": "Textarea",
@@ -485,6 +559,20 @@
       ]
     },
     {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "A temporary notification that stacks in the corner of the screen and clears itself after a few seconds. Mount Toaster once, then call toast.add from anywhere to confirm an action or report a result; it supports success, info, warning, error and loading types, an action button and in-place updates.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "toggle",
       "type": "registry:ui",
       "title": "Toggle",
@@ -494,6 +582,20 @@
       "files": [
         {
           "path": "registry/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "A set of toggle buttons sharing one value, either one at a time or several at once. Use it for alignment, text-style or view-mode controls; set spacing to zero for a joined segmented look, and orientation to vertical for a stack.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/toggle"],
+      "files": [
+        {
+          "path": "registry/ui/toggle-group.tsx",
           "type": "registry:ui"
         }
       ]

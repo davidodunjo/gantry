@@ -1,0 +1,73 @@
+<ComponentPreview name="tabs-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/tabs
+```
+
+## Usage
+
+```tsx
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+```
+
+```tsx
+<Tabs defaultValue="overview">
+  <TabsList>
+    <TabsTrigger value="overview">Overview</TabsTrigger>
+    <TabsTrigger value="team">Team</TabsTrigger>
+  </TabsList>
+  <TabsContent value="overview">Your workspace overview.</TabsContent>
+  <TabsContent value="team">Manage the people on your team.</TabsContent>
+</Tabs>
+```
+
+The default style: the active tab floats on a filled pill inside a padded track.
+
+## Line
+
+No track wraps the row; a rule under the active tab is the only marker.
+
+<ComponentPreview name="tabs-line" />
+
+## Gray
+
+No track and no rule, just a plain gray fill on whichever tab is active.
+
+<ComponentPreview name="tabs-gray" />
+
+## Minimal
+
+A thin ring frames the whole row, and the active tab adds a second, lighter ring of its own.
+
+<ComponentPreview name="tabs-minimal" />
+
+## Medium
+
+Labels grow to 16 pixels and the track gets extra padding, useful when the tabs are a page's main heading.
+
+<ComponentPreview name="tabs-medium" />
+
+## Vertical
+
+With orientation set to vertical, the tabs stack down the left edge, and the line variant's rule follows them there.
+
+<ComponentPreview name="tabs-vertical" />
+
+## API Reference
+
+### TabsList
+
+| Prop      | Type                                         | Default     |
+| --------- | -------------------------------------------- | ----------- |
+| `variant` | `"default" \| "line" \| "gray" \| "minimal"` | `"default"` |
+| `size`    | `"sm" \| "md"`                               | `"sm"`      |
+
+### Tabs
+
+| Prop          | Type                         | Default        |
+| ------------- | ---------------------------- | -------------- |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` |
+
+`Tabs`, `TabsTrigger` and `TabsContent` pass their props straight through to [Base UI's Tabs](https://base-ui.com/react/components/tabs): use `defaultValue`, or `value` with `onValueChange`, on `Tabs`, and a matching `value` on each trigger and panel. `tabsListVariants` exposes the list's classes for reuse.

@@ -1,0 +1,59 @@
+<ComponentPreview name="navigation-menu-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/navigation-menu
+```
+
+## Usage
+
+```tsx
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
+```
+
+```tsx
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <NavigationMenuLink href="/components">Components</NavigationMenuLink>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>
+```
+
+Resources opens a floating panel of linked cards below the trigger. The disabled trigger next to it never opens at all.
+
+## Active link
+
+The active link keeps a persistent highlight instead of only lighting up on hover, marking the current section without a click.
+
+<ComponentPreview name="navigation-menu-active-link" />
+
+## API Reference
+
+### NavigationMenu
+
+| Prop    | Type                           | Default   |
+| ------- | ------------------------------ | --------- |
+| `align` | `"start" \| "center" \| "end"` | `"start"` |
+
+`align` sets how the shared panel lines up with the trigger that opened it. The panel itself is rendered by `NavigationMenu`, so you only provide each item's `NavigationMenuContent`.
+
+### NavigationMenuLink
+
+| Prop     | Type      | Default |
+| -------- | --------- | ------- |
+| `active` | `boolean` | `false` |
+
+`navigationMenuTriggerStyle()` returns the trigger's classes, so a plain link can look like a trigger. `NavigationMenuPositioner` takes `side`, `sideOffset`, `align` and `alignOffset` and defaults to `"bottom"`, `8`, `"start"` and `0`. Every part passes its props straight through to [Base UI's Navigation Menu](https://base-ui.com/react/components/navigation-menu).

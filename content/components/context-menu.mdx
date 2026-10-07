@@ -1,0 +1,61 @@
+<ComponentPreview name="context-menu-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/context-menu
+```
+
+## Usage
+
+```tsx
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu"
+```
+
+```tsx
+<ContextMenu>
+  <ContextMenuTrigger className="h-36 w-80">
+    Right-click here
+  </ContextMenuTrigger>
+  <ContextMenuContent>
+    <ContextMenuItem>Settings</ContextMenuItem>
+  </ContextMenuContent>
+</ContextMenu>
+```
+
+Right-click the box, or focus it and press Shift+F10, to summon the menu at the pointer. There is no visible trigger button, which is what separates it from a dropdown menu.
+
+## Checkbox and radio items
+
+Checkbox items toggle independently and radio items pick one from a group, both marked with a check when selected.
+
+<ComponentPreview name="context-menu-checkbox-and-radio-items" />
+
+## API Reference
+
+### ContextMenuContent
+
+| Prop          | Type                                                                       | Default   |
+| ------------- | -------------------------------------------------------------------------- | --------- |
+| `side`        | `"top" \| "bottom" \| "left" \| "right" \| "inline-start" \| "inline-end"` | `"right"` |
+| `sideOffset`  | `number`                                                                   | `0`       |
+| `align`       | `"start" \| "center" \| "end"`                                             | `"start"` |
+| `alignOffset` | `number`                                                                   | `4`       |
+
+`ContextMenuSubContent` takes the same props and also opens to the right.
+
+### ContextMenuItem
+
+| Prop      | Type                         | Default     |
+| --------- | ---------------------------- | ----------- |
+| `variant` | `"default" \| "destructive"` | `"default"` |
+| `inset`   | `boolean`                    | `false`     |
+
+`inset` adds left padding so the item lines up with items that carry a check or an icon. `ContextMenuLabel`, `ContextMenuSubTrigger`, `ContextMenuCheckboxItem` and `ContextMenuRadioItem` accept `inset` too.
+
+`ContextMenuShortcut` is a plain `span` for the key hint on the right of an item. Every other part passes its props straight through to [Base UI's Context Menu](https://base-ui.com/react/components/context-menu).

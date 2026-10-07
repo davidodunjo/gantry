@@ -1,0 +1,56 @@
+<ComponentPreview name="menubar-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/menubar
+```
+
+This also installs [Dropdown Menu](/components/dropdown-menu), which the menus inside the bar are built from.
+
+## Usage
+
+```tsx
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from "@/components/ui/menubar"
+```
+
+```tsx
+<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>New file</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>
+```
+
+A persistent bar of menus, like a desktop app's menu bar. Open one with a click, then arrow left and right to move to File, Edit or View, each opens automatically once you're inside the bar.
+
+## API Reference
+
+### MenubarContent
+
+| Prop          | Type                                                                       | Default    |
+| ------------- | -------------------------------------------------------------------------- | ---------- |
+| `side`        | `"top" \| "bottom" \| "left" \| "right" \| "inline-start" \| "inline-end"` | `"bottom"` |
+| `sideOffset`  | `number`                                                                   | `8`        |
+| `align`       | `"start" \| "center" \| "end"`                                             | `"start"`  |
+| `alignOffset` | `number`                                                                   | `-4`       |
+
+### MenubarItem
+
+| Prop      | Type                         | Default     |
+| --------- | ---------------------------- | ----------- |
+| `variant` | `"default" \| "destructive"` | `"default"` |
+| `inset`   | `boolean`                    | `false`     |
+
+`inset` adds left padding so the item lines up with items that carry a check. `MenubarLabel`, `MenubarSubTrigger`, `MenubarCheckboxItem` and `MenubarRadioItem` accept `inset` too.
+
+`Menubar` passes its props through to [Base UI's Menubar](https://base-ui.com/react/components/menubar). The menu parts follow [Dropdown Menu](/components/dropdown-menu) and pass through to [Base UI's Menu](https://base-ui.com/react/components/menu).
