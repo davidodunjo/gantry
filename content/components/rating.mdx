@@ -1,0 +1,79 @@
+<ComponentPreview name="rating-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/rating
+```
+
+## Usage
+
+```tsx
+import { RatingStars } from "@/components/ui/rating-stars"
+import { RatingBadge } from "@/components/ui/rating-badge"
+```
+
+```tsx
+<RatingStars rating={4.5} />
+```
+
+## Fractional values
+
+A rating fills each star to the fraction it earns, so 3.75 leaves the fourth star three-quarters full instead of rounding up or down.
+
+<ComponentPreview name="rating-fractional-values" />
+
+## Sizes
+
+The star size is a class name passed straight through, so it scales with the type around it instead of a fixed prop.
+
+<ComponentPreview name="rating-sizes" />
+
+## Custom scale
+
+Passing stars changes the total count, for a rating that is not out of five, like a ten-point satisfaction score.
+
+<ComponentPreview name="rating-custom-scale" />
+
+## Fill progress
+
+Each star is one icon with a clipped fill layer underneath. Progress is the raw percentage that layer is driven by, from empty to fully filled.
+
+<ComponentPreview name="rating-fill-progress" />
+
+## Rating badge
+
+A wreath, the star row and a two-line caption combine into one social-proof mark. The light theme is for a dark background, like the one below.
+
+<ComponentPreview name="rating-badge" />
+
+## API Reference
+
+### RatingStars
+
+| Prop            | Type     | Default |
+| --------------- | -------- | ------- |
+| `rating`        | `number` | `5`     |
+| `stars`         | `number` | `5`     |
+| `starClassName` | `string` |         |
+
+`rating` is clamped between 0 and `stars`. `stars` must be a whole number from 1 to 100, otherwise a `RangeError` is thrown. A visually hidden label reads out the value to screen readers. All other props pass through to the wrapping `div`.
+
+### StarIcon
+
+| Prop       | Type     | Default |
+| ---------- | -------- | ------- |
+| `progress` | `number` | `100`   |
+
+`progress` is the percentage of the star that is filled, clamped between 0 and 100. All other props pass through to the `svg`.
+
+### RatingBadge
+
+| Prop       | Type                | Default              |
+| ---------- | ------------------- | -------------------- |
+| `title`    | `string`            | `"Best Design Tool"` |
+| `subtitle` | `string`            | `"2,000+ reviews"`   |
+| `rating`   | `number`            | `5`                  |
+| `theme`    | `"light" \| "dark"` | `"dark"`             |
+
+The `light` theme draws the wreath and text in white, for dark backgrounds. All other props pass through to the wrapping `div`. `Wreath` is also exported if you want the laurel on its own.

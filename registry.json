@@ -396,6 +396,23 @@
       ]
     },
     {
+      "name": "rating",
+      "type": "registry:ui",
+      "title": "Rating",
+      "description": "A row of stars that fills to a fractional value, plus a compact rating badge with laurel wreaths for social proof. Use the stars to show a score such as 4.8 out of 5 on a product or review, and the badge for award-style marks.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/rating-stars.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/rating-badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "resizable",
       "type": "registry:ui",
       "title": "Resizable",
