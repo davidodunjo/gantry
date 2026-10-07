@@ -50,6 +50,20 @@
       ]
     },
     {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "A row of single character boxes, backed by one hidden input, for typing or pasting a verification code. Use it for one-time passcodes, with six sizes and optional groups split by a separator.",
+      "dependencies": ["class-variance-authority", "input-otp"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "label",
       "type": "registry:ui",
       "title": "Label",
