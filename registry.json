@@ -499,6 +499,19 @@
       ]
     },
     {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "A single chat turn, pairing a sender's avatar and name with the bubble they sent. Use it for each turn of a conversation, with a header for the sender and a footer for delivery state; align it to the end for your own messages.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "native-select",
       "type": "registry:ui",
       "title": "Native Select",

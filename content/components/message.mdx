@@ -1,0 +1,58 @@
+<ComponentPreview name="message-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/message
+```
+
+## Usage
+
+```tsx
+import {
+  Message,
+  MessageAvatar,
+  MessageContent,
+  MessageGroup,
+  MessageHeader,
+} from "@/components/ui/message"
+```
+
+```tsx
+<MessageGroup>
+  <Message>
+    <MessageAvatar>
+      <Avatar size="sm" initials="OR" alt="Olivia Rhye" />
+    </MessageAvatar>
+    <MessageContent>
+      <MessageHeader>
+        <span>Olivia Rhye</span>
+        <time>10:30</time>
+      </MessageHeader>
+      <Bubble variant="secondary">
+        <BubbleContent>The latest designs are ready.</BubbleContent>
+      </Bubble>
+    </MessageContent>
+  </Message>
+</MessageGroup>
+```
+
+## Conversation
+
+MessageHeader carries the sender's name and a timestamp above the bubble. `align="end"` flips the row, drops the avatar and pushes the bubble to the opposite side for your own messages.
+
+<ComponentPreview name="message-conversation" />
+
+## Delivery status
+
+MessageFooter sits below the bubble instead of above it, for a read receipt or delivery state rather than a sender's name.
+
+<ComponentPreview name="message-delivery-status" />
+
+## API Reference
+
+| Prop    | Type               | Default   |
+| ------- | ------------------ | --------- |
+| `align` | `"start" \| "end"` | `"start"` |
+
+`Message` takes `align` and passes all other props to a `div`. `MessageGroup`, `MessageAvatar`, `MessageContent`, `MessageHeader` and `MessageFooter` each take the same props as a `div`.
