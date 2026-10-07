@@ -185,6 +185,19 @@
       ]
     },
     {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Rows and columns for structured data, with a header, an optional footer, a caption, selectable rows and a compact size. Reach for it when records share the same fields and readers compare them across rows; it scrolls sideways inside its own box when the columns do not fit.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "toggle",
       "type": "registry:ui",
       "title": "Toggle",

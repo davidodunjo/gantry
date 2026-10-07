@@ -1,0 +1,73 @@
+<ComponentPreview name="table-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/table
+```
+
+## Usage
+
+```tsx
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+```
+
+```tsx
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Invoice</TableHead>
+      <TableHead className="text-end">Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>INV-2041</TableCell>
+      <TableCell className="text-end">£1,240.00</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+A header row, a body and a footer for the total. Long customer names cut off with an ellipsis, and amounts align on the right so the digits line up.
+
+## Compact
+
+The `sm` size drops rows from 72 to 64 pixels and tightens the side padding. Compare it with the first table to see the difference.
+
+<ComponentPreview name="table-compact" />
+
+## Empty
+
+When there are no rows, one cell spans every column and says why, so the header still tells the reader what would be here.
+
+<ComponentPreview name="table-empty" />
+
+## Horizontal scroll
+
+The table sits in its own scroll container. When the columns are wider than the box, it scrolls sideways inside the box and the page stays put.
+
+<ComponentPreview name="table-horizontal-scroll" />
+
+## API Reference
+
+### Table
+
+| Prop   | Type           | Default |
+| ------ | -------------- | ------- |
+| `size` | `"sm" \| "md"` | `"md"`  |
+
+`size` sets the row and header heights and the side padding for every row beneath it. The `table` element sits inside a `div` that scrolls horizontally, and all other props go to the `table`.
+
+### TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell and TableCaption
+
+These add no props of their own. They render a `thead`, `tbody`, `tfoot`, `tr`, `th`, `td` and `caption`. A row with `data-state="selected"` takes the selected fill.
