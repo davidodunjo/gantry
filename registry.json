@@ -217,6 +217,20 @@
       ]
     },
     {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "A temporary notification that stacks in the corner of the screen and clears itself after a few seconds. Mount Toaster once, then call toast.add from anywhere to confirm an action or report a result; it supports success, info, warning, error and loading types, an action button and in-place updates.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "toggle",
       "type": "registry:ui",
       "title": "Toggle",
