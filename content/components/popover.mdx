@@ -1,0 +1,63 @@
+<ComponentPreview name="popover-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/popover
+```
+
+## Usage
+
+```tsx
+import {
+  Popover,
+  PopoverContent,
+  PopoverDescription,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+```
+
+```tsx
+<Popover>
+  <PopoverTrigger render={<Button variant="outline" />}>
+    Edit dimensions
+  </PopoverTrigger>
+  <PopoverContent>
+    <PopoverHeader>
+      <PopoverTitle>Dimensions</PopoverTitle>
+      <PopoverDescription>
+        Update the dimensions of this layer.
+      </PopoverDescription>
+    </PopoverHeader>
+  </PopoverContent>
+</Popover>
+```
+
+## Basic
+
+Opens on a click of its trigger and can hold interactive content, like these inputs. A hover card or a tooltip only ever show static text. Shown open here so the form is visible without clicking.
+
+<ComponentPreview name="popover-basic" />
+
+## Placement
+
+`side` sets which edge of the trigger the popup opens from. All four are shown open at once here so you can compare them side by side.
+
+<ComponentPreview name="popover-placement" />
+
+## API Reference
+
+### PopoverContent
+
+| Prop          | Type                                                                       | Default    |
+| ------------- | -------------------------------------------------------------------------- | ---------- |
+| `side`        | `"top" \| "right" \| "bottom" \| "left" \| "inline-start" \| "inline-end"` | `"bottom"` |
+| `sideOffset`  | `number`                                                                   | `6`        |
+| `align`       | `"start" \| "center" \| "end"`                                             | `"center"` |
+| `alignOffset` | `number`                                                                   | `0`        |
+
+`side`, `sideOffset`, `align` and `alignOffset` position the popup against its trigger. The popup is `w-72` wide with a `gap-4` column layout, so pass a `className` to change either. All other props pass through to [Base UI's Popover Popup](https://base-ui.com/react/components/popover).
+
+`Popover`, `PopoverTrigger`, `PopoverTitle` and `PopoverDescription` pass all props through to [Base UI's Popover](https://base-ui.com/react/components/popover). `PopoverHeader` is a plain `div` that stacks a title over a description.

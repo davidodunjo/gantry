@@ -1,0 +1,84 @@
+<ComponentPreview name="alert-dialog-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/alert-dialog
+```
+
+## Usage
+
+```tsx
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogMedia,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+```
+
+```tsx
+<AlertDialog>
+  <AlertDialogTrigger render={<Button variant="destructive-outline" />}>
+    Delete project
+  </AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Delete this project?</AlertDialogTitle>
+      <AlertDialogDescription>
+        This removes the project and all its files. This action cannot be
+        undone.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction variant="destructive">
+        Delete project
+      </AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
+```
+
+## Basic
+
+Reserved for choices that cannot be undone. Clicking outside the panel does nothing here, only Cancel or Delete project closes it, which is what separates an alert dialog from a regular one.
+
+<ComponentPreview name="alert-dialog-basic" />
+
+## Small
+
+A tighter width for a short question with two ways out, keep editing or discard, when a full-size confirmation would be more than the decision needs.
+
+<ComponentPreview name="alert-dialog-small" />
+
+## API Reference
+
+### AlertDialogContent
+
+| Prop   | Type                | Default     |
+| ------ | ------------------- | ----------- |
+| `size` | `"default" \| "sm"` | `"default"` |
+
+`size` sets the panel width: `"default"` is 20rem wide on small screens and 25rem from the `sm` breakpoint up, and `"sm"` stays at 20rem. All other props pass through to [Base UI's Alert Dialog Popup](https://base-ui.com/react/components/alert-dialog).
+
+### AlertDialogAction
+
+`AlertDialogAction` is a [Button](/components/button) and accepts all of its props. It does not close the dialog by itself, so close it from `onClick` or the controlled `open` state.
+
+### AlertDialogCancel
+
+| Prop      | Type                                     | Default     |
+| --------- | ---------------------------------------- | ----------- |
+| `variant` | Any [Button](/components/button) variant | `"outline"` |
+| `size`    | Any [Button](/components/button) size    | `"default"` |
+
+`AlertDialogCancel` closes the dialog and renders as a Button. All other props pass through to [Base UI's Alert Dialog Close](https://base-ui.com/react/components/alert-dialog).
+
+`AlertDialog`, `AlertDialogTrigger`, `AlertDialogPortal`, `AlertDialogOverlay`, `AlertDialogTitle` and `AlertDialogDescription` pass all props through to [Base UI's Alert Dialog](https://base-ui.com/react/components/alert-dialog). `AlertDialogHeader` and `AlertDialogFooter` are plain `div` elements. `AlertDialogMedia` is a plain `div` that frames an icon above the title.

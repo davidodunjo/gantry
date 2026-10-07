@@ -1,0 +1,53 @@
+<ComponentPreview name="hover-card-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/hover-card
+```
+
+## Usage
+
+```tsx
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+```
+
+```tsx
+<HoverCard>
+  <HoverCardTrigger href="/gantry">@gantry</HoverCardTrigger>
+  <HoverCardContent>
+    Reusable foundations for your next project.
+  </HoverCardContent>
+</HoverCard>
+```
+
+## Basic
+
+Opens on hover or keyboard focus of a link, after a short delay, to preview what it points to without navigating there. It only ever shows static content, unlike a popover. Shown open here so the preview is visible without hovering.
+
+<ComponentPreview name="hover-card-basic" />
+
+## Placement
+
+`side` sets which edge of the link the preview opens from. All four are shown open at once here so you can compare them side by side.
+
+<ComponentPreview name="hover-card-placement" />
+
+## API Reference
+
+### HoverCardContent
+
+| Prop          | Type                                                                       | Default    |
+| ------------- | -------------------------------------------------------------------------- | ---------- |
+| `side`        | `"top" \| "right" \| "bottom" \| "left" \| "inline-start" \| "inline-end"` | `"bottom"` |
+| `sideOffset`  | `number`                                                                   | `6`        |
+| `align`       | `"start" \| "center" \| "end"`                                             | `"center"` |
+| `alignOffset` | `number`                                                                   | `0`        |
+
+`side`, `sideOffset`, `align` and `alignOffset` position the card against its trigger. The card is `w-64` wide, so pass a `className` to change that. All other props pass through to [Base UI's Preview Card Popup](https://base-ui.com/react/components/preview-card).
+
+`HoverCard` and `HoverCardTrigger` pass all props through to [Base UI's Preview Card](https://base-ui.com/react/components/preview-card). The trigger renders a link, so give it an `href`.

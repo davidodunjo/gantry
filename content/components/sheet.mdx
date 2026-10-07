@@ -1,0 +1,64 @@
+<ComponentPreview name="sheet-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/sheet
+```
+
+## Usage
+
+```tsx
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+```
+
+```tsx
+<Sheet>
+  <SheetTrigger render={<Button variant="outline" />}>
+    Edit project
+  </SheetTrigger>
+  <SheetContent side="right">
+    <SheetHeader>
+      <SheetTitle>Edit project</SheetTitle>
+      <SheetDescription>Update your workspace details.</SheetDescription>
+    </SheetHeader>
+    <SheetFooter>
+      <SheetClose render={<Button />}>Save changes</SheetClose>
+    </SheetFooter>
+  </SheetContent>
+</Sheet>
+```
+
+## Sides
+
+`side` picks which edge the panel slides in from. Unlike a drawer there is nothing to drag, the trigger, the close button, and the footer are the only ways to open or close it.
+
+<ComponentPreview name="sheet-sides" />
+
+## No close button
+
+`showCloseButton` set to `false` hides the corner close icon, so the footer's Save changes or Cancel are the only way out, useful when a decision should go through those buttons.
+
+<ComponentPreview name="sheet-no-close-button" />
+
+## API Reference
+
+### SheetContent
+
+| Prop              | Type                                     | Default   |
+| ----------------- | ---------------------------------------- | --------- |
+| `side`            | `"top" \| "right" \| "bottom" \| "left"` | `"right"` |
+| `showCloseButton` | `boolean`                                | `true`    |
+
+`side` sets the edge the panel is attached to. Left and right panels are full height and 75% wide up to 25rem, and top and bottom panels are full width and as tall as their content. `showCloseButton` shows the ghost icon button in the top-right corner. All other props pass through to [Base UI's Dialog Popup](https://base-ui.com/react/components/dialog).
+
+`Sheet`, `SheetTrigger`, `SheetClose`, `SheetPortal`, `SheetOverlay`, `SheetTitle` and `SheetDescription` pass all props through to [Base UI's Dialog](https://base-ui.com/react/components/dialog). `SheetHeader` and `SheetFooter` are plain `div` elements.

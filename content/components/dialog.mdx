@@ -1,0 +1,73 @@
+<ComponentPreview name="dialog-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/dialog
+```
+
+## Usage
+
+```tsx
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+```
+
+```tsx
+<Dialog>
+  <DialogTrigger render={<Button variant="outline" />}>
+    Edit profile
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Edit profile</DialogTitle>
+      <DialogDescription>
+        Update the details shown to your workspace.
+      </DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <DialogClose render={<Button />}>Save changes</DialogClose>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+## Basic
+
+A centered panel for a focused task. Clicking outside it, pressing escape, or its own close button all dismiss it, which is what tells it apart from an alert dialog, where only its own buttons will.
+
+<ComponentPreview name="dialog-basic" />
+
+## Long content
+
+Content taller than the viewport scrolls inside the panel rather than pushing it off screen. This footer trades Cancel and Save for a single Close, from the footer's `showCloseButton` prop.
+
+<ComponentPreview name="dialog-long-content" />
+
+## API Reference
+
+### DialogContent
+
+| Prop              | Type      | Default |
+| ----------------- | --------- | ------- |
+| `showCloseButton` | `boolean` | `true`  |
+
+`showCloseButton` shows the ghost icon button in the top-right corner. The panel renders in a portal over a blurred backdrop. All other props pass through to [Base UI's Dialog Popup](https://base-ui.com/react/components/dialog).
+
+### DialogFooter
+
+| Prop              | Type      | Default |
+| ----------------- | --------- | ------- |
+| `showCloseButton` | `boolean` | `false` |
+
+`showCloseButton` appends an outline Close button after the footer's children. All other props pass through to a `div`.
+
+`Dialog`, `DialogTrigger`, `DialogClose`, `DialogPortal`, `DialogOverlay`, `DialogTitle` and `DialogDescription` pass all props through to [Base UI's Dialog](https://base-ui.com/react/components/dialog). `DialogHeader` is a plain `div` that stacks a title over a description.
