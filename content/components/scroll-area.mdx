@@ -1,0 +1,41 @@
+<ComponentPreview name="scroll-area-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/scroll-area
+```
+
+## Usage
+
+```tsx
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
+```
+
+```tsx
+<ScrollArea className="h-64 w-56 rounded-xl border">
+  <div className="p-4">{content}</div>
+</ScrollArea>
+```
+
+A fixed height with a slim scrollbar in place of the browser's own. Scroll with a wheel or trackpad, drag the thumb, or tab in and use the arrow keys.
+
+## Horizontal
+
+Add a horizontal `ScrollBar` for content that runs wider than its frame. The vertical one only appears when there is something to scroll.
+
+<ComponentPreview name="scroll-area-horizontal" />
+
+## API Reference
+
+### ScrollArea
+
+Give it a size, such as `h-64 w-56`, so there is a frame for the content to overflow. It adds no props of its own, and `className` accepts a string or a function of the state. All other props pass through to [Base UI's Scroll Area](https://base-ui.com/react/components/scroll-area).
+
+### ScrollBar
+
+| Prop          | Type                         | Default      |
+| ------------- | ---------------------------- | ------------ |
+| `orientation` | `"vertical" \| "horizontal"` | `"vertical"` |
+
+`ScrollArea` already includes a vertical `ScrollBar`. Add a second one with `orientation="horizontal"` inside it when the content can overflow sideways. All other props pass through to the Base UI scrollbar.
