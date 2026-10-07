@@ -4,6 +4,24 @@
   "homepage": "https://github.com/davidodunjo/gantry",
   "items": [
     {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "A small pill that labels a status, a count or a category next to other content, such as paid, pending or overdue. Choose it for short read-only labels, and use the dot, image, count and remove parts to add detail; it comes in three shapes, three sizes and six variants.",
+      "dependencies": [
+        "@base-ui/react",
+        "@untitledui/icons",
+        "class-variance-authority"
+      ],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
