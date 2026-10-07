@@ -1,0 +1,77 @@
+<ComponentPreview name="label-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/label
+```
+
+## Usage
+
+```tsx
+import { Label } from "@/components/ui/label"
+```
+
+```tsx
+<Label htmlFor="name">Display name</Label>
+```
+
+## Basic
+
+Names the control below it. Because it points at that control, clicking the word puts the caret in the box.
+
+<ComponentPreview name="label-basic" />
+
+## Required
+
+The required prop adds an asterisk after the text. It is hidden from screen readers, which hear the requirement from the control itself.
+
+<ComponentPreview name="label-required" />
+
+## Invalid
+
+Marking the label invalid turns that asterisk red, so the label agrees with the error underneath instead of sitting apart from it.
+
+<ComponentPreview name="label-invalid" />
+
+## Disabled
+
+A disabled label fades to match its control and refuses the pointer, so clicking the word no longer tries to focus anything.
+
+<ComponentPreview name="label-disabled" />
+
+## Inherited
+
+Two labels written the same way. The one on the right sits inside a wrapper marked required and invalid, and picks both up without a prop of its own.
+
+<ComponentPreview name="label-inherited" />
+
+## Optional
+
+Anything can go inside the label. Setting the rest of the line in a lighter weight keeps the name first and the aside second.
+
+<ComponentPreview name="label-optional" />
+
+## With help
+
+A help button can sit beside the label rather than inside it, so the help stays reachable by keyboard and out of the label's click target.
+
+<ComponentPreview name="label-with-help" />
+
+## Around a control
+
+Wrapping the control instead of pointing at it makes the whole line one target, which is what you want beside a checkbox.
+
+<ComponentPreview name="label-around-a-control" />
+
+## API Reference
+
+| Prop       | Type      | Default     |
+| ---------- | --------- | ----------- |
+| `required` | `boolean` | `undefined` |
+| `invalid`  | `boolean` | `undefined` |
+| `disabled` | `boolean` | `undefined` |
+
+`required` shows the asterisk. `invalid` turns it red. `disabled` fades the label and shows a not-allowed cursor. Leave a prop unset and the label reads it from the nearest ancestor with the `group` class and a matching `data-required`, `data-invalid` or `data-disabled` attribute. A label that follows a disabled `peer` control fades on its own.
+
+All other props pass through to the native `<label>` element.

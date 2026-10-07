@@ -90,6 +90,24 @@
       ]
     },
     {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "A box for one yes-or-no value in a form, with a third mixed state for a group that is only partly ticked. Use it for independent options, consent and select-all lists.",
+      "dependencies": [
+        "@base-ui/react",
+        "@untitledui/icons",
+        "class-variance-authority"
+      ],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "collapsible",
       "type": "registry:ui",
       "title": "Collapsible",
@@ -104,6 +122,34 @@
       ]
     },
     {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A single line text field that keeps the browser's native input types and adds three sizes and invalid, disabled and read-only states. Use it for names, emails, passwords, search and dates.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "A row of single character boxes, backed by one hidden input, for typing or pasting a verification code. Use it for one-time passcodes, with six sizes and optional groups split by a separator.",
+      "dependencies": ["class-variance-authority", "input-otp"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "kbd",
       "type": "registry:ui",
       "title": "Kbd",
@@ -112,6 +158,47 @@
       "files": [
         {
           "path": "registry/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "The name for a form control, with an optional required marker that picks up invalid and disabled states from its props or from a wrapper. Pair one with every input, checkbox, radio and switch.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "A set of options where choosing one releases the rest, so the group always holds a single answer. Use it when people must pick exactly one of a few visible choices.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "A one-pixel rule that divides content horizontally or vertically. Reach for it to split a heading from what follows or to separate items in a row.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/separator.tsx",
           "type": "registry:ui"
         }
       ]
@@ -139,6 +226,34 @@
       "files": [
         {
           "path": "registry/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "An on-off control for a setting that takes effect the moment it is flipped, with no save step behind it. Choose it over a checkbox when the change applies immediately.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "A multi line text field that grows with what you type, with three sizes and invalid, disabled and read-only states. Use it for messages, notes and any answer longer than one line.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/textarea.tsx",
           "type": "registry:ui"
         }
       ]

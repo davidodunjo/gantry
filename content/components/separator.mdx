@@ -1,0 +1,37 @@
+<ComponentPreview name="separator-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/separator
+```
+
+## Usage
+
+```tsx
+import { Separator } from "@/components/ui/separator"
+```
+
+```tsx
+<Separator />
+```
+
+## Horizontal
+
+A one-pixel rule across the full width of its container, splitting a heading from what follows.
+
+<ComponentPreview name="separator-horizontal" />
+
+## Vertical
+
+With orientation set to vertical it divides items in a row. It stretches to the row's height, so give the row one.
+
+<ComponentPreview name="separator-vertical" />
+
+## API Reference
+
+| Prop          | Type                         | Default        |
+| ------------- | ---------------------------- | -------------- |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` |
+
+All other props pass through to [Base UI's Separator](https://base-ui.com/react/components/separator).

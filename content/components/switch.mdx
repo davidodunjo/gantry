@@ -1,0 +1,64 @@
+<ComponentPreview name="switch-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/switch
+```
+
+## Usage
+
+```tsx
+import { Switch } from "@/components/ui/switch"
+```
+
+```tsx
+<Switch aria-label="Airplane mode" />
+```
+
+## Basic
+
+A switch is a setting, not an answer to a question. Flip it and the change has already happened, so the text below it moves at the same time.
+
+<ComponentPreview name="switch-basic" />
+
+## Sizes
+
+Two track sizes: 36 by 20 for small, 44 by 24 for medium. The thumb and its travel grow with the track.
+
+<ComponentPreview name="switch-sizes" />
+
+## Slim
+
+The slim prop drops the padding around the thumb, so the thumb sits proud of a thinner track. Shown beside the regular track at both sizes.
+
+<ComponentPreview name="switch-slim" />
+
+## In a card
+
+A settings panel is a column of rows, label on the left and switch on the right. Turning off the first row disables the two under it, which is what a disabled switch looks like.
+
+<ComponentPreview name="switch-in-a-card" />
+
+## Invalid
+
+An invalid switch keeps a red outline around its track, for the rare setting a form refuses to submit without.
+
+<ComponentPreview name="switch-invalid" />
+
+## Right to left
+
+In a right-to-left page the thumb starts on the right and travels left, so on still reads as forward.
+
+<ComponentPreview name="switch-rtl" />
+
+## API Reference
+
+| Prop   | Type                        | Default |
+| ------ | --------------------------- | ------- |
+| `size` | `"sm" \| "md" \| "default"` | `"sm"`  |
+| `slim` | `boolean`                   | `false` |
+
+`size` sets the track to 36 by 20 pixels (`"sm"`) or 44 by 24 (`"md"`). `"default"` is an alias for `"md"`. `slim` removes the padding around the thumb and thins the track. `aria-invalid` and `data-invalid` add a red outline.
+
+All other props pass through to [Base UI's Switch](https://base-ui.com/react/components/switch).

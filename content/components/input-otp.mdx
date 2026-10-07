@@ -1,0 +1,100 @@
+<ComponentPreview name="input-otp-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/input-otp
+```
+
+## Usage
+
+```tsx
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp"
+```
+
+```tsx
+<InputOTP maxLength={4} aria-label="Four digit code">
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+    <InputOTPSlot index={2} />
+    <InputOTPSlot index={3} />
+  </InputOTPGroup>
+</InputOTP>
+```
+
+## Basic
+
+One hidden input behind four boxes. Empty boxes hold a faint zero, the box you are on carries a blinking caret and a double ring, and a filled box keeps a solid one.
+
+<ComponentPreview name="input-otp-basic" />
+
+## Sizes
+
+Six sizes, from a 36 pixel box that fits a form row to a 96 pixel box that carries a verification screen on its own.
+
+<ComponentPreview name="input-otp-sizes" />
+
+## Separator
+
+Split the boxes into groups and put a dash between them. Typing still runs straight through; the break is only for the eye.
+
+<ComponentPreview name="input-otp-separator" />
+
+## Disabled and read only
+
+Disabled fades every box and refuses focus. Read only keeps full contrast and lets you focus and copy the code without changing it.
+
+<ComponentPreview name="input-otp-disabled-read-only" />
+
+## Invalid
+
+With aria-invalid set, every ring and every digit turns red, including the box you are on.
+
+<ComponentPreview name="input-otp-invalid" />
+
+## Controlled
+
+Hold the digits in state to report progress as they land and to empty every box from a button.
+
+<ComponentPreview name="input-otp-controlled" />
+
+## Letters and numbers
+
+Widen the pattern to accept letters, and clean up what people paste before it reaches the boxes.
+
+<ComponentPreview name="input-otp-letters-and-numbers" />
+
+## API Reference
+
+### InputOTP
+
+| Prop                 | Type                                              | Default |
+| -------------------- | ------------------------------------------------- | ------- |
+| `controlSize`        | `"xxxs" \| "xxs" \| "xs" \| "sm" \| "md" \| "lg"` | `"md"`  |
+| `containerClassName` | `string`                                          |         |
+
+`controlSize` sets the box size, text size and corner radius for every slot. `containerClassName` styles the wrapper around the boxes, while `className` styles the hidden input. `aria-invalid` and `disabled` on the input are picked up by every slot.
+
+All other props, including `maxLength`, `pattern`, `value`, `defaultValue`, `onChange` and `pasteTransformer`, pass through to [input-otp](https://github.com/guilhermerodz/input-otp).
+
+### InputOTPGroup
+
+A flex row that holds a set of slots. It takes the props of a `div`.
+
+### InputOTPSlot
+
+| Prop    | Type     | Default |
+| ------- | -------- | ------- |
+| `index` | `number` | none    |
+
+`index` is the position of the box in the code and is required. The remaining props pass through to a `div`.
+
+### InputOTPSeparator
+
+A dash between two groups. It takes the props of a `div`.

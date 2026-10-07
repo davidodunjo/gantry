@@ -1,0 +1,69 @@
+<ComponentPreview name="textarea-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/textarea
+```
+
+## Usage
+
+```tsx
+import { Textarea } from "@/components/ui/textarea"
+```
+
+```tsx
+<Textarea aria-label="Message" placeholder="Tell us what happened…" />
+```
+
+## Basic
+
+Several lines of text. Drag the corner to make it taller, or just keep typing.
+
+<ComponentPreview name="textarea-basic" />
+
+## Sizes
+
+Three paddings. The small size sets tighter leading and the smaller text size with it.
+
+<ComponentPreview name="textarea-sizes" />
+
+## Growing
+
+By default the box grows with the text and never scrolls. Fix the sizing and set rows instead when the height has to stay put.
+
+<ComponentPreview name="textarea-growing" />
+
+## Disabled and read only
+
+Disabled fades the box and refuses focus. Read only keeps its normal weight and still lets you select and copy the text.
+
+<ComponentPreview name="textarea-disabled-read-only" />
+
+## Invalid
+
+With aria-invalid set, the ring turns red and deepens on focus.
+
+<ComponentPreview name="textarea-invalid" />
+
+## Character limit
+
+Hold the text in state to count what is left. The counter falls as you type and the box refuses the last character.
+
+<ComponentPreview name="textarea-character-limit" />
+
+## Right to left
+
+Inside a right to left container the text, the caret and the placeholder all start from the right edge.
+
+<ComponentPreview name="textarea-rtl" />
+
+## API Reference
+
+| Prop          | Type                        | Default     |
+| ------------- | --------------------------- | ----------- |
+| `controlSize` | `"sm" \| "default" \| "lg"` | `"default"` |
+
+`controlSize` sets the padding, text size and line height. The box grows with its content through `field-sizing: content`. Add `field-sizing-fixed` and a `rows` value to keep a fixed height.
+
+All other props pass through to the native `<textarea>` element.

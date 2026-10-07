@@ -1,0 +1,63 @@
+<ComponentPreview name="checkbox-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/checkbox
+```
+
+## Usage
+
+```tsx
+import { Checkbox } from "@/components/ui/checkbox"
+```
+
+```tsx
+<Checkbox aria-label="Remember this device" />
+```
+
+## Basic
+
+One yes-or-no value with its label beside it. It starts off, and a click or the space key ticks it; nothing happens until the form is submitted.
+
+<ComponentPreview name="checkbox-basic" />
+
+## Sizes
+
+Two sizes. The small box is 16px and pairs with body text; the medium box is 20px and holds its own next to a heading.
+
+<ComponentPreview name="checkbox-sizes" />
+
+## Indeterminate
+
+The third state. Tick one channel and the box above it shows a dash instead of a check, because some but not all of the group is on.
+
+<ComponentPreview name="checkbox-indeterminate" />
+
+## Disabled and read only
+
+A disabled checkbox fades and greys out. A read-only one keeps its normal weight and still reads as ticked, but clicking it changes nothing.
+
+<ComponentPreview name="checkbox-disabled-read-only" />
+
+## Invalid
+
+Marked invalid, the outline and the focus ring both turn red, so the message under it has something to point at.
+
+<ComponentPreview name="checkbox-invalid" />
+
+## In a form
+
+Each checkbox submits its value under its name. The required one blocks the submit until it is ticked; the optional one is simply absent when it is not.
+
+<ComponentPreview name="checkbox-in-a-form" />
+
+## API Reference
+
+| Prop   | Type           | Default |
+| ------ | -------------- | ------- |
+| `size` | `"sm" \| "md"` | `"sm"`  |
+
+`size` sets the box to 16px or 20px and scales the check mark with it. A tick or dash appears for the checked and `indeterminate` states. `aria-invalid` and `data-invalid` turn the outline and focus ring red. Each box also gets a larger invisible hit area, so it is easy to tap.
+
+All other props pass through to [Base UI's Checkbox](https://base-ui.com/react/components/checkbox).
