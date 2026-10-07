@@ -41,7 +41,7 @@ const invoices: Invoice[] = [
   },
   {
     id: "INV-2043",
-    customer: "Okafor Logistics",
+    customer: "Ashdown Logistics",
     issued: "9 Sep 2026",
     due: "9 Oct 2026",
     method: "Direct debit",
