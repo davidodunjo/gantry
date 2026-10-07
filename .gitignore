@@ -38,3 +38,7 @@ dist-ssr
 # shadcn build output
 public/r
 
+
+# generated docs
+public/docs
+public/llms.txt

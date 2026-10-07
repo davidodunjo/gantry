@@ -1,7 +1,9 @@
+import mdx from "@mdx-js/rollup"
 import path from "path"
 import tailwindcss from "@tailwindcss/vite"
 import { tanstackRouter } from "@tanstack/router-plugin/vite"
 import react from "@vitejs/plugin-react"
+import remarkGfm from "remark-gfm"
 import { defineConfig } from "vite"
 
 function fromRoot(folder: string) {
@@ -9,7 +11,12 @@ function fromRoot(folder: string) {
 }
 
 export default defineConfig({
-  plugins: [tanstackRouter(), react(), tailwindcss()],
+  plugins: [
+    tanstackRouter(),
+    { enforce: "pre", ...mdx({ remarkPlugins: [remarkGfm] }) },
+    react(),
+    tailwindcss(),
+  ],
   resolve: {
     alias: [
       { find: "@/components/ui", replacement: fromRoot("registry/ui") },

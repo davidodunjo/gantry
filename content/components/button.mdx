@@ -1,0 +1,67 @@
+<ComponentPreview name="button-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/button
+```
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button"
+```
+
+```tsx
+<Button variant="outline">Button</Button>
+```
+
+## Variants
+
+Every variant side by side. Solid, bordered and ghost styles keep a button box. The three link styles drop it and read as inline text.
+
+<ComponentPreview name="button-variants" />
+
+## Sizes
+
+Five heights, each with a square icon-only twin of the same height. Extra small also shrinks its icon and thickens the stroke so it stays legible.
+
+<ComponentPreview name="button-sizes" />
+
+## With icon
+
+An icon can lead the label, trail it, or both. Icons sit at reduced opacity and brighten on hover so the label stays the loudest part of the button.
+
+<ComponentPreview name="button-with-icon" />
+
+## Loading
+
+Loading hides the label and centres a spinner in its place. Add `showTextWhileLoading` to keep the label and move the spinner in front of it. Either way the button stops responding to clicks but can still be focused.
+
+<ComponentPreview name="button-loading" />
+
+## Disabled
+
+The same four buttons enabled and then disabled. A disabled button drops to half opacity, shows a not-allowed cursor and ignores clicks.
+
+<ComponentPreview name="button-disabled" />
+
+## Right to left
+
+In a right-to-left direction the icon moves to the other side of the label and the padding follows. Mirror directional icons, such as the arrow here, so they still point the way the reader is reading.
+
+<ComponentPreview name="button-rtl" />
+
+## API Reference
+
+| Prop                   | Type                                                                                                                                                                | Default     |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `variant`              | `"default" \| "outline" \| "secondary" \| "ghost" \| "destructive" \| "destructive-outline" \| "destructive-ghost" \| "link" \| "link-muted" \| "destructive-link"` | `"default"` |
+| `size`                 | `"xs" \| "sm" \| "default" \| "lg" \| "xl" \| "icon-xs" \| "icon-sm" \| "icon" \| "icon-lg" \| "icon-xl"`                                                           | `"default"` |
+| `loading`              | `boolean`                                                                                                                                                           | `false`     |
+| `showTextWhileLoading` | `boolean`                                                                                                                                                           | `false`     |
+| `noTextPadding`        | `boolean`                                                                                                                                                           | `false`     |
+
+`loading` disables the button and sets `aria-busy`. `showTextWhileLoading` keeps the label visible next to the spinner. `noTextPadding` removes the small horizontal padding around the label.
+
+All other props pass through to [Base UI's Button](https://base-ui.com/react/components/button).

@@ -44,7 +44,6 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
   --font-sans: "Geist Variable", sans-serif;
-  
 }
 
 :root {
@@ -124,4 +123,54 @@
   body {
     @apply bg-background font-sans text-foreground;
   }
+}
+
+@layer base {
+  :root {
+    --gutter: 1.5rem;
+    --header-height: 3.5rem;
+  }
+
+  @media (min-width: 40rem) {
+    :root {
+      --gutter: 4rem;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    :root {
+      --gutter: 5rem;
+    }
+  }
+}
+
+@keyframes link-rise {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.text-link-label {
+  animation: link-rise 500ms cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: calc(300ms + var(--link-index) * 100ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-link-label {
+    animation: none;
+  }
+}
+
+.shiki,
+.shiki span {
+  color: var(--shiki-light);
+}
+
+.dark .shiki,
+.dark .shiki span {
+  color: var(--shiki-dark);
 }

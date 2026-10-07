@@ -1,11 +1,27 @@
 import { Outlet, createRootRoute } from "@tanstack/react-router"
 
-export const Route = createRootRoute({ component: Root })
+import AppHeader from "@/components/app-header"
+import Page from "@/components/page"
+import ThemeProvider from "@/theme/theme-provider"
+
+export const Route = createRootRoute({
+  component: Root,
+  notFoundComponent: NotFound,
+})
 
 function Root() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16">
+    <ThemeProvider>
+      <AppHeader />
       <Outlet />
-    </main>
+    </ThemeProvider>
+  )
+}
+
+function NotFound() {
+  return (
+    <Page title="Page not found">
+      <p className="text-sm text-muted-foreground">This page does not exist.</p>
+    </Page>
   )
 }
