@@ -1,0 +1,36 @@
+<ComponentPreview name="kbd-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/kbd
+```
+
+## Usage
+
+```tsx
+import { Kbd, KbdGroup } from "@/components/ui/kbd"
+```
+
+```tsx
+<KbdGroup>
+  <Kbd>⌘</Kbd>
+  <Kbd>K</Kbd>
+</KbdGroup>
+```
+
+One key per box, set in the monospace face. A single character stays square; a word stretches the box only as far as it needs.
+
+## Combinations
+
+`KbdGroup` keeps a shortcut together with an even gap. Put the keys next to each other, or spell the chord out with plus signs between them.
+
+<ComponentPreview name="kbd-combinations" />
+
+## API Reference
+
+### Kbd and KbdGroup
+
+Both accept the props of a `kbd` element and add no props of their own. `Kbd` draws one key, and `KbdGroup` lays its keys out in a row.
+
+Inside an element marked `data-slot="tooltip-content"` the keys invert, trading the light box and ring for a translucent one that reads against a dark popup.

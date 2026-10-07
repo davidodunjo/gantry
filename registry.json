@@ -75,6 +75,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Shows a keyboard key or a whole shortcut inline, in the monospace face. Use Kbd for a single key and KbdGroup to keep a shortcut such as Command K together.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
