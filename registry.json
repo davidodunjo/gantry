@@ -59,6 +59,28 @@
       ]
     },
     {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "A round or square photo that stands for a person, with initials or an icon when the photo is missing, plus status, verified, count and company badges. Use it wherever someone appears; it also ships a group stack, an add button, a name-and-subtitle label group and a large profile photo.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/tooltip"],
+      "files": [
+        {
+          "path": "registry/ui/avatar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/avatar-label-group.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/avatar-profile-photo.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",

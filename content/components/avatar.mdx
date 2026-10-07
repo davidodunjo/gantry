@@ -1,0 +1,130 @@
+<ComponentPreview name="avatar-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/avatar
+```
+
+## Usage
+
+```tsx
+import { Avatar } from "@/components/ui/avatar"
+```
+
+```tsx
+<Avatar src="/olivia.jpg" alt="Olivia Rhye" initials="OR" />
+```
+
+The initials show while the photo loads and whenever it fails or is missing. Installing `avatar` also gives you `AvatarLabelGroup` and `AvatarProfilePhoto`.
+
+## Sizes
+
+Six sizes from 24 to 64 pixels. The photo, ring width and any overlay all scale together.
+
+<ComponentPreview name="avatar-sizes" />
+
+## Fallbacks
+
+With no photo, initials stand in. With no initials either, a generic person icon does. Both fall back the same way a broken image would.
+
+<ComponentPreview name="avatar-fallbacks" />
+
+## Shape
+
+Rounded is the default. A square avatar swaps the outer radius for the smaller corner used by cards, and either can carry a background ring.
+
+<ComponentPreview name="avatar-shape" />
+
+## Badges
+
+One overlay slot in the bottom corner, so online status, a verified tick, a company logo and an unread count never compete for the same space.
+
+<ComponentPreview name="avatar-badges" />
+
+## Composition
+
+Swapping in the image, fallback and badge parts directly makes the invalid photo below fall back to initials, with a custom badge in place of a status dot.
+
+<ComponentPreview name="avatar-composition" />
+
+## Group
+
+Overlapping avatars share a ring in the surface color so they read as a stack. A count tile covers anyone past the visible three, and the add button grows the stack.
+
+<ComponentPreview name="avatar-group" />
+
+## Add button
+
+Three sizes to match the avatar it sits beside, and a disabled state once the group it would grow is full.
+
+<ComponentPreview name="avatar-add-button" />
+
+## Label group
+
+A name beside its avatar, with an optional subtitle underneath. A long name and a long email both clip with an ellipsis rather than wrap and push the row taller.
+
+<ComponentPreview name="avatar-label-group" />
+
+## Profile photo
+
+A larger, standalone variant for a settings page or a profile header, in the same three sizes and the same fallback and status states as the inline avatar.
+
+<ComponentPreview name="avatar-profile-photo" />
+
+## API Reference
+
+### Avatar
+
+| Prop               | Type                                                         | Default     |
+| ------------------ | ------------------------------------------------------------ | ----------- |
+| `size`             | `"xs" \| "sm" \| "md" \| "default" \| "lg" \| "xl" \| "2xl"` | `"default"` |
+| `src`              | `string \| null`                                             |             |
+| `alt`              | `string`                                                     |             |
+| `initials`         | `string`                                                     |             |
+| `placeholder`      | `ReactNode`                                                  |             |
+| `placeholderIcon`  | `ComponentType<{ className?: string }>`                      | `User01`    |
+| `rounded`          | `boolean`                                                    | `true`      |
+| `border`           | `boolean`                                                    | `false`     |
+| `focusable`        | `boolean`                                                    | `false`     |
+| `contentClassName` | `string`                                                     |             |
+| `status`           | `"online" \| "offline"`                                      |             |
+| `verified`         | `boolean`                                                    |             |
+| `count`            | `number`                                                     |             |
+| `badge`            | `ReactNode`                                                  |             |
+
+Only one overlay shows, in this order: `status`, `verified`, `count`, `badge`. Pass `children` to replace the image and fallback with your own `AvatarImage` and `AvatarFallback`. `focusable` draws a focus ring when a parent with the `group` class has keyboard focus. All other props pass through to [Base UI Avatar](https://base-ui.com/react/components/avatar).
+
+### Other parts
+
+| Part                    | Purpose                                                                            |
+| ----------------------- | ---------------------------------------------------------------------------------- |
+| `AvatarImage`           | The photo, for composition.                                                        |
+| `AvatarFallback`        | The initials or icon shown when the photo is missing.                              |
+| `AvatarBadge`           | A custom corner badge.                                                             |
+| `AvatarGroup`           | Overlaps its avatars into a stack.                                                 |
+| `AvatarGroupCount`      | The "+N" tile at the end of a stack.                                               |
+| `AvatarAddButton`       | A dashed round button. Takes `size` (`"xs" \| "sm" \| "md"`) and `title`.          |
+| `AvatarCompanyIcon`     | A small company logo for the `badge` prop. Takes `size`, `src`, `alt`, `fallback`. |
+| `AvatarOnlineIndicator` | The status dot. Takes `size` and `status`.                                         |
+| `AvatarCount`           | The unread count bubble. Takes `count`, which caps at 99+.                         |
+| `VerifiedTick`          | The verified mark. Takes `size`.                                                   |
+
+### AvatarLabelGroup
+
+| Prop              | Type                   | Default |
+| ----------------- | ---------------------- | ------- |
+| `size`            | `"sm" \| "md" \| "lg"` | `"md"`  |
+| `title`           | `ReactNode`            |         |
+| `subtitle`        | `ReactNode`            |         |
+| `avatarClassName` | `string`               |         |
+
+Every other `Avatar` prop passes through to the avatar.
+
+### AvatarProfilePhoto
+
+| Prop   | Type                   | Default |
+| ------ | ---------------------- | ------- |
+| `size` | `"sm" \| "md" \| "lg"` | `"md"`  |
+
+It accepts the image, fallback and overlay props of `Avatar`, except `border`, `rounded`, `count` and `focusable`.
