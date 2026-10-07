@@ -1,0 +1,103 @@
+<ComponentPreview name="multi-select-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/multi-select
+```
+
+## Usage
+
+```tsx
+import {
+  MultiSelect,
+  type MultiSelectOption,
+} from "@/components/ui/multi-select"
+```
+
+```tsx
+<MultiSelect
+  label="Integrations"
+  options={integrations}
+  defaultValue={["slack"]}
+/>
+```
+
+Several answers at once. Every row is a tick box, the trigger counts what is on rather than naming it, and the popup stays open so you can keep going.
+
+## Tags
+
+With showTags the selection also lands under the field, one removable tag each, so it is readable without opening the popup.
+
+<ComponentPreview name="multi-select-tags" />
+
+## Avatars
+
+An option can carry an avatar and a handle. Both the search box and the footer buttons work the same way.
+
+<ComponentPreview name="multi-select-avatars" />
+
+## Sizes
+
+Three field heights, 36, 40 and 44 pixels. The search box, the rows and the footer buttons all scale with the field.
+
+<ComponentPreview name="multi-select-sizes" />
+
+## Plain list
+
+Turn off the search box and the footer for a handful of options. What is left is the list and nothing else, which suits five rows better than a search field does.
+
+<ComponentPreview name="multi-select-plain-list" />
+
+## Disabled and read only
+
+A disabled field fades and will not open. A read-only one still shows its selection, but Reset, Select all and the crosses on the tags all refuse to change it.
+
+<ComponentPreview name="multi-select-disabled-and-read-only" />
+
+## Invalid
+
+An invalid field keeps a red ring and turns its hint red, which is where a required field with nothing selected ends up.
+
+<ComponentPreview name="multi-select-invalid" />
+
+## API Reference
+
+### MultiSelect
+
+| Prop             | Type                        | Default            |
+| ---------------- | --------------------------- | ------------------ |
+| `options`        | `MultiSelectOption[]`       | required           |
+| `label`          | `string`                    | required           |
+| `value`          | `string[]`                  | none               |
+| `defaultValue`   | `string[]`                  | `[]`               |
+| `onValueChange`  | `(value: string[]) => void` | none               |
+| `placeholder`    | `string`                    | `"Select options"` |
+| `hint`           | `string`                    | none               |
+| `size`           | `"sm" \| "md" \| "lg"`      | `"md"`             |
+| `supportingText` | `ReactNode`                 | none               |
+| `showSearch`     | `boolean`                   | `true`             |
+| `showFooter`     | `boolean`                   | `true`             |
+| `showTags`       | `boolean`                   | `false`            |
+| `disabled`       | `boolean`                   | `false`            |
+| `readOnly`       | `boolean`                   | `false`            |
+| `invalid`        | `boolean`                   | `false`            |
+| `required`       | `boolean`                   | `false`            |
+| `name`           | `string`                    | none               |
+| `id`             | `string`                    | generated          |
+| `className`      | `string`                    | none               |
+
+Pass `value` and `onValueChange` to control the selection, or `defaultValue` to let the field keep its own. `label` names the field for screen readers and is shown above it. `supportingText` appears after the count on the trigger when something is selected. `hint` sits under the field and turns red when `invalid` is set. The footer's Reset keeps any disabled option that was already picked, and Select all skips disabled options.
+
+### MultiSelectOption
+
+| Field         | Type        | Default  |
+| ------------- | ----------- | -------- |
+| `value`       | `string`    | required |
+| `label`       | `string`    | required |
+| `description` | `string`    | none     |
+| `avatarUrl`   | `string`    | none     |
+| `icon`        | `ReactNode` | none     |
+| `disabled`    | `boolean`   | `false`  |
+
+An option shows its `avatarUrl` as an avatar with its first letter as the fallback, otherwise its `icon`. `description` is shown in grey after the label.

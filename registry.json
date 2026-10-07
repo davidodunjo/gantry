@@ -59,6 +59,20 @@
       ]
     },
     {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "A file card for an upload or a message attachment, with a thumbnail or icon, a name, a description and actions. Use it for files that are uploading, processing, done or failed; it comes in three sizes, a vertical tile and a scrolling group.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/attachment.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "avatar",
       "type": "registry:ui",
       "title": "Avatar",
@@ -265,6 +279,24 @@
       "files": [
         {
           "path": "registry/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "A text field that filters a list as you type, for picking one option from more choices than a select suits. Use it for long lists such as countries or teammates; with multiple, each pick stays in the field as a removable chip.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": [
+        "utils",
+        "davidodunjo/gantry/button",
+        "davidodunjo/gantry/input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/combobox.tsx",
           "type": "registry:ui"
         }
       ]
@@ -549,6 +581,25 @@
       "files": [
         {
           "path": "registry/ui/message-scroller.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "multi-select",
+      "type": "registry:ui",
+      "title": "Multi Select",
+      "description": "A field that holds several picks at once, counting them on the trigger and ticking them off a searchable list. Use it when someone chooses more than one option from a set, such as integrations or reviewers; it can show the picks as tags and offers select all and reset.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": [
+        "utils",
+        "davidodunjo/gantry/button",
+        "davidodunjo/gantry/avatar",
+        "davidodunjo/gantry/combobox"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/multi-select.tsx",
           "type": "registry:ui"
         }
       ]
