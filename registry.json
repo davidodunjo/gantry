@@ -46,6 +46,23 @@
       ]
     },
     {
+      "name": "app-store-buttons",
+      "type": "registry:ui",
+      "title": "App Store Buttons",
+      "description": "Official store badges for Google Play, the App Store, Galaxy Store and AppGallery, solid or outlined. Use them to link to your app’s store listing, in 40 or 44 pixel heights.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/app-store-buttons.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/app-store-buttons-outline.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "aspect-ratio",
       "type": "registry:ui",
       "title": "Aspect Ratio",
@@ -439,6 +456,36 @@
       "files": [
         {
           "path": "registry/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "illustrations",
+      "type": "registry:ui",
+      "title": "Illustrations",
+      "description": "Decorative shapes with a swappable center icon, for empty states and notices. Choose a box, cloud, credit card or documents shape in three sizes, and replace or remove the icon to suit the message.",
+      "dependencies": ["@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/illustration.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/illustration-box.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/illustration-cloud.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/illustration-credit-card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/illustration-documents.tsx",
           "type": "registry:ui"
         }
       ]
@@ -865,6 +912,23 @@
       "files": [
         {
           "path": "registry/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "social-buttons",
+      "type": "registry:ui",
+      "title": "Social Buttons",
+      "description": "Sign-in buttons for six providers, in monochrome, colour-logo and full brand treatments. Use them for provider sign-in or account linking, with labels or accessible icon-only buttons.",
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/social-logos.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/social-buttons.tsx",
           "type": "registry:ui"
         }
       ]

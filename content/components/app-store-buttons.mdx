@@ -1,0 +1,54 @@
+<ComponentPreview name="app-store-buttons-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/app-store-buttons
+```
+
+## Usage
+
+```tsx
+import { GooglePlayButton } from "@/components/ui/app-store-buttons"
+import { AppStoreButton } from "@/components/ui/app-store-buttons-outline"
+```
+
+```tsx
+<GooglePlayButton href="https://play.google.com/store" />
+<AppStoreButton href="https://www.apple.com/app-store/" />
+```
+
+## Solid
+
+The badge each store ships: fixed artwork on a black plate. Four stores, all the same height, so a row of them lines up.
+
+<ComponentPreview name="app-store-buttons-solid" />
+
+## Outlined
+
+The same badges drawn in the current text colour on no fill. Switch the site to dark mode and these flip to white while the solid ones stay black.
+
+<ComponentPreview name="app-store-buttons-outlined" />
+
+## Sizes
+
+Two heights, 40 and 44 pixels. The artwork scales with the badge rather than being cropped, so the wordmark stays readable at either size.
+
+<ComponentPreview name="app-store-buttons-sizes" />
+
+## White outline
+
+Google Play alone ships a third badge: the black plate with a white keyline, for sitting on a photograph or a dark panel where the plain plate would disappear.
+
+<ComponentPreview name="app-store-buttons-white-outline" />
+
+## API Reference
+
+All badges share `AppStoreButtonProps`. The solid file also exports `GooglePlayWhiteButton`.
+
+| Prop   | Type           | Default  |
+| ------ | -------------- | -------- |
+| `href` | `string`       | Required |
+| `size` | `"md" \| "lg"` | `"md"`   |
+
+`size` sets the badge height to 40 or 44 pixels and scales its width with the artwork. All other props, including `ref`, `target`, `rel`, `className` and an overriding `aria-label`, pass through to the underlying anchor. The SVG artwork is hidden from assistive technology; the anchor carries the store label.

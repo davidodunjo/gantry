@@ -1,0 +1,72 @@
+<ComponentPreview name="social-buttons-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/social-buttons
+```
+
+## Usage
+
+```tsx
+import { SocialButton } from "@/components/ui/social-buttons"
+
+;<SocialButton provider="google" />
+```
+
+## Monochrome
+
+The default. Every logo is drawn in one grey on a plain bordered button, so a column of providers reads as one list instead of six brands.
+
+<ComponentPreview name="social-buttons-monochrome" />
+
+## Colour logos
+
+The same bordered button with each logo in its own brand colours. Only the mark changes; the surface stays neutral.
+
+<ComponentPreview name="social-buttons-colour-logos" />
+
+## Brand colours
+
+The button itself takes the brand. Facebook goes blue, Dribbble pink, the rest black. Google is the exception and keeps the bordered form with its colour logo.
+
+<ComponentPreview name="social-buttons-brand-colours" />
+
+## Icon only
+
+Drop the label and the button becomes a square. The accessible name stays, so a screen reader still hears the full invitation to continue with that provider.
+
+<ComponentPreview name="social-buttons-icon-only" />
+
+## Sizes
+
+Two heights, 40 and 44 pixels, in both the labelled and the square form. The larger size also steps the logo and the text up a notch.
+
+<ComponentPreview name="social-buttons-sizes" />
+
+## Loading and disabled
+
+These are ordinary buttons underneath, so they take the same loading and disabled states. Loading hides the logo and the label behind a spinner; showTextWhileLoading keeps the label. Pass children to replace the default wording.
+
+<ComponentPreview name="social-buttons-loading-and-disabled" />
+
+## API Reference
+
+| Prop       | Type                                                                      | Default  |
+| ---------- | ------------------------------------------------------------------------- | -------- |
+| `provider` | `"google" \| "facebook" \| "apple" \| "twitter" \| "figma" \| "dribbble"` | Required |
+| `theme`    | `"gray" \| "color" \| "brand"`                                            | `"gray"` |
+| `size`     | `"md" \| "lg"`                                                            | `"lg"`   |
+| `iconOnly` | `boolean`                                                                 | `false`  |
+
+Children replace the default provider label. Other props pass through to Gantry Button and Base UI Button, including loading and disabled states.
+
+### Social logos
+
+GoogleLogo, FacebookLogo, AppleLogo, TwitterLogo, FigmaLogo, FigmaLogoOutlined and DribbleLogo accept native SVG props.
+
+| Prop       | Type      | Default            |
+| ---------- | --------- | ------------------ |
+| `colorful` | `boolean` | Unset (monochrome) |
+
+AppleLogo, TwitterLogo and FigmaLogoOutlined remain monochrome.
