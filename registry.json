@@ -16,6 +16,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "A one-pixel rule that divides content horizontally or vertically. Reach for it to split a heading from what follows or to separate items in a row.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
