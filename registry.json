@@ -387,6 +387,36 @@
       ]
     },
     {
+      "name": "illustrations",
+      "type": "registry:ui",
+      "title": "Illustrations",
+      "description": "Decorative shapes with a swappable center icon, for empty states and notices. Choose a box, cloud, credit card or documents shape in three sizes, and replace or remove the icon to suit the message.",
+      "dependencies": ["@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/illustration.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/illustration-box.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/illustration-cloud.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/illustration-credit-card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/illustration-documents.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "input",
       "type": "registry:ui",
       "title": "Input",

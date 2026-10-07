@@ -1,0 +1,68 @@
+<ComponentPreview name="illustrations-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/illustrations
+```
+
+## Usage
+
+```tsx
+import { Illustration } from "@/components/ui/illustration"
+```
+
+```tsx
+<Illustration type="box" size="md" />
+```
+
+## Kinds
+
+Four shapes, each with its own default icon at its center. The circle behind every shape shifts with light and dark mode on its own.
+
+<ComponentPreview name="illustrations-kinds" />
+
+## Sizes
+
+The same shape at three sizes. Everything, including the center icon, scales together.
+
+<ComponentPreview name="illustrations-sizes" />
+
+## Custom icon
+
+The center icon can be swapped for any other, or removed entirely to leave the bare shape.
+
+<ComponentPreview name="illustrations-custom-icon" />
+
+## In context
+
+An empty state leans on the larger sizes to anchor a whole panel. A notice keeps it small, next to the message it explains.
+
+<ComponentPreview name="illustrations-in-context" />
+
+## API Reference
+
+### Illustration
+
+| Prop                | Type                                               | Default             |
+| ------------------- | -------------------------------------------------- | ------------------- |
+| `type`              | `"box" \| "cloud" \| "credit-card" \| "documents"` | Required            |
+| `size`              | `"sm" \| "md" \| "lg"`                             | `"lg"`              |
+| `svgClassName`      | `string`                                           | —                   |
+| `childrenClassName` | `string`                                           | —                   |
+| `children`          | `ReactNode`                                        | Shape-specific icon |
+
+`svgClassName` styles the decorative SVG. `childrenClassName` styles the center icon frame. Pass your own icon as `children`, or `null` to hide the frame.
+
+### Individual shapes
+
+`BoxIllustration`, `CloudIllustration`, `CreditCardIllustration` and `DocumentsIllustration` are also exported from `@/components/ui/illustration`, or from their individual `illustration-box`, `illustration-cloud`, `illustration-credit-card` and `illustration-documents` files. They accept the same props except `type`.
+
+| Component                | Default `children` |
+| ------------------------ | ------------------ |
+| `BoxIllustration`        | `UploadCloud02`    |
+| `CloudIllustration`      | `SearchLg`         |
+| `CreditCardIllustration` | `AlertCircle`      |
+| `DocumentsIllustration`  | `UploadCloud02`    |
+
+All other props, including `className`, pass through to the outer `div`. The decorative SVG is hidden from assistive technology.
