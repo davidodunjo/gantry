@@ -146,6 +146,19 @@
       ]
     },
     {
+      "name": "featured-icon",
+      "type": "registry:ui",
+      "title": "Featured Icon",
+      "description": "A small icon frame in six fills and five colors, for notices, empty states and list headers. Use it to give an icon more presence than a bare glyph, in a size from 32 to 56 pixels.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/featured-icon.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "kbd",
       "type": "registry:ui",
       "title": "Kbd",

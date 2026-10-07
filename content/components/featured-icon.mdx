@@ -1,0 +1,52 @@
+<ComponentPreview name="featured-icon-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/featured-icon
+```
+
+## Usage
+
+```tsx
+import { FeaturedIcon } from "@/components/ui/featured-icon"
+```
+
+```tsx
+<FeaturedIcon icon={<Zap aria-hidden />} title="Fast" />
+```
+
+## Themes
+
+Six fills for the same brand icon, from a soft tint through a solid, gradient and neumorphic treatment.
+
+<ComponentPreview name="featured-icon-themes" />
+
+## Sizes
+
+Four sizes on the light theme, 32 through 56 pixels. The icon inside scales with the frame.
+
+<ComponentPreview name="featured-icon-sizes" />
+
+## Colors
+
+On the dark theme the color fills the whole frame, which is where brand, gray and the semantic colors read most clearly.
+
+<ComponentPreview name="featured-icon-colors" />
+
+## In context
+
+A notice leads with a small, colored icon next to its heading. An empty state centers a larger one above its heading, where it reads as an illustration.
+
+<ComponentPreview name="featured-icon-in-context" />
+
+## API Reference
+
+| Prop    | Type                                                                        | Default   |
+| ------- | --------------------------------------------------------------------------- | --------- |
+| `icon`  | `ReactNode`                                                                 | -         |
+| `size`  | `"sm" \| "md" \| "lg" \| "xl"`                                              | `"sm"`    |
+| `color` | `"brand" \| "gray" \| "error" \| "warning" \| "success"`                    | `"brand"` |
+| `theme` | `"light" \| "gradient" \| "dark" \| "outline" \| "modern" \| "modern-neue"` | `"light"` |
+
+The icon can be passed as `icon` or as `children`, and `icon` wins when both are set. Pass `title` to name the icon for assistive technology when it carries meaning; the icon inside should be marked `aria-hidden`. The `outline` and `gradient` themes draw rings around the frame, which extend past its box. All other props pass through to the `div`.
