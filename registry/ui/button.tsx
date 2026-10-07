@@ -75,8 +75,8 @@ function Button(props: ButtonProps) {
 
   return (
     <ButtonPrimitive
-      {...rest}
       data-slot="button"
+      {...rest}
       data-loading={loading || undefined}
       disabled={disabled || loading}
       focusableWhenDisabled={
