@@ -1,0 +1,62 @@
+<ComponentPreview name="toggle-group-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/toggle-group
+```
+
+This also installs [Toggle](/components/toggle), which the items are built from.
+
+## Usage
+
+```tsx
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+```
+
+```tsx
+<ToggleGroup aria-label="Alignment" defaultValue={["left"]}>
+  <ToggleGroupItem value="left">Left</ToggleGroupItem>
+  <ToggleGroupItem value="right">Right</ToggleGroupItem>
+</ToggleGroup>
+```
+
+Toggles that share one value. Only one can be down at a time, so picking another releases the one before it, and arrow keys move between them.
+
+## Multiple
+
+With the multiple prop the items stop excluding each other. Bold and underline are both down here, and either can be released on its own.
+
+<ComponentPreview name="toggle-group-multiple" />
+
+## Joined
+
+Set spacing to zero and the gap closes into one segmented control: the borders collapse into shared edges and only the outer corners stay round.
+
+<ComponentPreview name="toggle-group-joined" />
+
+## Vertical
+
+A vertical group stacks and stretches its items to a shared width, and the up and down arrows take over from left and right.
+
+<ComponentPreview name="toggle-group-vertical" />
+
+## Disabled
+
+One item can be disabled while the rest of the group carries on. Disable the group instead and every item inside it fades with it.
+
+<ComponentPreview name="toggle-group-disabled" />
+
+## API Reference
+
+| Prop          | Type                         | Default        |
+| ------------- | ---------------------------- | -------------- |
+| `variant`     | `"default" \| "outline"`     | -              |
+| `size`        | `"sm" \| "default" \| "lg"`  | -              |
+| `spacing`     | `number`                     | `2`            |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` |
+| `multiple`    | `boolean`                    | `false`        |
+
+`variant` and `size` on the group apply to every item, and fall back to the item's own props when unset. `spacing` is the gap between items in Tailwind spacing units; `0` joins them. Each `ToggleGroupItem` needs a unique `value`.
+
+All other props pass through to [Base UI's Toggle Group](https://base-ui.com/react/components/toggle-group) and [Toggle](https://base-ui.com/react/components/toggle).

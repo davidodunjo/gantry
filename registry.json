@@ -229,6 +229,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "A set of toggle buttons sharing one value, either one at a time or several at once. Use it for alignment, text-style or view-mode controls; set spacing to zero for a joined segmented look, and orientation to vertical for a stack.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/toggle"],
+      "files": [
+        {
+          "path": "registry/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
