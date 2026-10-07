@@ -1,0 +1,57 @@
+<ComponentPreview name="collapsible-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/collapsible
+```
+
+## Usage
+
+```tsx
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+```
+
+```tsx
+<Collapsible>
+  <CollapsibleTrigger>Release notes</CollapsibleTrigger>
+  <CollapsibleContent>Faster search indexing</CollapsibleContent>
+</Collapsible>
+```
+
+One section that opens on its own. Nothing else on the page reacts, unlike an accordion item, which closes its siblings when it opens.
+
+## Controlled
+
+The open state lives outside the collapsible, in a button that sits apart from the panel it opens.
+
+<ComponentPreview name="collapsible-controlled" />
+
+## Disabled
+
+A disabled collapsible ignores clicks on its trigger and stops responding to the keyboard.
+
+<ComponentPreview name="collapsible-disabled" />
+
+## API Reference
+
+### Collapsible
+
+| Prop           | Type                      | Default |
+| -------------- | ------------------------- | ------- |
+| `defaultOpen`  | `boolean`                 | `false` |
+| `open`         | `boolean`                 | -       |
+| `onOpenChange` | `(open: boolean) => void` | -       |
+| `disabled`     | `boolean`                 | `false` |
+
+Use `open` with `onOpenChange` to control the section from outside, as in the controlled example.
+
+All other props pass through to [Base UI's Collapsible](https://base-ui.com/react/components/collapsible).
+
+### CollapsibleTrigger and CollapsibleContent
+
+`CollapsibleTrigger` renders a button; pass `render` to turn another element, such as a Gantry button, into the trigger. It sets `aria-expanded` for styling the open state. `CollapsibleContent` animates its height and opacity as the section opens and closes. Both pass their other props through to Base UI.
