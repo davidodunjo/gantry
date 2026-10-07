@@ -9,7 +9,7 @@ type CodeBlockProps = {
   lang: string
 }
 
-const CODE_CLASSES = "overflow-x-auto p-4 pr-14 text-[0.8125rem]/6"
+const CODE_CLASSES = "overflow-x-auto p-4 pr-14 font-mono text-[0.8125rem]/6"
 
 function CodeBlock(props: CodeBlockProps) {
   const { code, lang } = props
@@ -45,7 +45,7 @@ function HighlightedCode(props: CodeBlockProps) {
 
   return (
     <div
-      className="[&_pre]:overflow-x-auto [&_pre]:p-4 [&_pre]:pr-14 [&_pre]:text-[0.8125rem]/6"
+      className="[&_pre]:overflow-x-auto [&_pre]:p-4 [&_pre]:pr-14 [&_pre]:font-mono [&_pre]:text-[0.8125rem]/6"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   )
