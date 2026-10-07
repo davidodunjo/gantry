@@ -192,6 +192,19 @@
       ]
     },
     {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction",
+      "description": "A provider that sets left-to-right or right-to-left behaviour for every Base UI component beneath it, plus a hook that reads the current direction. Wrap a right-to-left page in it, together with a dir attribute, so sliders, tabs and keyboard navigation follow the reading direction.",
+      "dependencies": ["@base-ui/react"],
+      "files": [
+        {
+          "path": "registry/ui/direction.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "drawer",
       "type": "registry:ui",
       "title": "Drawer",
