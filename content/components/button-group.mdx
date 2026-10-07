@@ -1,0 +1,67 @@
+<ComponentPreview name="button-group-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/button-group
+```
+
+## Usage
+
+```tsx
+import {
+  ButtonGroup,
+  ButtonGroupSeparator,
+  ButtonGroupText,
+} from "@/components/ui/button-group"
+```
+
+```tsx
+<ButtonGroup aria-label="Message actions">
+  <Button variant="outline">Archive</Button>
+  <Button variant="outline">Snooze</Button>
+  <Button variant="outline">Report spam</Button>
+</ButtonGroup>
+```
+
+Three buttons share one outline. Only the outer corners stay round, and the border between neighbours collapses into a single line.
+
+## Vertical
+
+The same group stacked. The rounding and the collapsed borders move to the top and bottom edges.
+
+<ComponentPreview name="button-group-vertical" />
+
+## With text
+
+`ButtonGroupText` adds a filled label that sits in the group but takes no clicks. `ButtonGroupSeparator` puts a divider back between two buttons that would otherwise share one border.
+
+<ComponentPreview name="button-group-with-text" />
+
+## With a field
+
+An input inside the group stretches to fill whatever space the label and the button leave behind.
+
+<ComponentPreview name="button-group-with-a-field" />
+
+## API Reference
+
+### ButtonGroup
+
+| Prop          | Type                         | Default        |
+| ------------- | ---------------------------- | -------------- |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` |
+
+The group has `role="group"`, so give it an `aria-label`. Every other prop passes through to a `div`.
+
+### ButtonGroupText
+
+A filled label for the group. It takes the props of a `div`, and a `render` prop to swap the element it draws, as in [Base UI's useRender](https://base-ui.com/react/utils/use-render).
+
+### ButtonGroupSeparator
+
+| Prop          | Type                         | Default      |
+| ------------- | ---------------------------- | ------------ |
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` |
+
+A divider between two buttons. It passes everything else through to the Separator component.

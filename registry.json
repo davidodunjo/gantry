@@ -91,6 +91,20 @@
       ]
     },
     {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "A row or column of related buttons, inputs and labels joined into one control with shared borders and rounded outer corners. Use it for a set of related actions, a label beside a field, or a segmented set of choices; it runs horizontally or vertically.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/separator"],
+      "files": [
+        {
+          "path": "registry/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "card",
       "type": "registry:ui",
       "title": "Card",
