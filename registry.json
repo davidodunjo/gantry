@@ -524,6 +524,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "utility-button",
+      "type": "registry:ui",
+      "title": "Utility Button",
+      "description": "A small icon-only button for toolbars and panel headers that carries its label in a tooltip. Use it for quiet actions such as copy, edit or download; it comes as a raised secondary chip or a bare tertiary icon, in two sizes, and shows no tooltip while disabled.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/tooltip"],
+      "files": [
+        {
+          "path": "registry/ui/utility-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
