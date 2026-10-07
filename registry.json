@@ -4,6 +4,20 @@
   "homepage": "https://github.com/davidodunjo/gantry",
   "items": [
     {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "A vertically stacked set of headings that each reveal a section of content. Use it for FAQs and other long lists where readers only need a few sections at a time; it opens one section at once by default, or several with the multiple prop.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",
