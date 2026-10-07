@@ -1,6 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router"
 import { Suspense, createElement } from "react"
 
+import CopyPageButton from "@/components/copy-page-button"
 import { mdxComponents } from "@/components/mdx-components"
 import Page from "@/components/page"
 import { findComponent, getComponentPage } from "@/docs/components"
@@ -23,7 +24,11 @@ function ComponentPage() {
   const Content = getComponentPage(slug)
 
   return (
-    <Page title={title} description={description}>
+    <Page
+      title={title}
+      description={description}
+      action={<CopyPageButton slug={slug} />}
+    >
       <div className="flex flex-col gap-4">
         <Suspense fallback={null}>
           {createElement(Content, { components: mdxComponents })}

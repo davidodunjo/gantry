@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --port 3000",
+    "dev": "bun run docs:build && vite --port 3000",
     "build": "bun run registry:build && bun run docs:build && tsr generate && tsc --noEmit && vite build",
     "registry:build": "shadcn build",
     "docs:build": "bun scripts/build-docs.ts",
