@@ -18,6 +18,20 @@
       ]
     },
     {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "A short banner that shows a message tied to the page around it, with an optional icon, a title, a description and one follow-up action. Use it for inline notices and errors that should stay visible, not for transient confirmations; it has a default and a destructive variant.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",
