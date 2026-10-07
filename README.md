@@ -4,10 +4,10 @@ Gantry is a registry of React components for apps that use shadcn. Each componen
 
 ## Install a component
 
-Your app needs shadcn set up first, which means a `components.json` and Tailwind CSS v4. If you don't have that yet, run `bunx --bun shadcn@latest init` in your app before continuing.
+Your app needs shadcn set up first, which means a `components.json` and Tailwind CSS v4. If you don't have that yet, run `bunx shadcn@latest init` in your app before continuing.
 
 ```bash
-bunx --bun shadcn@latest add davidodunjo/gantry/button
+bunx shadcn@latest add davidodunjo/gantry/button
 ```
 
 This copies `button.tsx` into your `components/ui` folder and installs `@base-ui/react` and `class-variance-authority`. It also adds `cn` to `lib/utils` if your project doesn't have it. Components use the standard shadcn tokens (`--primary`, `--border` and the rest), so they pick up your existing theme.
