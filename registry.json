@@ -471,6 +471,20 @@
       ]
     },
     {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "A small labeled row used inline as a status line, a centered divider or an underlined section header. Use it to label a point in a feed or a section of a page, not as a control; pick the separator variant for a date divider and the border variant above a list.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/marker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "menubar",
       "type": "registry:ui",
       "title": "Menubar",

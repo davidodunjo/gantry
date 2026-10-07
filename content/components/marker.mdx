@@ -1,0 +1,42 @@
+<ComponentPreview name="marker-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/marker
+```
+
+## Usage
+
+```tsx
+import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/marker"
+```
+
+```tsx
+<Marker>
+  <MarkerIcon>
+    <Check />
+  </MarkerIcon>
+  <MarkerContent>All changes saved</MarkerContent>
+</Marker>
+```
+
+## Variants
+
+Default sits inline as a quiet status line, separator centers a label between two rules like a date divider in a timeline, and border underlines the row for a section header sitting above a list.
+
+<ComponentPreview name="marker-variants" />
+
+## Link
+
+A link inside `MarkerContent` stays underlined and matches the row's color, so it reads as part of the sentence rather than a separate button.
+
+<ComponentPreview name="marker-link" />
+
+## API Reference
+
+| Prop      | Type                                   | Default     |
+| --------- | -------------------------------------- | ----------- |
+| `variant` | `"default" \| "separator" \| "border"` | `"default"` |
+
+`MarkerIcon` and `MarkerContent` are `span`s and take the same props as a `span`. `Marker` passes all other props through to its `div`, and accepts `render`, the Base UI render prop.
