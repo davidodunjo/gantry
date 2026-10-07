@@ -1,0 +1,53 @@
+<ComponentPreview name="bubble-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/bubble
+```
+
+## Usage
+
+```tsx
+import { Bubble, BubbleContent, BubbleGroup } from "@/components/ui/bubble"
+```
+
+```tsx
+<BubbleGroup>
+  <Bubble>
+    <BubbleContent>Your refund has been approved.</BubbleContent>
+  </Bubble>
+</BubbleGroup>
+```
+
+## Variants
+
+Seven fills for seven kinds of message: a plain reply, a system note, a reminder, a request, a quiet status line and a failure.
+
+<ComponentPreview name="bubble-variants" />
+
+## Alignment
+
+`align="end"` flips a bubble to the right and rounds the opposite corner, the way an outgoing message reads against an incoming one. `BubbleReactions` pins a small count over the corner.
+
+<ComponentPreview name="bubble-alignment" />
+
+## API Reference
+
+### Bubble
+
+| Prop      | Type                                                                                       | Default     |
+| --------- | ------------------------------------------------------------------------------------------ | ----------- |
+| `variant` | `"default" \| "secondary" \| "muted" \| "tinted" \| "outline" \| "ghost" \| "destructive"` | `"default"` |
+| `align`   | `"start" \| "end"`                                                                         | `"start"`   |
+
+All other props pass through to a `div`.
+
+### BubbleReactions
+
+| Prop    | Type                | Default    |
+| ------- | ------------------- | ---------- |
+| `side`  | `"top" \| "bottom"` | `"bottom"` |
+| `align` | `"start" \| "end"`  | `"end"`    |
+
+`BubbleGroup` and `BubbleContent` take the same props as a `div`. `BubbleContent` also accepts `render`, the Base UI render prop, so it can become a link or button.

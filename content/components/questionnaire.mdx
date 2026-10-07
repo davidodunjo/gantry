@@ -1,0 +1,84 @@
+<ComponentPreview name="questionnaire-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/questionnaire
+```
+
+## Usage
+
+A single choice, a multiple choice and a text step, with progress, validation and keyboard shortcuts for each letter. Submitting the last step replaces the form with a confirmation.
+
+```tsx
+import {
+  Questionnaire,
+  QuestionnaireActions,
+  QuestionnaireChoice,
+  QuestionnaireChoices,
+  QuestionnaireItem,
+  QuestionnaireNext,
+  QuestionnairePrevious,
+  QuestionnaireProgress,
+  QuestionnaireSubmit,
+  QuestionnaireTitle,
+} from "@/components/ui/questionnaire"
+```
+
+```tsx
+<Questionnaire shortcuts="letters" onSubmit={handleSubmit}>
+  <QuestionnaireProgress />
+  <QuestionnaireItem name="team" required>
+    <QuestionnaireTitle>Which team are you on?</QuestionnaireTitle>
+    <QuestionnaireChoices>
+      <QuestionnaireChoice value="design">Design</QuestionnaireChoice>
+      <QuestionnaireChoice value="engineering">Engineering</QuestionnaireChoice>
+    </QuestionnaireChoices>
+  </QuestionnaireItem>
+  <QuestionnaireActions>
+    <QuestionnairePrevious />
+    <QuestionnaireNext />
+    <QuestionnaireSubmit />
+  </QuestionnaireActions>
+</Questionnaire>
+```
+
+## Controlled
+
+Hold the current step in state to jump to it from outside the questionnaire, alongside the usual previous and next buttons.
+
+<ComponentPreview name="questionnaire-controlled" />
+
+## API Reference
+
+### Questionnaire
+
+| Prop           | Type                     | Default |
+| -------------- | ------------------------ | ------- |
+| `item`         | `string`                 | none    |
+| `defaultItem`  | `string`                 | none    |
+| `onItemChange` | `(item: string) => void` | none    |
+| `shortcuts`    | `"letters" \| "numbers"` | none    |
+| `noValidate`   | `boolean`                | `true`  |
+
+`Questionnaire` is a `form`. Its `onSubmit` runs when the last step is submitted, and it passes all other props to the form. Use `item` with `onItemChange` to control the current step.
+
+### QuestionnaireItem
+
+| Prop       | Type      | Default |
+| ---------- | --------- | ------- |
+| `name`     | `string`  | none    |
+| `required` | `boolean` | `false` |
+| `multiple` | `boolean` | `false` |
+| `disabled` | `boolean` | `false` |
+| `invalid`  | `boolean` | `false` |
+
+### QuestionnairePrevious, QuestionnaireSkip, QuestionnaireNext, QuestionnaireSubmit
+
+| Prop       | Type              | Default                                                            |
+| ---------- | ----------------- | ------------------------------------------------------------------ |
+| `variant`  | `Button` variants | `"outline"` for Previous and Skip, `"default"` for Next and Submit |
+| `size`     | `Button` sizes    | `"default"`                                                        |
+| `children` | `ReactNode`       | `"Previous"`, `"Skip"`, `"Next"` or `"Submit"`                     |
+
+The navigation buttons use the Button styles and pass all other props to the underlying `@shadcn/react` questionnaire primitive, as do the other parts.

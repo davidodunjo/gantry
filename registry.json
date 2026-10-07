@@ -127,6 +127,20 @@
       ]
     },
     {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "The colored, rounded shape a chat message sits inside, aligned to whichever side sent it. Use it for the text of a single chat message; pick a variant for the kind of message, align it to the end for outgoing messages and add reactions to show a count.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/bubble.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
@@ -457,6 +471,20 @@
       ]
     },
     {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "A small labeled row used inline as a status line, a centered divider or an underlined section header. Use it to label a point in a feed or a section of a page, not as a control; pick the separator variant for a date divider and the border variant above a list.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/marker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "menubar",
       "type": "registry:ui",
       "title": "Menubar",
@@ -466,6 +494,33 @@
       "files": [
         {
           "path": "registry/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "A single chat turn, pairing a sender's avatar and name with the bubble they sent. Use it for each turn of a conversation, with a header for the sender and a footer for delivery state; align it to the end for your own messages.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message Scroller",
+      "description": "A scrolling viewport for a conversation that stays pinned to the newest item and offers a jump button when you scroll away. Use it for chat threads and live feeds that grow over time; wrap each entry in an item with a messageId so you can scroll to it.",
+      "dependencies": ["@shadcn/react", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/message-scroller.tsx",
           "type": "registry:ui"
         }
       ]
@@ -558,6 +613,20 @@
         },
         {
           "path": "registry/ui/progress-circle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "title": "Questionnaire",
+      "description": "A step-by-step form with progress, validation and keyboard shortcuts built in. Use it for onboarding, surveys and any multi-question flow where each answer is a single or multiple choice or a short text; it can run uncontrolled or with the current step held in state.",
+      "dependencies": ["@shadcn/react", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/questionnaire.tsx",
           "type": "registry:ui"
         }
       ]
