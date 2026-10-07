@@ -1,0 +1,82 @@
+<ComponentPreview name="radio-group-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/radio-group
+```
+
+## Usage
+
+```tsx
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+```
+
+```tsx
+<RadioGroup aria-label="Seat" defaultValue="aisle">
+  <RadioGroupItem value="window" aria-label="Window" />
+  <RadioGroupItem value="aisle" aria-label="Aisle" />
+</RadioGroup>
+```
+
+## Basic
+
+One answer at a time. Picking a second option releases the first, and arrow keys move between them without leaving the group.
+
+<ComponentPreview name="radio-group-basic" />
+
+## Sizes
+
+The size prop sits on the group and every radio inside it follows: 16px for small, 20px for medium.
+
+<ComponentPreview name="radio-group-sizes" />
+
+## With descriptions
+
+When the options need explaining, the radio aligns to the first line of text and the description sits under the label.
+
+<ComponentPreview name="radio-group-with-descriptions" />
+
+## Horizontal
+
+The group stacks by default. Lay it out in a row for two or three short options and the arrow keys follow the new reading order.
+
+<ComponentPreview name="radio-group-horizontal" />
+
+## Disabled and read only
+
+A single option can be disabled while the rest stay live. A read-only group looks untouched and keeps its answer, but will not take a different one.
+
+<ComponentPreview name="radio-group-disabled-read-only" />
+
+## Invalid
+
+Marking the group invalid turns every radio in it red, not only the one nearest the message.
+
+<ComponentPreview name="radio-group-invalid" />
+
+## In a form
+
+The group submits one value under its name. Held in state, it starts empty and resets back to empty.
+
+<ComponentPreview name="radio-group-in-a-form" />
+
+## API Reference
+
+### RadioGroup
+
+| Prop   | Type           | Default |
+| ------ | -------------- | ------- |
+| `size` | `"sm" \| "md"` | `"sm"`  |
+
+`size` sets the dot and circle size for every item inside the group. `aria-invalid` and `data-invalid` on the group turn all its items red.
+
+All other props pass through to [Base UI's Radio Group](https://base-ui.com/react/components/radio-group).
+
+### RadioGroupItem
+
+| Prop   | Type           | Default                   |
+| ------ | -------------- | ------------------------- |
+| `size` | `"sm" \| "md"` | the size set on the group |
+
+All other props, including `value` and `disabled`, pass through to [Base UI's Radio](https://base-ui.com/react/components/radio).
