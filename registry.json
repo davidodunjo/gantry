@@ -192,6 +192,24 @@
       ]
     },
     {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "A wrapper that pairs a control with its label, guidance and error, and shares its required, invalid and disabled state with all three. Use it for every row of a form; it lays out vertically, horizontally or responsively, and its parts build field sets, separators and choice cards.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [
+        "utils",
+        "davidodunjo/gantry/label",
+        "davidodunjo/gantry/separator"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "hover-card",
       "type": "registry:ui",
       "title": "Hover Card",
