@@ -1,0 +1,116 @@
+<ComponentPreview name="input-group-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/input-group
+```
+
+## Usage
+
+```tsx
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+  InputGroupText,
+  InputGroupTextarea,
+} from "@/components/ui/input-group"
+```
+
+```tsx
+<InputGroup>
+  <InputGroupAddon>
+    <SearchLg aria-hidden="true" />
+  </InputGroupAddon>
+  <InputGroupInput aria-label="Search invoices" placeholder="Search invoices" />
+</InputGroup>
+```
+
+The icon lives inside the ring instead of beside it, and the group frames its control and its addons as one field.
+
+## With an icon
+
+The icon scales with `controlSize`. Clicking anywhere in the addon puts the caret in the field.
+
+<ComponentPreview name="input-group-with-an-icon" />
+
+## Prefix and suffix
+
+Static text can sit on either end. It reads as part of the value, so the field only has to hold the part that changes.
+
+<ComponentPreview name="input-group-prefix-and-suffix" />
+
+## Separated
+
+The `separated` prop stretches an addon to the full height and rules a line between it and the field.
+
+<ComponentPreview name="input-group-separated" />
+
+## Inline button
+
+An addon can hold a button. This one swaps the input type, so the value flips between dots and plain text as you press it.
+
+<ComponentPreview name="input-group-inline-button" />
+
+## Block addons
+
+Addons aligned to `block-start` and `block-end` turn the group into a column, so a textarea can carry a heading above it and a counter and a send button below.
+
+<ComponentPreview name="input-group-block-addons" />
+
+## Invalid
+
+The group watches its own control. Marking the input invalid turns the whole frame red, addons included.
+
+<ComponentPreview name="input-group-invalid" />
+
+## Disabled
+
+Disabling the control fades the group as one piece, so the icon and the button go with it.
+
+<ComponentPreview name="input-group-disabled" />
+
+## Right to left
+
+Addon placement is logical, not left and right, so the search icon moves to the right edge and the field starts beside it.
+
+<ComponentPreview name="input-group-rtl" />
+
+## API Reference
+
+### InputGroup
+
+| Prop          | Type                        | Default     |
+| ------------- | --------------------------- | ----------- |
+| `controlSize` | `"sm" \| "default" \| "lg"` | `"default"` |
+
+`controlSize` sets the height of the group and the text and icon size inside it. The ring follows the control: it thickens when the control has focus and turns red when the control is `aria-invalid`, and the whole group fades when the control is disabled. All other props pass through to a `div`.
+
+### InputGroupAddon
+
+| Prop        | Type                                                             | Default          |
+| ----------- | ---------------------------------------------------------------- | ---------------- |
+| `align`     | `"inline-start" \| "inline-end" \| "block-start" \| "block-end"` | `"inline-start"` |
+| `separated` | `boolean`                                                        | `false`          |
+
+`align` places the addon before or after the control, or above or below it. Any block placement switches the group to a column. `separated` stretches the addon to the full height of the group and draws a line between it and the control. Pressing the addon anywhere outside a button or link moves focus to the control. All other props pass through to a `div`.
+
+### InputGroupButton
+
+| Prop      | Type                                     | Default    |
+| --------- | ---------------------------------------- | ---------- |
+| `size`    | `"xs" \| "sm" \| "icon-xs" \| "icon-sm"` | `"xs"`     |
+| `variant` | any Button variant                       | `"ghost"`  |
+| `type`    | `"button" \| "submit" \| "reset"`        | `"button"` |
+
+A Button sized to sit inside the frame. All other props pass through to the Button.
+
+### InputGroupInput and InputGroupTextarea
+
+The control. `InputGroupInput` takes the props of Input and `InputGroupTextarea` those of Textarea, with their own border, ring and background removed so the group frames them.
+
+### InputGroupText
+
+A span for static text inside an addon. It takes the props of a `span`.

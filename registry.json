@@ -220,6 +220,25 @@
       ]
     },
     {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "A text field framed with icons, text or buttons inside one border, so the extras read as part of the field. Use it for a search icon, a currency or domain affix, a password reveal button or a textarea with a footer; the frame reads the state of the control inside it.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [
+        "utils",
+        "davidodunjo/gantry/button",
+        "davidodunjo/gantry/input",
+        "davidodunjo/gantry/textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "input-otp",
       "type": "registry:ui",
       "title": "Input OTP",
