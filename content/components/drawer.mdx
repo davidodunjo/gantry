@@ -1,0 +1,68 @@
+<ComponentPreview name="drawer-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/drawer
+```
+
+## Usage
+
+```tsx
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+```
+
+```tsx
+<Drawer showSwipeHandle>
+  <DrawerTrigger render={<Button variant="outline" />}>
+    Open drawer
+  </DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Project activity</DrawerTitle>
+      <DrawerDescription>
+        Swipe to dismiss or use the close button.
+      </DrawerDescription>
+    </DrawerHeader>
+    <DrawerFooter>
+      <DrawerClose render={<Button variant="outline" />}>Close</DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>
+```
+
+## Swipe direction
+
+`swipeDirection` sets which edge the drawer slides in from, and dragging the handle that same way dismisses it. That drag is the touch-first move a sheet does not have, a sheet only opens and closes on a click.
+
+<ComponentPreview name="drawer-swipe-direction" />
+
+## Snap points
+
+`snapPoints` gives the drawer resting heights to stop at while dragging. Releasing settles it at the nearest one instead of only fully open or fully closed.
+
+<ComponentPreview name="drawer-snap-points" />
+
+## API Reference
+
+### Drawer
+
+| Prop              | Type                                  | Default  |
+| ----------------- | ------------------------------------- | -------- |
+| `swipeDirection`  | `"down" \| "up" \| "left" \| "right"` | `"down"` |
+| `showSwipeHandle` | `boolean`                             | `false`  |
+| `modal`           | `boolean \| "trap-focus"`             | `true`   |
+| `snapPoints`      | `(number \| string)[]`                |          |
+
+`showSwipeHandle` draws a grab handle along the edge the drawer is dismissed towards. `modal` defaults to `true`, which locks page scroll and shows the blurred backdrop; `false` leaves the page usable, and `"trap-focus"` only traps focus. `snapPoints` takes fractions of the viewport height between 0 and 1, pixel numbers above 1, or `px` and `rem` strings. When it is set the drawer opens to the full viewport height so it can rest at each point. All other props pass through to [Base UI's Drawer](https://base-ui.com/react/components/drawer).
+
+`DrawerContent`, `DrawerTrigger`, `DrawerClose`, `DrawerPortal`, `DrawerOverlay`, `DrawerTitle` and `DrawerDescription` pass all props through to [Base UI's Drawer](https://base-ui.com/react/components/drawer). `DrawerContent` must be rendered inside a `Drawer`, which supplies its direction and handle settings. `DrawerHeader`, `DrawerFooter` and `DrawerSwipeHandle` are plain `div` elements.

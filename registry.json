@@ -46,6 +46,20 @@
       ]
     },
     {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "A touch-first panel that slides in from any edge and is dismissed by dragging it away, with optional snap points and a swipe handle. Use it for mobile-style sheets and bottom panels; for a side panel with no drag, use a sheet.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "hover-card",
       "type": "registry:ui",
       "title": "Hover Card",
