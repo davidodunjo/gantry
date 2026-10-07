@@ -228,6 +228,24 @@
       ]
     },
     {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "A text field that filters a list as you type, for picking one option from more choices than a select suits. Use it for long lists such as countries or teammates; with multiple, each pick stays in the field as a removable chip.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": [
+        "utils",
+        "davidodunjo/gantry/button",
+        "davidodunjo/gantry/input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "command",
       "type": "registry:ui",
       "title": "Command",

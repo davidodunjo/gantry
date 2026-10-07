@@ -1,0 +1,105 @@
+<ComponentPreview name="combobox-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/combobox
+```
+
+## Usage
+
+```tsx
+import {
+  Combobox,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxList,
+} from "@/components/ui/combobox"
+```
+
+```tsx
+<Combobox items={countries}>
+  <ComboboxInput aria-label="Country" placeholder="Search countries" />
+  <ComboboxContent>
+    <ComboboxEmpty>No country matches that.</ComboboxEmpty>
+    <ComboboxList>
+      {(item: string) => (
+        <ComboboxItem key={item} value={item}>
+          {item}
+        </ComboboxItem>
+      )}
+    </ComboboxList>
+  </ComboboxContent>
+</Combobox>
+```
+
+You type and the list narrows. Twenty-four countries are behind this field; type a few letters and only the matches stay. Type something that matches nothing and the list says so.
+
+## Search field
+
+Dressed as a search box instead: a magnifier before the text, a cross to empty it, and no chevron, because the list is meant to follow the query rather than be browsed.
+
+<ComponentPreview name="combobox-search-field" />
+
+## Chips
+
+With multiple, each pick stays in the field as a chip and the cursor carries on typing beside it. The field grows a row at a time as the chips wrap.
+
+<ComponentPreview name="combobox-chips" />
+
+## Sizes
+
+Three field heights, 36, 40 and 44 pixels. The popup keeps the width of the field it is anchored to.
+
+<ComponentPreview name="combobox-sizes" />
+
+## Disabled
+
+A disabled combobox fades and stops taking text, keeping whatever was already chosen visible in the field.
+
+<ComponentPreview name="combobox-disabled" />
+
+## API Reference
+
+### Combobox
+
+The root from Base UI. It takes the props of Base UI's Combobox, including `items`, `multiple`, `value` and `disabled`.
+
+### ComboboxInput
+
+| Prop          | Type                        | Default     |
+| ------------- | --------------------------- | ----------- |
+| `controlSize` | `"sm" \| "default" \| "lg"` | `"default"` |
+| `showTrigger` | `boolean`                   | `true`      |
+| `showClear`   | `boolean`                   | `false`     |
+| `anchorRef`   | `Ref<HTMLDivElement>`       | none        |
+
+`controlSize` sets the height of the field. `showTrigger` shows the chevron that opens the list, and `showClear` shows a cross that empties the field. `anchorRef` is the ref you pass to `ComboboxContent`'s `anchor` when the popup should line up with the field. Any child passed in renders inside the field, such as a leading icon. All other props pass through to Base UI's Combobox Input.
+
+### ComboboxContent
+
+| Prop          | Type                                                                       | Default    |
+| ------------- | -------------------------------------------------------------------------- | ---------- |
+| `side`        | `"top" \| "bottom" \| "left" \| "right" \| "inline-start" \| "inline-end"` | `"bottom"` |
+| `align`       | `"start" \| "center" \| "end"`                                             | `"start"`  |
+| `sideOffset`  | `number`                                                                   | `6`        |
+| `alignOffset` | `number`                                                                   | `0`        |
+| `anchor`      | `Element \| RefObject<Element \| null>`                                    | none       |
+
+The popup is rendered in a portal. `anchor` sets the element the popup measures itself against, which is what makes it match the width of a chip field. All other props pass through to Base UI's Combobox Popup.
+
+### ComboboxChips and ComboboxChip
+
+`ComboboxChips` is the field that holds chips and the input. Pass it the ref from `useComboboxAnchor` so the popup lines up with it.
+
+| Prop         | Type      | Default |
+| ------------ | --------- | ------- |
+| `showRemove` | `boolean` | `true`  |
+
+`showRemove` on `ComboboxChip` adds the cross that removes the chip. Both components pass all other props through to Base UI.
+
+### useComboboxAnchor
+
+Returns a ref for `anchorRef` on `ComboboxInput`, or for `ref` on `ComboboxChips`, and the matching `anchor` on `ComboboxContent`.
