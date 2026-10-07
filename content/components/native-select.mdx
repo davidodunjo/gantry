@@ -1,0 +1,71 @@
+<ComponentPreview name="native-select-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/native-select
+```
+
+## Usage
+
+```tsx
+import {
+  NativeSelect,
+  NativeSelectOptGroup,
+  NativeSelectOption,
+} from "@/components/ui/native-select"
+```
+
+```tsx
+<NativeSelect aria-label="Assign to" defaultValue="design">
+  <NativeSelectOption value="design">Design</NativeSelectOption>
+  <NativeSelectOption value="engineering">Engineering</NativeSelectOption>
+  <NativeSelectOption value="support">Support</NativeSelectOption>
+</NativeSelect>
+```
+
+The browser's own select, restyled. Opening it hands over to the platform menu, which is why it fits touch and long option lists so well.
+
+## Sizes
+
+Three heights: 36, 40 and 44 pixels. The chevron grows with the large size; the small size drops to the smaller text size.
+
+<ComponentPreview name="native-select-sizes" />
+
+## Groups
+
+Options can be filed under headings, and a single option can be taken out of play without leaving the list.
+
+<ComponentPreview name="native-select-groups" />
+
+## Disabled
+
+A disabled select fills with the muted colour and fades, so it reads as settled rather than empty.
+
+<ComponentPreview name="native-select-disabled" />
+
+## Invalid
+
+With `aria-invalid` set, the ring turns red while the chevron and the text stay as they are.
+
+<ComponentPreview name="native-select-invalid" />
+
+## Right to left
+
+The chevron is placed against the end edge, so it moves to the left and the option text starts from the right.
+
+<ComponentPreview name="native-select-rtl" />
+
+## API Reference
+
+### NativeSelect
+
+| Prop   | Type                        | Default     |
+| ------ | --------------------------- | ----------- |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` |
+
+`className` styles the wrapper around the select and the chevron. All other props, including `value`, `defaultValue` and `onChange`, pass through to the native `select` element.
+
+### NativeSelectOption and NativeSelectOptGroup
+
+Each takes the props of its native element, `option` or `optgroup`, and sets the colours the platform menu uses for its rows.

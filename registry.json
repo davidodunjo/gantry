@@ -311,6 +311,20 @@
       ]
     },
     {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "The browser's own select menu, restyled to sit alongside the other form controls. Choose it for long option lists and touch devices where the platform menu works best; use the Select component when you need a custom popup.",
+      "dependencies": ["@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "number-input",
       "type": "registry:ui",
       "title": "Number Input",
