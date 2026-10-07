@@ -1,0 +1,75 @@
+<ComponentPreview name="input-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/input
+```
+
+## Usage
+
+```tsx
+import { Input } from "@/components/ui/input"
+```
+
+```tsx
+<Input aria-label="Full name" placeholder="Ada Lovelace" />
+```
+
+## Basic
+
+A single line of text. The ring thickens and darkens on focus.
+
+<ComponentPreview name="input-basic" />
+
+## Sizes
+
+Three heights: 36, 40 and 44 pixels. The small size also drops to the smaller text size.
+
+<ComponentPreview name="input-sizes" />
+
+## Types
+
+The type prop hands the browser its own behaviour: masked characters, a clear button, a date picker.
+
+<ComponentPreview name="input-types" />
+
+## File
+
+A file input keeps the same frame and lets the browser draw the picker button inside it.
+
+<ComponentPreview name="input-file" />
+
+## Disabled and read only
+
+Disabled fades the whole control and refuses focus. Read only looks untouched and still lets you select and copy the text.
+
+<ComponentPreview name="input-disabled-read-only" />
+
+## Invalid
+
+With aria-invalid set, the ring turns red and deepens on focus.
+
+<ComponentPreview name="input-invalid" />
+
+## Controlled
+
+Hold the text in state with onValueChange to count it and clear it from outside the input.
+
+<ComponentPreview name="input-controlled" />
+
+## Right to left
+
+Inside a right to left container the text, the caret and the placeholder all start from the right edge.
+
+<ComponentPreview name="input-rtl" />
+
+## API Reference
+
+| Prop          | Type                        | Default     |
+| ------------- | --------------------------- | ----------- |
+| `controlSize` | `"sm" \| "default" \| "lg"` | `"default"` |
+
+`controlSize` sets the height, horizontal padding and text size. `aria-invalid` and `data-invalid` turn the ring red.
+
+All other props pass through to [Base UI's Input](https://base-ui.com/react/components/input).

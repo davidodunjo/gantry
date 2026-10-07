@@ -18,6 +18,20 @@
       ]
     },
     {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A single line text field that keeps the browser's native input types and adds three sizes and invalid, disabled and read-only states. Use it for names, emails, passwords, search and dates.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "separator",
       "type": "registry:ui",
       "title": "Separator",
