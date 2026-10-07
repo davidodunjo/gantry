@@ -127,6 +127,20 @@
       ]
     },
     {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "The colored, rounded shape a chat message sits inside, aligned to whichever side sent it. Use it for the text of a single chat message; pick a variant for the kind of message, align it to the end for outgoing messages and add reactions to show a count.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/bubble.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
