@@ -271,6 +271,20 @@
       ]
     },
     {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "A flexible row that groups media, text and actions, and can render as a link or a button. Use it for lists of files, settings, people or results; it comes in three variants and three sizes, with optional header and footer lines.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/separator"],
+      "files": [
+        {
+          "path": "registry/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "kbd",
       "type": "registry:ui",
       "title": "Kbd",
