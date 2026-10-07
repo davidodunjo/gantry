@@ -1,0 +1,79 @@
+<ComponentPreview name="message-scroller-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/message-scroller
+```
+
+## Usage
+
+```tsx
+import {
+  MessageScroller,
+  MessageScrollerButton,
+  MessageScrollerContent,
+  MessageScrollerItem,
+  MessageScrollerProvider,
+  MessageScrollerViewport,
+} from "@/components/ui/message-scroller"
+```
+
+```tsx
+<MessageScrollerProvider>
+  <MessageScroller className="h-64">
+    <MessageScrollerViewport aria-label="Conversation">
+      <MessageScrollerContent>
+        <MessageScrollerItem messageId="1">
+          <Bubble>
+            <BubbleContent>Are you around for a quick call?</BubbleContent>
+          </Bubble>
+        </MessageScrollerItem>
+      </MessageScrollerContent>
+    </MessageScrollerViewport>
+    <MessageScrollerButton />
+  </MessageScroller>
+</MessageScrollerProvider>
+```
+
+## Live conversation
+
+The viewport stays pinned to the newest message as you add more. Scroll up and a jump-to-latest button appears at the bottom; scroll away from the top and one appears up there too.
+
+<ComponentPreview name="message-scroller-live-conversation" />
+
+## API Reference
+
+### MessageScrollerProvider
+
+| Prop                     | Type                                | Default |
+| ------------------------ | ----------------------------------- | ------- |
+| `autoScroll`             | `boolean`                           | `false` |
+| `defaultScrollPosition`  | `"start" \| "end" \| "last-anchor"` | `"end"` |
+| `scrollEdgeThreshold`    | `number`                            | `8`     |
+| `scrollPreviousItemPeek` | `number`                            | `64`    |
+| `scrollMargin`           | `number`                            | `0`     |
+
+### MessageScrollerItem
+
+| Prop           | Type      | Default |
+| -------------- | --------- | ------- |
+| `messageId`    | `string`  | none    |
+| `scrollAnchor` | `boolean` | `false` |
+
+### MessageScrollerViewport
+
+| Prop                      | Type      | Default |
+| ------------------------- | --------- | ------- |
+| `preserveScrollOnPrepend` | `boolean` | `true`  |
+
+### MessageScrollerButton
+
+| Prop        | Type               | Default       |
+| ----------- | ------------------ | ------------- |
+| `direction` | `"start" \| "end"` | `"end"`       |
+| `variant`   | `Button` variants  | `"secondary"` |
+| `size`      | `Button` sizes     | `"icon-sm"`   |
+| `behavior`  | `ScrollBehavior`   | `"auto"`      |
+
+`MessageScrollerButton` renders a `Button` unless you pass `render`. Its default content is a down arrow for `end`, turned to point up for `start`, with a screen-reader label either way. The hooks `useMessageScroller`, `useMessageScrollerScrollable` and `useMessageScrollerVisibility` are exported from the same module. All other props pass through to the `@shadcn/react` message scroller primitive.

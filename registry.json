@@ -512,6 +512,20 @@
       ]
     },
     {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message Scroller",
+      "description": "A scrolling viewport for a conversation that stays pinned to the newest item and offers a jump button when you scroll away. Use it for chat threads and live feeds that grow over time; wrap each entry in an item with a messageId so you can scroll to it.",
+      "dependencies": ["@shadcn/react", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/message-scroller.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "native-select",
       "type": "registry:ui",
       "title": "Native Select",
