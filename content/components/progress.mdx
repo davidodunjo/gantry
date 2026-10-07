@@ -1,0 +1,102 @@
+<ComponentPreview name="progress-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/progress
+```
+
+## Usage
+
+```tsx
+import {
+  Progress,
+  ProgressBar,
+  ProgressLabel,
+  ProgressValue,
+} from "@/components/ui/progress"
+import { ProgressCircle } from "@/components/ui/progress-circle"
+```
+
+```tsx
+<Progress value={40}>
+  <ProgressLabel>Upload</ProgressLabel>
+  <ProgressValue />
+</Progress>
+```
+
+A label and a percentage above a bar that fills to the value. Pass `null` for a value that is not known yet.
+
+## Interactive
+
+Advance steps the value up by ten and wraps back to zero at Reset. The bar fills with it and the percentage follows.
+
+<ComponentPreview name="progress-interactive" />
+
+## Value placement
+
+The label can sit to the right of the bar, below it, or float above or below the fill as it moves. Leave `labelPosition` off and the bar carries only an `aria-label` for screen readers.
+
+<ComponentPreview name="progress-value-placement" />
+
+## Circle sizes
+
+Five diameters, from a compact status ring up to a dashboard-sized number, each carrying a label above the value.
+
+<ComponentPreview name="progress-circle-sizes" />
+
+## Half-circle sizes
+
+The same five sizes drawn as a half turn instead of a full ring, suited to sitting flush against the bottom of a card.
+
+<ComponentPreview name="progress-half-circle-sizes" />
+
+## Without labels
+
+With no `label` prop, the ring shows only the fill and its number. `aria-label` still names it for assistive tech.
+
+<ComponentPreview name="progress-without-labels" />
+
+## Custom range and formatting
+
+`min`, `max` and `valueFormatter` let the read-out show something other than a percentage, like six of twelve tasks done.
+
+<ComponentPreview name="progress-custom-range" />
+
+## States
+
+Value 0, value 100 and value `null` side by side: empty, complete and indeterminate. Indeterminate pulses because there is nothing yet to measure.
+
+<ComponentPreview name="progress-states" />
+
+## API Reference
+
+### Progress
+
+`Progress` renders a bar made of `ProgressTrack` and `ProgressIndicator` after its children, so put `ProgressLabel` and `ProgressValue` inside it. It adds no props of its own. Every part passes its props through to the matching part of [Base UI's Progress](https://base-ui.com/react/components/progress), and `className` accepts a string or a function of the state.
+
+### ProgressBar
+
+A bar that draws its own value label, for when you want the percentage beside, below or floating over the fill instead of composing the parts yourself.
+
+| Prop             | Type                                                         | Default |
+| ---------------- | ------------------------------------------------------------ | ------- |
+| `labelPosition`  | `"right" \| "bottom" \| "top-floating" \| "bottom-floating"` | -       |
+| `valueFormatter` | `(value: number, percentage: number) => string \| number`    | -       |
+| `min`            | `number`                                                     | `0`     |
+| `max`            | `number`                                                     | `100`   |
+
+`value` is clamped between `min` and `max`. It throws a `RangeError` when `min` or `max` is not finite or `max` is not above `min`. Without `valueFormatter` the label shows the rounded percentage, and `null` shows "Loading". The bar needs an `aria-label`, or a `ProgressLabel` child, to be named.
+
+### ProgressCircle
+
+| Prop             | Type                                                      | Default    |
+| ---------------- | --------------------------------------------------------- | ---------- |
+| `size`           | `"xxs" \| "xs" \| "sm" \| "md" \| "lg"`                   | `"md"`     |
+| `variant`        | `"circle" \| "half-circle"`                               | `"circle"` |
+| `label`          | `string`                                                  | -          |
+| `valueFormatter` | `(value: number, percentage: number) => string \| number` | -          |
+| `min`            | `number`                                                  | `0`        |
+| `max`            | `number`                                                  | `100`      |
+
+`label` names the ring as well as captioning it, and `aria-label` takes precedence for assistive technology. `value`, `min` and `max` follow the same rules as `ProgressBar`, and `null` spins the ring, or pulses the half circle. All other props pass through to [Base UI's Progress](https://base-ui.com/react/components/progress).

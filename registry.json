@@ -186,6 +186,24 @@
       ]
     },
     {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "A bar or ring that fills to show how far a task has got, or pulses when there is nothing to measure yet. Use the bar for uploads and multi-step flows and the circle or half circle for a figure on a dashboard; a value of null shows the indeterminate state.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/progress.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/progress-circle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "skeleton",
       "type": "registry:ui",
       "title": "Skeleton",
