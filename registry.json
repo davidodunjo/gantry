@@ -101,6 +101,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "An indeterminate loading indicator in five sizes that takes the surrounding text colour. Use it when work is in progress and you cannot say how long it will take, either inline beside text or centred in an empty panel.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
