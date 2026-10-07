@@ -1,0 +1,61 @@
+<ComponentPreview name="dropdown-menu-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/dropdown-menu
+```
+
+## Usage
+
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+```
+
+```tsx
+<DropdownMenu>
+  <DropdownMenuTrigger render={<Button variant="outline" />}>
+    Open menu
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuItem>Settings</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+Opens from a visible trigger button and stays anchored to it, unlike a context menu, which opens wherever you right-click.
+
+## Checkbox and radio items
+
+Checkbox items toggle independently and radio items pick one from a group, both marked with a check when selected.
+
+<ComponentPreview name="dropdown-menu-checkbox-and-radio-items" />
+
+## API Reference
+
+### DropdownMenuContent
+
+| Prop          | Type                                                                       | Default    |
+| ------------- | -------------------------------------------------------------------------- | ---------- |
+| `side`        | `"top" \| "bottom" \| "left" \| "right" \| "inline-start" \| "inline-end"` | `"bottom"` |
+| `sideOffset`  | `number`                                                                   | `4`        |
+| `align`       | `"start" \| "center" \| "end"`                                             | `"start"`  |
+| `alignOffset` | `number`                                                                   | `0`        |
+
+`DropdownMenuSubContent` takes the same props and defaults to `side="right"`, `sideOffset={0}` and `alignOffset={-3}`.
+
+### DropdownMenuItem
+
+| Prop      | Type                         | Default     |
+| --------- | ---------------------------- | ----------- |
+| `variant` | `"default" \| "destructive"` | `"default"` |
+| `inset`   | `boolean`                    | `false`     |
+
+`inset` adds left padding so the item lines up with items that carry a check or an icon. `DropdownMenuLabel`, `DropdownMenuSubTrigger`, `DropdownMenuCheckboxItem` and `DropdownMenuRadioItem` accept `inset` too.
+
+`DropdownMenuShortcut` is a plain `span` for the key hint on the right of an item. Every other part passes its props straight through to [Base UI's Menu](https://base-ui.com/react/components/menu).
