@@ -14,7 +14,7 @@ const link =
   "h-auto! rounded p-0! underline-offset-4 hover:not-data-disabled:underline"
 
 const buttonVariants = cva(
-  "group/button relative inline-flex shrink-0 cursor-pointer items-center justify-center rounded-[8px] text-sm font-semibold whitespace-nowrap transition duration-100 ease-linear outline-none select-none hover:not-data-disabled:bg-(--button-hover) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:not-aria-disabled:not-aria-[haspopup]:translate-y-px aria-expanded:bg-(--button-hover) aria-invalid:outline-2 aria-invalid:outline-destructive data-disabled:not-data-loading:cursor-not-allowed data-disabled:not-data-loading:opacity-50 data-loading:cursor-progress data-loading:bg-(--button-hover) [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5",
+  "group/button relative inline-flex shrink-0 cursor-pointer items-center justify-center rounded-[8px] text-sm font-semibold whitespace-nowrap transition duration-100 ease-linear outline-none select-none hover:not-data-disabled:bg-(--button-hover) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:not-aria-disabled:not-aria-[haspopup]:translate-y-px aria-expanded:bg-(--button-hover) aria-invalid:outline-2 aria-invalid:outline-destructive data-loading:cursor-progress data-loading:bg-(--button-hover) data-disabled:not-data-loading:cursor-not-allowed data-disabled:not-data-loading:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5",
   {
     variants: {
       variant: {
