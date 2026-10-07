@@ -32,6 +32,19 @@
       ]
     },
     {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "A container that reserves space at a fixed ratio before media loads. Wrap an image, video or embed in it with a numeric ratio such as 16 / 9 so the page does not jump when the media arrives.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",

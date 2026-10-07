@@ -1,0 +1,31 @@
+<ComponentPreview name="aspect-ratio-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/aspect-ratio
+```
+
+## Usage
+
+```tsx
+import { AspectRatio } from "@/components/ui/aspect-ratio"
+```
+
+```tsx
+<AspectRatio ratio={16 / 9}>
+  <img src="/cover.jpg" alt="Cover" className="size-full object-cover" />
+</AspectRatio>
+```
+
+Every frame in the preview is the same width and the ratio sets its height. The space is held before anything loads into it, so the page does not jump when an image or video arrives.
+
+## API Reference
+
+| Prop    | Type     | Default |
+| ------- | -------- | ------- |
+| `ratio` | `number` | -       |
+
+`ratio` is width divided by height, so a widescreen frame is `16 / 9`. It is written to a `--ratio` custom property on the element, and a `style` prop you pass is merged after it.
+
+All other props pass through to the `div`.
