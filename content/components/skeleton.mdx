@@ -18,6 +18,12 @@ import { Skeleton } from "@/components/ui/skeleton"
 
 The preview above is a profile: a circular skeleton stands in for the avatar and two bars for the name and subtitle, sized to match what lands once the profile loads.
 
+## Pulse
+
+Set `animation="pulse"` to fade the whole placeholder in and out instead of sweeping a shimmer across it.
+
+<ComponentPreview name="skeleton-pulse" />
+
 ## Card
 
 A tall block covers where the image will sit, with two shorter bars underneath for the title and byline.
@@ -28,6 +34,12 @@ A tall block covers where the image will sit, with two shorter bars underneath f
 
 ### Skeleton
 
-`Skeleton` accepts the props of a `div` and adds none of its own. Give it a height, a width and, when the real element is round, a radius through `className`. It pulses until the user prefers reduced motion, then holds still.
+`Skeleton` accepts the props of a `div`. Give it a height, a width and, when the real element is round, a radius through `className`.
+
+| Prop        | Type                   | Default     |
+| ----------- | ---------------------- | ----------- |
+| `animation` | `"shimmer" \| "pulse"` | `"shimmer"` |
+
+Both animations stop when the user prefers reduced motion. The shimmer uses the `animate-in` and `slide-in-from-*` utilities from `tw-animate-css`, which `shadcn init` already imports into your CSS.
 
 Skeleton is not announced to assistive technology. Mark the surrounding region with `aria-busy="true"` and a label, as the examples do.

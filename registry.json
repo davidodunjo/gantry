@@ -120,7 +120,8 @@
       "name": "skeleton",
       "type": "registry:ui",
       "title": "Skeleton",
-      "description": "A pulsing placeholder shaped like the content it stands in for while that content loads. Size and round it to match the real element so the layout does not jump when the content arrives.",
+      "description": "A placeholder shaped like the content it stands in for while that content loads, with a shimmer sweep by default or a pulse. Size and round it to match the real element so the layout does not jump when the content arrives.",
+      "devDependencies": ["tw-animate-css"],
       "registryDependencies": ["utils"],
       "files": [
         {
