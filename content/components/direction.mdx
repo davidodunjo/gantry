@@ -22,6 +22,12 @@ The provider changes how components behave, such as which way a slider fills and
 
 `useDirection` returns the direction of the nearest provider, so your own components can adapt to it.
 
+## Both directions
+
+The same slider under each direction. Right to left, the fill grows from the right edge and the arrow keys swap, so Left raises the value. The provider changes the behaviour; the dir attribute on the wrapper flips the layout, and a page needs both.
+
+<ComponentPreview name="direction-both-directions" />
+
 ## API Reference
 
 ### DirectionProvider
