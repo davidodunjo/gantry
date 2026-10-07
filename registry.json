@@ -88,6 +88,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "A pulsing placeholder shaped like the content it stands in for while that content loads. Size and round it to match the real element so the layout does not jump when the content arrives.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
