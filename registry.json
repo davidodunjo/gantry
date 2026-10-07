@@ -279,6 +279,20 @@
       ]
     },
     {
+      "name": "number-input",
+      "type": "registry:ui",
+      "title": "Number Input",
+      "description": "A numeric field with a label, a hint and stepper buttons, plus bounds, step sizes and locale-aware formatting. Use it for quantities, amounts and other numbers people nudge up or down; the stepper stacks at the end or splits to either side.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/number-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "popover",
       "type": "registry:ui",
       "title": "Popover",
