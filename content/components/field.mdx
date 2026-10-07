@@ -1,0 +1,123 @@
+<ComponentPreview name="field-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/field
+```
+
+## Usage
+
+```tsx
+import {
+  Field,
+  FieldContent,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+  FieldLegend,
+  FieldSeparator,
+  FieldSet,
+  FieldTitle,
+} from "@/components/ui/field"
+```
+
+```tsx
+<Field>
+  <FieldLabel htmlFor="display-name">Display name</FieldLabel>
+  <Input id="display-name" aria-describedby="display-name-hint" />
+  <FieldDescription id="display-name-hint">
+    This is the name teammates see on your comments.
+  </FieldDescription>
+</Field>
+```
+
+`Field` stacks a label, a control and a line of guidance, and owns the spacing between them so every form row lines up.
+
+## Required
+
+Mark the field required with `data-required` and the label grows an asterisk. Nothing on the label itself changes, so the marker follows the field it belongs to.
+
+<ComponentPreview name="field-required" />
+
+## Invalid
+
+Marking the field `data-invalid` turns the asterisk and the guidance red at once, and the error takes the place of the hint.
+
+<ComponentPreview name="field-invalid" />
+
+## Disabled
+
+Marking the field `data-disabled="true"` fades the label and the guidance too, so the whole row reads as out of reach rather than just the box.
+
+<ComponentPreview name="field-disabled" />
+
+## Horizontal
+
+Turn the field on its side and the label and guidance move into a column of their own beside the control. Good for a long settings list.
+
+<ComponentPreview name="field-horizontal" />
+
+## Responsive
+
+The same field twice. Responsive orientation reads the width of its group, so it stacks in the narrow one and sits side by side in the wide one.
+
+<ComponentPreview name="field-responsive" />
+
+## Grouped
+
+A field set names a run of fields with a legend, and a separator can cut the run in two and carry a word of its own.
+
+<ComponentPreview name="field-grouped" />
+
+## Choice cards
+
+A label can wrap a whole field instead of sitting above one. It draws a border around the row, takes the click for the control inside it, and tints itself once that control is checked.
+
+<ComponentPreview name="field-choice-cards" />
+
+## Several errors
+
+Hand the error a list of messages and it lays them out as bullets. One message stays a plain line, as in the invalid field above.
+
+<ComponentPreview name="field-several-errors" />
+
+## API Reference
+
+### Field
+
+| Prop          | Type                                         | Default      |
+| ------------- | -------------------------------------------- | ------------ |
+| `orientation` | `"vertical" \| "horizontal" \| "responsive"` | `"vertical"` |
+
+`Field` has `role="group"` and shares its state with its children through attributes, not props: `data-required`, `data-invalid` and `data-disabled="true"` on the field are read by the label and the description inside it. `responsive` switches between stacked and side by side at the width of the nearest `FieldGroup`. All other props pass through to a `div`.
+
+### FieldSet and FieldLegend
+
+`FieldSet` is a native `fieldset` and takes its props. `FieldLegend` is a `legend` with a `variant` of `"legend"` (the default) or `"label"` that sets the text size.
+
+### FieldGroup, FieldContent and FieldTitle
+
+Layout parts. `FieldGroup` stacks fields and is the container that `responsive` reads. `FieldContent` holds a label and a description in one column beside a control. `FieldTitle` is a non-label heading for a choice card. Each takes the props of a `div`.
+
+### FieldLabel
+
+A Label that also works as a wrapper. It takes the props of Label. Wrapped around a `Field`, it turns into a bordered choice card.
+
+### FieldDescription
+
+Guidance under a control, in muted text. It fades with a disabled field and turns red with an invalid one. It takes the props of a `p`.
+
+### FieldSeparator
+
+A rule between fields. Pass children to set a word in the middle of it. It takes the props of a `div`.
+
+### FieldError
+
+| Prop     | Type                                       | Default     |
+| -------- | ------------------------------------------ | ----------- |
+| `errors` | `Array<{ message?: string } \| undefined>` |             |
+| `size`   | `"sm" \| "default"`                        | `"default"` |
+
+Renders its children, or the messages in `errors` with duplicates and blanks removed: one message as a line and several as a bulleted list. It renders nothing when there is nothing to show. It has `role="alert"` and takes the props of a `div`.

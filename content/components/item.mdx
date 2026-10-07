@@ -1,0 +1,99 @@
+<ComponentPreview name="item-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/item
+```
+
+## Usage
+
+```tsx
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemFooter,
+  ItemGroup,
+  ItemHeader,
+  ItemMedia,
+  ItemSeparator,
+  ItemTitle,
+} from "@/components/ui/item"
+```
+
+```tsx
+<Item variant="outline">
+  <ItemMedia variant="icon">
+    <File02 aria-hidden="true" />
+  </ItemMedia>
+  <ItemContent>
+    <ItemTitle>Q3 board deck.pdf</ItemTitle>
+    <ItemDescription>2.4 MB, updated today</ItemDescription>
+  </ItemContent>
+  <ItemActions>
+    <Button variant="ghost" size="sm">
+      Open
+    </Button>
+  </ItemActions>
+</Item>
+```
+
+A row that groups media, text and actions. It wraps onto extra lines for a header or a footer, and can render as a link or a button.
+
+## Variants
+
+From the top: default has no border, outline adds a border and a card fill, and muted swaps the border for a soft grey fill.
+
+<ComponentPreview name="item-variants" />
+
+## Sizes
+
+Padding steps down from 16 to 12 to 8 pixels. At `xs` the description drops to small text, which suits menus and dense lists.
+
+<ComponentPreview name="item-sizes" />
+
+## As a link
+
+Render the item as a link and the whole row becomes the click target, with a grey fill on hover. Separators split the rows.
+
+<ComponentPreview name="item-as-a-link" />
+
+## Header and footer
+
+A header and a footer each take a full line, above and below the content, for a title row with a timestamp or a row of actions.
+
+<ComponentPreview name="item-header-and-footer" />
+
+## API Reference
+
+### Item
+
+| Prop      | Type                                | Default     |
+| --------- | ----------------------------------- | ----------- |
+| `variant` | `"default" \| "outline" \| "muted"` | `"default"` |
+| `size`    | `"default" \| "sm" \| "xs"`         | `"default"` |
+| `render`  | `ReactElement`                      |             |
+
+`render` swaps the `div` for another element, such as `<a href="...">`, while keeping the item's styling. All other props pass through to a `div`; see [Base UI's useRender](https://base-ui.com/react/utils/use-render).
+
+### ItemMedia
+
+| Prop      | Type                             | Default     |
+| --------- | -------------------------------- | ----------- |
+| `variant` | `"default" \| "icon" \| "image"` | `"default"` |
+
+`icon` draws a bordered square around an icon. `image` clips an image to a small rounded square that shrinks with the item size. It takes the props of a `div`.
+
+### ItemGroup, ItemContent, ItemActions, ItemHeader and ItemFooter
+
+Layout parts. `ItemGroup` stacks items, `ItemContent` holds the title and description in a column, `ItemActions` lays buttons in a row, and `ItemHeader` and `ItemFooter` each take a full line. Each takes the props of a `div`.
+
+### ItemTitle and ItemDescription
+
+`ItemTitle` is a one-line heading and takes the props of a `div`. `ItemDescription` is muted text clamped to two lines and takes the props of a `p`.
+
+### ItemSeparator
+
+A horizontal rule between items. It takes the props of the Separator component.

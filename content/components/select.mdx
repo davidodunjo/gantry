@@ -1,0 +1,108 @@
+<ComponentPreview name="select-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/select
+```
+
+## Usage
+
+```tsx
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+```
+
+```tsx
+<Select items={timezones}>
+  <SelectTrigger aria-label="Timezone">
+    <SelectValue placeholder="Select a timezone" />
+  </SelectTrigger>
+  <SelectContent>
+    {timezones.map((timezone) => (
+      <SelectItem key={timezone.value} value={timezone.value}>
+        {timezone.label}
+      </SelectItem>
+    ))}
+  </SelectContent>
+</Select>
+```
+
+One choice from a short list. The trigger shows what is selected and the options only exist while the popup is open, so there is no typing and no filtering here.
+
+## Grouped
+
+Longer lists get headings and a rule between blocks. The headings are labels only, so arrow keys skip straight past them.
+
+<ComponentPreview name="select-grouped" />
+
+## Sizes
+
+Three trigger heights, 36, 40 and 44 pixels. Pass the same size to the popup and the rows inside it line up with the trigger they came from.
+
+<ComponentPreview name="select-sizes" />
+
+## Aligned popup
+
+With `alignItemWithTrigger` the popup opens on top of the trigger with the selected row already under the pointer, instead of dropping below it.
+
+<ComponentPreview name="select-aligned-popup" />
+
+## Disabled
+
+The whole control can be disabled, or a single row inside it. The first select will not open at all; open the second and Frankfurt is greyed out and unselectable.
+
+<ComponentPreview name="select-disabled" />
+
+## Invalid
+
+An invalid trigger keeps a red ring, so a required field nobody has answered is obvious before anyone presses submit.
+
+<ComponentPreview name="select-invalid" />
+
+## API Reference
+
+### Select
+
+The root, with no styling of its own. Pass `items` so the trigger can show a label for the selected value before the popup has ever opened. All props pass through to [Base UI's Select](https://base-ui.com/react/components/select).
+
+### SelectTrigger
+
+| Prop   | Type                        | Default     |
+| ------ | --------------------------- | ----------- |
+| `size` | `"sm" \| "default" \| "lg"` | `"default"` |
+
+The button that shows the selection. It sets the height and text size and adds a chevron. All other props pass through to Base UI's Select trigger.
+
+### SelectValue
+
+The selected label inside the trigger, or its `placeholder` when nothing is chosen. It takes the props of Base UI's Select value.
+
+### SelectContent
+
+| Prop                   | Type                                                                       | Default     |
+| ---------------------- | -------------------------------------------------------------------------- | ----------- |
+| `size`                 | `"sm" \| "default" \| "lg"`                                                | `"default"` |
+| `side`                 | `"top" \| "bottom" \| "left" \| "right" \| "inline-start" \| "inline-end"` | `"bottom"`  |
+| `sideOffset`           | `number`                                                                   | `6`         |
+| `align`                | `"start" \| "center" \| "end"`                                             | `"start"`   |
+| `alignOffset`          | `number`                                                                   | `0`         |
+| `alignItemWithTrigger` | `boolean`                                                                  | `false`     |
+
+The popup, rendered in a portal and sized to the trigger. The placement props go to Base UI's positioner and every other prop goes to the popup. It adds scroll arrows when the list is taller than the space available.
+
+### SelectItem, SelectGroup, SelectLabel and SelectSeparator
+
+`SelectItem` is one option, with a check on the chosen one and a `value` prop. `SelectGroup` and `SelectLabel` file options under a heading, and `SelectSeparator` rules a line between groups. Each takes the props of its Base UI part.
+
+### SelectScrollUpButton and SelectScrollDownButton
+
+The arrows `SelectContent` shows at either end of a long list. They are exported in case you build your own popup.

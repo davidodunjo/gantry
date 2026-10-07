@@ -1,0 +1,91 @@
+<ComponentPreview name="number-input-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/number-input
+```
+
+## Usage
+
+```tsx
+import { NumberInput } from "@/components/ui/number-input"
+```
+
+```tsx
+<NumberInput label="Quantity" defaultValue={12} />
+```
+
+A text field with a stacked stepper on the end. The arrows and the up and down keys move the value by the same amount.
+
+## Horizontal
+
+Minus and plus move to either side and the value centres between them, which suits a cart row better than the stacked arrows.
+
+<ComponentPreview name="number-input-horizontal" />
+
+## Sizes
+
+Three heights: 36, 40 and 44 pixels. The large size widens the stepper column and grows its chevrons with it.
+
+<ComponentPreview name="number-input-sizes" />
+
+## Steps
+
+`step` sets the normal jump. Hold alt while stepping for the small step and shift for the large one, so one control covers fine and coarse adjustment.
+
+<ComponentPreview name="number-input-steps" />
+
+## Limits
+
+`min` and `max` fence the value in. This one starts at its ceiling, so the up arrow is already dead while the down arrow still works.
+
+<ComponentPreview name="number-input-limits" />
+
+## Formatted
+
+The value stays a plain number while the field shows it as currency, a percentage or a unit. Stepping and typing both respect the format.
+
+<ComponentPreview name="number-input-formatted" />
+
+## Disabled and read only
+
+Disabled fades the whole control. Read only keeps the field at full contrast and its text selectable, and only greys the arrows out.
+
+<ComponentPreview name="number-input-disabled-read-only" />
+
+## Invalid
+
+The `invalid` prop turns the ring and the hint red, and keeps them red while the field is focused.
+
+<ComponentPreview name="number-input-invalid" />
+
+## Controlled
+
+Hold the number in state to read it outside the field and push new values back in. An emptied field reports `null` rather than zero.
+
+<ComponentPreview name="number-input-controlled" />
+
+## In a form
+
+`required` adds the marker beside the label and holds the form back until the field has a value. What the form carries is the raw number, not the formatted text.
+
+<ComponentPreview name="number-input-in-a-form" />
+
+## API Reference
+
+| Prop               | Type                         | Default      |
+| ------------------ | ---------------------------- | ------------ |
+| `label`            | `string`                     | none         |
+| `hint`             | `ReactNode`                  |              |
+| `invalid`          | `boolean`                    | `false`      |
+| `size`             | `"sm" \| "md" \| "lg"`       | `"md"`       |
+| `orientation`      | `"vertical" \| "horizontal"` | `"vertical"` |
+| `placeholder`      | `string`                     |              |
+| `className`        | `string`                     |              |
+| `controlClassName` | `string`                     |              |
+| `visibleInputRef`  | `Ref<HTMLInputElement>`      |              |
+
+`label` is required and doubles as the accessible name of both stepper buttons. `hint` renders below the field and is linked to the input. `invalid` turns the ring and the hint red. `orientation` puts the stepper in a stacked column at the end, or minus and plus on either side. `className` styles the whole component and `controlClassName` styles the bordered row that holds the input and the stepper.
+
+All other props, including `value`, `defaultValue`, `onValueChange`, `min`, `max`, `step`, `smallStep`, `largeStep`, `format`, `locale`, `required`, `disabled`, `readOnly` and `name`, pass through to [Base UI's Number Field](https://base-ui.com/react/components/number-field).

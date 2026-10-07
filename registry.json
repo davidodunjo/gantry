@@ -119,6 +119,20 @@
       ]
     },
     {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "A row or column of related buttons, inputs and labels joined into one control with shared borders and rounded outer corners. Use it for a set of related actions, a label beside a field, or a segmented set of choices; it runs horizontally or vertically.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/separator"],
+      "files": [
+        {
+          "path": "registry/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "card",
       "type": "registry:ui",
       "title": "Card",
@@ -261,6 +275,24 @@
       ]
     },
     {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "A wrapper that pairs a control with its label, guidance and error, and shares its required, invalid and disabled state with all three. Use it for every row of a form; it lays out vertically, horizontally or responsively, and its parts build field sets, separators and choice cards.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [
+        "utils",
+        "davidodunjo/gantry/label",
+        "davidodunjo/gantry/separator"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "hover-card",
       "type": "registry:ui",
       "title": "Hover Card",
@@ -289,6 +321,25 @@
       ]
     },
     {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "A text field framed with icons, text or buttons inside one border, so the extras read as part of the field. Use it for a search icon, a currency or domain affix, a password reveal button or a textarea with a footer; the frame reads the state of the control inside it.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [
+        "utils",
+        "davidodunjo/gantry/button",
+        "davidodunjo/gantry/input",
+        "davidodunjo/gantry/textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "input-otp",
       "type": "registry:ui",
       "title": "Input OTP",
@@ -298,6 +349,20 @@
       "files": [
         {
           "path": "registry/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "A flexible row that groups media, text and actions, and can render as a link or a button. Use it for lists of files, settings, people or results; it comes in three variants and three sizes, with optional header and footer lines.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/separator"],
+      "files": [
+        {
+          "path": "registry/ui/item.tsx",
           "type": "registry:ui"
         }
       ]
@@ -343,6 +408,20 @@
       ]
     },
     {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "The browser's own select menu, restyled to sit alongside the other form controls. Choose it for long option lists and touch devices where the platform menu works best; use the Select component when you need a custom popup.",
+      "dependencies": ["@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "navigation-menu",
       "type": "registry:ui",
       "title": "Navigation Menu",
@@ -356,6 +435,20 @@
       "files": [
         {
           "path": "registry/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "number-input",
+      "type": "registry:ui",
+      "title": "Number Input",
+      "description": "A numeric field with a label, a hint and stepper buttons, plus bounds, step sizes and locale-aware formatting. Use it for quantities, amounts and other numbers people nudge up or down; the stepper stacks at the end or splits to either side.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/number-input.tsx",
           "type": "registry:ui"
         }
       ]
@@ -449,6 +542,20 @@
       ]
     },
     {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "The styled single choice: the trigger shows the one selection and the options live in a popup, with no typing involved. Use it for a short list of fixed options such as a time zone or a region; for a long list people need to search, use a combobox.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "separator",
       "type": "registry:ui",
       "title": "Separator",
@@ -486,6 +593,20 @@
       "files": [
         {
           "path": "registry/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "A thumb dragged along a track to pick a number, or two thumbs to pick a range. Use it for approximate values such as volume or a price range; it can show each value in a label, run vertically and format the label text.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/slider.tsx",
           "type": "registry:ui"
         }
       ]
