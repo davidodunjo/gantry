@@ -104,6 +104,20 @@
       ]
     },
     {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "A menu summoned by right-click or long press at the pointer, with no visible trigger of its own. Use it for shortcuts on a region such as a canvas, file row or table cell; it supports groups, labels, shortcuts, checkbox and radio items, submenus and a destructive item style.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "dropdown-menu",
       "type": "registry:ui",
       "title": "Dropdown Menu",
