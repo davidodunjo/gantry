@@ -489,6 +489,25 @@
       ]
     },
     {
+      "name": "multi-select",
+      "type": "registry:ui",
+      "title": "Multi Select",
+      "description": "A field that holds several picks at once, counting them on the trigger and ticking them off a searchable list. Use it when someone chooses more than one option from a set, such as integrations or reviewers; it can show the picks as tags and offers select all and reset.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": [
+        "utils",
+        "davidodunjo/gantry/button",
+        "davidodunjo/gantry/avatar",
+        "davidodunjo/gantry/combobox"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/multi-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "native-select",
       "type": "registry:ui",
       "title": "Native Select",
