@@ -63,6 +63,20 @@
       ]
     },
     {
+      "name": "badge-group",
+      "type": "registry:ui",
+      "title": "Badge Group",
+      "description": "A tag paired with a short message beside it, for an announcement or update that needs more than a status word. Use it as a link at the top of a page or section; it has a light and a modern theme, two sizes, and can lead or trail with the tag.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/badge-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",

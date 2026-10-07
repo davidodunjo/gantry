@@ -1,0 +1,56 @@
+<ComponentPreview name="badge-group-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/badge-group
+```
+
+## Usage
+
+```tsx
+import { BadgeGroup } from "@/components/ui/badge-group"
+```
+
+```tsx
+<BadgeGroup addonText="New">Team billing is now live</BadgeGroup>
+```
+
+## Light
+
+A pill tag on one end and a plain-text message on the other. Leading puts the tag first, trailing puts the message first and ends on the tag.
+
+<ComponentPreview name="badge-group-light" />
+
+## Modern
+
+The modern theme trades the ring for a background and a hairline shadow, with a small dot marking the tag instead of a filled pill.
+
+<ComponentPreview name="badge-group-modern" />
+
+## Without arrow
+
+Passing null for `iconTrailing` drops the arrow, for an announcement that is not a link anywhere.
+
+<ComponentPreview name="badge-group-without-arrow" />
+
+## Standalone addon
+
+With no message beside it, a badge group is just its tag, sized and shaped the same as when it carries one.
+
+<ComponentPreview name="badge-group-standalone-addon" />
+
+## API Reference
+
+| Prop           | Type                                             | Default             |
+| -------------- | ------------------------------------------------ | ------------------- |
+| `addonText`    | `ReactNode`                                      | -                   |
+| `size`         | `"md" \| "lg"`                                   | `"md"`              |
+| `theme`        | `"light" \| "modern"`                            | `"light"`           |
+| `align`        | `"leading" \| "trailing"`                        | `"leading"`         |
+| `iconTrailing` | `ReactNode`                                      | an arrow right icon |
+| `render`       | `ReactElement \| (props, state) => ReactElement` | -                   |
+
+`addonText` is the tag and `children` is the message beside it. `align` decides which of the two comes first. With `align="trailing"` the arrow moves inside the tag. Pass `null` to `iconTrailing` to drop the arrow. `render` replaces the default `span`, so the group can be a link.
+
+All other props pass through to the rendered element through Base UI's [useRender](https://base-ui.com/react/utils/use-render).
