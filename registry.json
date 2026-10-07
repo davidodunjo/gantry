@@ -692,6 +692,23 @@
       ]
     },
     {
+      "name": "social-buttons",
+      "type": "registry:ui",
+      "title": "Social Buttons",
+      "description": "Sign-in buttons for six providers, in monochrome, colour-logo and full brand treatments. Use them for provider sign-in or account linking, with labels or accessible icon-only buttons.",
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/social-logos.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/social-buttons.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "spinner",
       "type": "registry:ui",
       "title": "Spinner",
