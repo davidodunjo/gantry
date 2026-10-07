@@ -182,6 +182,20 @@
       ]
     },
     {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "A horizontal or vertical strip of slides moved with buttons, drag or arrow keys, one screenful at a time. Reach for it to show a set of related items, such as testimonials or project cards, in a space too small to show them all at once.",
+      "dependencies": ["embla-carousel-react"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "checkbox",
       "type": "registry:ui",
       "title": "Checkbox",
