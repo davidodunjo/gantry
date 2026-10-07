@@ -1,0 +1,99 @@
+<ComponentPreview name="sidebar-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/sidebar
+```
+
+## Usage
+
+Boxed at a fixed height so the preview stays contained. The sidebar uses `collapsible="none"` to stay in normal flow, since its default offcanvas and icon modes anchor to the viewport edge and would break out of a box this size.
+
+```tsx
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarInset,
+  SidebarMenuItem,
+  SidebarProvider,
+} from "@/components/ui/sidebar"
+```
+
+```tsx
+<SidebarProvider>
+  <Sidebar>
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Workspace</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton isActive>Home</SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+  <SidebarInset>...</SidebarInset>
+</SidebarProvider>
+```
+
+## Sizes
+
+Three menu button heights, small, default and large, sit above a loading skeleton for a row still fetching its label.
+
+<ComponentPreview name="sidebar-sizes" />
+
+## API Reference
+
+### SidebarProvider
+
+| Prop           | Type                      | Default     |
+| -------------- | ------------------------- | ----------- |
+| `defaultOpen`  | `boolean`                 | `true`      |
+| `open`         | `boolean`                 | `undefined` |
+| `onOpenChange` | `(open: boolean) => void` | `undefined` |
+
+`open` and `onOpenChange` make the sidebar controlled. The open state is saved in a `sidebar_state` cookie, and <kbd>Ctrl</kbd> or <kbd>Cmd</kbd> + <kbd>B</kbd> toggles it.
+
+### Sidebar
+
+| Prop          | Type                                 | Default       |
+| ------------- | ------------------------------------ | ------------- |
+| `side`        | `"left" \| "right"`                  | `"left"`      |
+| `variant`     | `"sidebar" \| "floating" \| "inset"` | `"sidebar"`   |
+| `collapsible` | `"offcanvas" \| "icon" \| "none"`    | `"offcanvas"` |
+
+`collapsible="none"` keeps the sidebar in normal flow with no toggle. Below 768px the sidebar becomes a sheet that opens from the trigger.
+
+### SidebarMenuButton
+
+| Prop       | Type                                              | Default     |
+| ---------- | ------------------------------------------------- | ----------- |
+| `isActive` | `boolean`                                         | `false`     |
+| `variant`  | `"default" \| "outline"`                          | `"default"` |
+| `size`     | `"sm" \| "default" \| "lg"`                       | `"default"` |
+| `tooltip`  | `string \| ComponentProps<typeof TooltipContent>` | `undefined` |
+
+`tooltip` shows its content to the right of the button while the sidebar is icon-collapsed. Every other prop passes through to Base UI's `useRender`, so `render` swaps the element, for example for a link.
+
+### SidebarMenuAction
+
+`showOnHover` (default `false`) hides the action until its menu item is hovered or focused, on screens md and wider.
+
+### SidebarMenuSkeleton
+
+`showIcon` (default `false`) adds a square icon placeholder before the text bar.
+
+### SidebarMenuSubButton
+
+`size` (`"sm" \| "md"`, default `"md"`) and `isActive` (default `false`).
+
+`useSidebar` returns the sidebar state for custom controls and throws outside a `SidebarProvider`.

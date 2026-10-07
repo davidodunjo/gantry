@@ -1,0 +1,86 @@
+<ComponentPreview name="chart-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/chart
+```
+
+## Usage
+
+Wrap a Recharts chart in `ChartContainer` and pass it a config that names each series. The config sets the label and colour for each series, and the tooltip and legend read their labels from it.
+
+```tsx
+import {
+  type ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart"
+```
+
+```tsx
+const chartConfig: ChartConfig = {
+  signups: { label: "Signups", color: "var(--chart-1)" },
+}
+
+<ChartContainer config={chartConfig}>
+  <BarChart data={data}>
+    <ChartTooltip content={<ChartTooltipContent />} />
+    <Bar dataKey="signups" fill="var(--color-signups)" />
+  </BarChart>
+</ChartContainer>
+```
+
+## Trend
+
+An area chart tracks tickets opened against tickets resolved over eight weeks. The week of 7 September spikes as an incident lands, and resolved tickets catch up the week after.
+
+<ComponentPreview name="chart-trend" />
+
+## Comparison
+
+Grouped bars set this quarter's revenue against last quarter's for four pricing plans. Three plans grew; Enterprise is the one that slipped.
+
+<ComponentPreview name="chart-comparison" />
+
+## Breakdown
+
+A donut adds up where signups came from this month. Each ring segment is a channel's share of the total, read from the legend or a hover on the slice.
+
+<ComponentPreview name="chart-breakdown" />
+
+## API Reference
+
+### ChartContainer
+
+| Prop               | Type                                | Default                       |
+| ------------------ | ----------------------------------- | ----------------------------- |
+| `config`           | `ChartConfig`                       | required                      |
+| `id`               | `string`                            | `useId()`                     |
+| `initialDimension` | `{ width: number; height: number }` | `{ width: 320, height: 200 }` |
+
+`config` maps each series key to a `label`, an optional `icon`, and either a `color` or a `theme` with `light` and `dark` colours. `initialDimension` is the size the chart renders at before its container has been measured. Every other prop passes through to the root `div`, and the chart itself is a Recharts `ResponsiveContainer`.
+
+### ChartTooltipContent
+
+| Prop             | Type                            | Default     |
+| ---------------- | ------------------------------- | ----------- |
+| `indicator`      | `"dot" \| "line" \| "dashed"`   | `"dot"`     |
+| `hideLabel`      | `boolean`                       | `false`     |
+| `hideIndicator`  | `boolean`                       | `false`     |
+| `labelKey`       | `string`                        | `undefined` |
+| `nameKey`        | `string`                        | `undefined` |
+| `labelFormatter` | `(label, payload) => ReactNode` | `undefined` |
+
+Pass it as `content` to `ChartTooltip`. It takes the Recharts tooltip props, so `formatter` and `labelFormatter` work as they do on Recharts.
+
+### ChartLegendContent
+
+| Prop            | Type                | Default     |
+| --------------- | ------------------- | ----------- |
+| `hideIcon`      | `boolean`           | `false`     |
+| `nameKey`       | `string`            | `undefined` |
+| `verticalAlign` | `"top" \| "bottom"` | `"bottom"`  |
+
+Pass it as `content` to `ChartLegend`. Every other prop passes through to the Recharts legend payload.

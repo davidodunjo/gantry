@@ -196,6 +196,34 @@
       ]
     },
     {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "A horizontal or vertical strip of slides moved with buttons, drag or arrow keys, one screenful at a time. Reach for it to show a set of related items, such as testimonials or project cards, in a space too small to show them all at once.",
+      "dependencies": ["embla-carousel-react"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Area, bar and donut charts built on Recharts, themed to the app's chart colours with a tooltip and legend built in. Reach for it to show a trend, a comparison or a share of a whole.",
+      "dependencies": ["recharts"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "checkbox",
       "type": "registry:ui",
       "title": "Checkbox",
@@ -729,6 +757,36 @@
         {
           "path": "registry/ui/sheet.tsx",
           "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "A collapsible side panel of navigation groups, menus and nested items alongside the page content. Use it for an app's main navigation; it collapses to icons or closes, depending on the collapsible prop, and becomes a sheet on mobile.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "@untitledui/icons"
+      ],
+      "registryDependencies": [
+        "utils",
+        "davidodunjo/gantry/button",
+        "davidodunjo/gantry/input",
+        "davidodunjo/gantry/separator",
+        "davidodunjo/gantry/sheet",
+        "davidodunjo/gantry/skeleton",
+        "davidodunjo/gantry/tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/sidebar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/hooks/use-mobile.ts",
+          "type": "registry:hook"
         }
       ]
     },

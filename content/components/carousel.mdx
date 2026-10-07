@@ -1,0 +1,63 @@
+<ComponentPreview name="carousel-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/carousel
+```
+
+## Usage
+
+One slide at a time, moved with the previous and next buttons or the arrow keys once the region has focus.
+
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+```
+
+```tsx
+<Carousel aria-label="Featured case studies">
+  <CarouselContent>
+    <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+```
+
+## Multiple visible
+
+With opts set to loop and align start, two project cards show at once and the previous button stays active on the first slide instead of disabling.
+
+<ComponentPreview name="carousel-multiple-visible" />
+
+## Vertical
+
+With orientation set to vertical, the slides stack top to bottom and the arrow keys move up and down instead of left and right.
+
+<ComponentPreview name="carousel-vertical" />
+
+## Slide indicator
+
+Reading the carousel's api through setApi drives a dot for every slide and a running count, both in sync with dragging, the buttons and the keyboard.
+
+<ComponentPreview name="carousel-slide-indicator" />
+
+## API Reference
+
+| Prop          | Type                         | Default        |
+| ------------- | ---------------------------- | -------------- |
+| `opts`        | `EmblaOptionsType`           | `undefined`    |
+| `plugins`     | `EmblaPluginType[]`          | `undefined`    |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` |
+| `setApi`      | `(api: CarouselApi) => void` | `undefined`    |
+
+`opts` and `plugins` pass straight to [Embla Carousel](https://www.embla-carousel.com/api/options/). `setApi` receives the Embla instance once it mounts, which is how the slide indicator reads the current slide. Every other prop passes through to the root `div`.
+
+`CarouselPrevious` and `CarouselNext` take every prop of [Button](/components/button) and default to `variant="outline"` and `size="icon-sm"`. They disable themselves when the carousel cannot scroll in their direction.
