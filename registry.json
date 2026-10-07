@@ -523,6 +523,24 @@
       ]
     },
     {
+      "name": "tags",
+      "type": "registry:ui",
+      "title": "Tags",
+      "description": "A removable chip the user attaches themselves, with optional dot, avatar and count. Use it to show applied filters, tagged people or chosen topics; group tags in a tag group to make them selectable, or give one a remove handler.",
+      "dependencies": [
+        "@base-ui/react",
+        "@untitledui/icons",
+        "class-variance-authority"
+      ],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/tags.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "textarea",
       "type": "registry:ui",
       "title": "Textarea",
