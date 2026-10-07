@@ -1,0 +1,56 @@
+<ComponentPreview name="alert-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/alert
+```
+
+## Usage
+
+```tsx
+import {
+  Alert,
+  AlertAction,
+  AlertDescription,
+  AlertTitle,
+} from "@/components/ui/alert"
+```
+
+```tsx
+<Alert>
+  <InfoCircle aria-hidden="true" />
+  <AlertTitle>Your workspace is ready</AlertTitle>
+  <AlertDescription>
+    Invite your team and start your first project.
+  </AlertDescription>
+</Alert>
+```
+
+An icon sits beside the title, aligned to its first line, with the description wrapping underneath.
+
+## Destructive
+
+The destructive variant tints the border, background and icon red to flag something that needs attention.
+
+<ComponentPreview name="alert-destructive" />
+
+## With action
+
+`AlertAction` adds a compact link or button under the description for a single follow-up step.
+
+<ComponentPreview name="alert-with-action" />
+
+## API Reference
+
+### Alert
+
+| Prop      | Type                         | Default     |
+| --------- | ---------------------------- | ----------- |
+| `variant` | `"default" \| "destructive"` | `"default"` |
+
+`Alert` renders a `div` with `role="alert"`, so screen readers announce it when it appears. All other props pass through to the `div`.
+
+### AlertTitle, AlertDescription and AlertAction
+
+Each part accepts the props of a `div`. An icon placed as the first child of `Alert` moves the parts into a second column beside it. Buttons and links inside `AlertAction` lose their height and padding so they read as inline text.

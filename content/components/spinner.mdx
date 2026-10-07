@@ -1,0 +1,46 @@
+<ComponentPreview name="spinner-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/spinner
+```
+
+## Usage
+
+```tsx
+import { Spinner } from "@/components/ui/spinner"
+```
+
+```tsx
+<Spinner />
+```
+
+## Sizes
+
+Five sizes. Inline is the default, sized to sit beside a line of text; the rest are for empty panels and full pages.
+
+<ComponentPreview name="spinner-sizes" />
+
+## Variants
+
+Line simple draws a short arc over a full muted track. Line spinner drops the track and sweeps a much longer arc, which reads as faster at the same speed.
+
+<ComponentPreview name="spinner-variants" />
+
+## Colour
+
+The arc is drawn in the current text colour, so a spinner takes on whatever it sits inside. The muted track behind it stays put.
+
+<ComponentPreview name="spinner-colour" />
+
+## API Reference
+
+| Prop      | Type                                            | Default         |
+| --------- | ----------------------------------------------- | --------------- |
+| `size`    | `"inline" \| "sm" \| "default" \| "lg" \| "xl"` | `"inline"`      |
+| `variant` | `"line-simple" \| "line-spinner"`               | `"line-simple"` |
+
+The spinner has `role="status"` and a default `aria-label` of "Loading". Pass your own `aria-label` to describe what is loading. It stops rotating when the user prefers reduced motion.
+
+All other props pass through to the `svg`.

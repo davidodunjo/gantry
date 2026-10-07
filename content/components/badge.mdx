@@ -1,0 +1,95 @@
+<ComponentPreview name="badge-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/badge
+```
+
+## Usage
+
+```tsx
+import {
+  Badge,
+  BadgeCount,
+  BadgeDot,
+  BadgeImage,
+  BadgeRemove,
+} from "@/components/ui/badge"
+```
+
+```tsx
+<Badge variant="outline">
+  <BadgeDot /> Paid
+</Badge>
+```
+
+## Status
+
+A dot and a variant tuned to the state: outline for the steady state, secondary while waiting, destructive when something needs attention.
+
+<ComponentPreview name="badge-status" />
+
+## Shape
+
+Pill is fully rounded, badge squares the corners to 6 pixels, and modern adds a background and a hairline shadow instead of the ring.
+
+<ComponentPreview name="badge-shape" />
+
+## Size
+
+Three heights, each with its own padding and type size, so a badge can sit beside a small label or a heading without looking out of scale.
+
+<ComponentPreview name="badge-size" />
+
+## Content
+
+A badge is a container for a small piece of content beside its text: a leading avatar for an assignee, a flag for a region, an icon, or a count for the total.
+
+<ComponentPreview name="badge-content" />
+
+## Icon only
+
+Content shrinks to a square with the icon centered, so a status can sit in a tight space like a table cell without a label.
+
+<ComponentPreview name="badge-icon-only" />
+
+## Removable
+
+A close control shrinks the trailing padding so it sits flush against the label. A disabled one stays visible but stops responding to clicks.
+
+<ComponentPreview name="badge-removable" />
+
+## Link
+
+Passing `render` swaps the span for an anchor, so the whole badge becomes a click target and picks up the hover and focus states of a link.
+
+<ComponentPreview name="badge-link" />
+
+## API Reference
+
+### Badge
+
+| Prop       | Type                                                                          | Default     |
+| ---------- | ----------------------------------------------------------------------------- | ----------- |
+| `variant`  | `"default" \| "secondary" \| "destructive" \| "outline" \| "ghost" \| "link"` | `"default"` |
+| `size`     | `"sm" \| "default" \| "lg"`                                                   | `"default"` |
+| `shape`    | `"pill" \| "badge" \| "modern"`                                               | `"pill"`    |
+| `iconOnly` | `boolean`                                                                     | -           |
+| `render`   | `ReactElement \| (props, state) => ReactElement`                              | -           |
+
+`iconOnly` removes the gap and pads the badge evenly so a lone icon sits in a square. `render` replaces the default `span`, as in the link example above.
+
+All other props pass through to the rendered element through Base UI's [useRender](https://base-ui.com/react/utils/use-render).
+
+### BadgeDot, BadgeImage and BadgeCount
+
+`BadgeDot` and `BadgeCount` accept the props of a `span`, and `BadgeImage` the props of an `img` with `alt` defaulting to an empty string. `BadgeDot` is hidden from assistive technology.
+
+### BadgeRemove
+
+| Prop         | Type     | Default |
+| ------------ | -------- | ------- |
+| `aria-label` | `string` | -       |
+
+`aria-label` is required because the control is an icon with no text. It renders an X icon unless you pass your own `children`. All other props pass through to [Base UI's Button](https://base-ui.com/react/components/button).

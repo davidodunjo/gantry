@@ -1,0 +1,87 @@
+<ComponentPreview name="accordion-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/accordion
+```
+
+## Usage
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+```
+
+```tsx
+<Accordion defaultValue={["options"]}>
+  <AccordionItem value="options">
+    <AccordionTrigger>What are your shipping options?</AccordionTrigger>
+    <AccordionContent>Standard arrives in five to seven days.</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+By default one section is open at a time. Opening another closes the one before it.
+
+## Multiple
+
+With the `multiple` prop, every section opens independently and stays open.
+
+<ComponentPreview name="accordion-multiple" />
+
+## Disabled
+
+A single item can be disabled. It keeps its place in the list but stops responding to clicks and keyboard focus.
+
+<ComponentPreview name="accordion-disabled" />
+
+## Controlled
+
+Hold the open sections in state to drive them from outside the accordion.
+
+<ComponentPreview name="accordion-controlled" />
+
+## In a card
+
+Inside a card, the accordion carries the body and the card header carries the context.
+
+<ComponentPreview name="accordion-in-a-card" />
+
+## Right to left
+
+The accordion is built from logical properties, so the trigger icon and content padding follow the reading direction.
+
+<ComponentPreview name="accordion-rtl" />
+
+## API Reference
+
+### Accordion
+
+| Prop            | Type                        | Default |
+| --------------- | --------------------------- | ------- |
+| `multiple`      | `boolean`                   | `false` |
+| `defaultValue`  | `string[]`                  | -       |
+| `value`         | `string[]`                  | -       |
+| `onValueChange` | `(value: string[]) => void` | -       |
+
+`defaultValue` and `value` hold the `value` of every open item, so they are arrays even when `multiple` is off. Use `value` with `onValueChange` to control the open sections.
+
+All other props pass through to [Base UI's Accordion](https://base-ui.com/react/components/accordion).
+
+### AccordionItem
+
+| Prop       | Type      | Default |
+| ---------- | --------- | ------- |
+| `value`    | `string`  | -       |
+| `disabled` | `boolean` | `false` |
+
+`value` identifies the item in the accordion's `value` array. A disabled item stays in the list but cannot be opened.
+
+### AccordionTrigger and AccordionContent
+
+`AccordionTrigger` wraps its children in a heading and adds a plus or minus icon at the end that follows the open state. `AccordionContent` animates its height as the item opens and closes and wraps its children in a padded block. Both pass their other props through to Base UI's `Accordion.Trigger` and `Accordion.Panel`.

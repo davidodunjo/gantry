@@ -1,0 +1,33 @@
+<ComponentPreview name="skeleton-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/skeleton
+```
+
+## Usage
+
+```tsx
+import { Skeleton } from "@/components/ui/skeleton"
+```
+
+```tsx
+<Skeleton className="h-4 w-48" />
+```
+
+The preview above is a profile: a circular skeleton stands in for the avatar and two bars for the name and subtitle, sized to match what lands once the profile loads.
+
+## Card
+
+A tall block covers where the image will sit, with two shorter bars underneath for the title and byline.
+
+<ComponentPreview name="skeleton-card" />
+
+## API Reference
+
+### Skeleton
+
+`Skeleton` accepts the props of a `div` and adds none of its own. Give it a height, a width and, when the real element is round, a radius through `className`. It pulses until the user prefers reduced motion, then holds still.
+
+Skeleton is not announced to assistive technology. Mark the surrounding region with `aria-busy="true"` and a label, as the examples do.

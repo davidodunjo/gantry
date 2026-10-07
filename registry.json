@@ -4,6 +4,65 @@
   "homepage": "https://github.com/davidodunjo/gantry",
   "items": [
     {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "A vertically stacked set of headings that each reveal a section of content. Use it for FAQs and other long lists where readers only need a few sections at a time; it opens one section at once by default, or several with the multiple prop.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "A short banner that shows a message tied to the page around it, with an optional icon, a title, a description and one follow-up action. Use it for inline notices and errors that should stay visible, not for transient confirmations; it has a default and a destructive variant.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "A container that reserves space at a fixed ratio before media loads. Wrap an image, video or embed in it with a numeric ratio such as 16 / 9 so the page does not jump when the media arrives.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "A small pill that labels a status, a count or a category next to other content, such as paid, pending or overdue. Choose it for short read-only labels, and use the dot, image, count and remove parts to add detail; it comes in three shapes, three sizes and six variants.",
+      "dependencies": [
+        "@base-ui/react",
+        "@untitledui/icons",
+        "class-variance-authority"
+      ],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
@@ -13,6 +72,86 @@
       "files": [
         {
           "path": "registry/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A bordered surface that groups related content, built from optional header, title, description, action, content and footer parts. Reach for it to frame a self-contained block such as an invoice, a settings panel or a dashboard figure; it comes in a default and a compact size.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "A single section that expands and collapses on its own, with no sibling sections to coordinate. Use it to hide secondary content behind one trigger; use an accordion when several sections should open and close together.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Shows a keyboard key or a whole shortcut inline, in the monospace face. Use Kbd for a single key and KbdGroup to keep a shortcut such as Command K together.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "A pulsing placeholder shaped like the content it stands in for while that content loads. Size and round it to match the real element so the layout does not jump when the content arrives.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "An indeterminate loading indicator in five sizes that takes the surrounding text colour. Use it when work is in progress and you cannot say how long it will take, either inline beside text or centred in an empty panel.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "A single button that stays pressed until something presses it again. Use it for an on or off choice such as bold, favourite or pin, in a default or outline style.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/toggle.tsx",
           "type": "registry:ui"
         }
       ]

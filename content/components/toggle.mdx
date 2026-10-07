@@ -1,0 +1,63 @@
+<ComponentPreview name="toggle-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/toggle
+```
+
+## Usage
+
+```tsx
+import { Toggle } from "@/components/ui/toggle"
+```
+
+```tsx
+<Toggle>Bold</Toggle>
+```
+
+A button that stays down. Press it and it holds the pressed background until something presses it again, which is what separates it from an ordinary button.
+
+## Variants
+
+The default toggle is invisible until it is pressed. The outline one carries a border the whole time, so it reads as a control even when it is off.
+
+<ComponentPreview name="toggle-variants" />
+
+## Sizes
+
+Three heights, 36, 40 and 44 pixels, with the padding tightening to match.
+
+<ComponentPreview name="toggle-sizes" />
+
+## With icon
+
+An icon on its own makes a square toolbar button and needs a label for screen readers. Marked as inline-start, it sits beside the text and the padding on that side closes up.
+
+<ComponentPreview name="toggle-with-icon" />
+
+## Controlled
+
+Hold the pressed state yourself and the toggle drives something. Italic starts on, and the sentence under the buttons changes as you press them.
+
+<ComponentPreview name="toggle-controlled" />
+
+## Disabled
+
+A disabled toggle fades and stops responding, in whichever state it was left.
+
+<ComponentPreview name="toggle-disabled" />
+
+## API Reference
+
+| Prop              | Type                         | Default     |
+| ----------------- | ---------------------------- | ----------- |
+| `variant`         | `"default" \| "outline"`     | `"default"` |
+| `size`            | `"sm" \| "default" \| "lg"`  | `"default"` |
+| `defaultPressed`  | `boolean`                    | `false`     |
+| `pressed`         | `boolean`                    | -           |
+| `onPressedChange` | `(pressed: boolean) => void` | -           |
+
+Use `pressed` with `onPressedChange` to control the toggle. Set `data-icon="inline-start"` or `data-icon="inline-end"` on an icon inside to tighten the padding on that side.
+
+All other props pass through to [Base UI's Toggle](https://base-ui.com/react/components/toggle).
