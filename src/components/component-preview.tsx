@@ -19,23 +19,23 @@ function ComponentPreview(props: ComponentPreviewProps) {
 
   return (
     <div className="flex flex-col gap-3">
-      <fieldset className="flex gap-4">
-        <legend className="sr-only">View</legend>
+      <div role="tablist" aria-label="View" className="flex gap-4">
         {VIEWS.map((option) => (
           <button
             key={option}
             type="button"
-            aria-pressed={view === option}
+            role="tab"
+            aria-selected={view === option}
             className={cn(
-              "-m-2 cursor-pointer p-2 text-sm font-semibold text-muted-foreground capitalize transition-colors hover:text-foreground focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4",
-              view === option && "text-foreground"
+              "relative cursor-pointer pb-1.5 text-sm font-semibold text-muted-foreground capitalize transition-colors after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:rounded-full after:bg-foreground after:opacity-0 after:transition-opacity hover:text-foreground focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4",
+              view === option && "text-foreground after:opacity-100"
             )}
             onClick={() => setView(option)}
           >
             {option}
           </button>
         ))}
-      </fieldset>
+      </div>
       {view === "preview" ? (
         <div className="flex min-h-32 flex-wrap items-center justify-center gap-4 rounded-xl border p-8">
           <Suspense fallback={null}>{createElement(Example)}</Suspense>
