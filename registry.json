@@ -30,6 +30,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "A short label that appears on hover or keyboard focus of its trigger, with an optional description line and arrow. Use it to name an icon-only control or add a brief hint; it only holds text, so reach for a popover when the content is interactive.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

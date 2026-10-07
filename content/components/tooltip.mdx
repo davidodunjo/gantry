@@ -1,0 +1,79 @@
+<ComponentPreview name="tooltip-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/tooltip
+```
+
+## Usage
+
+```tsx
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+```
+
+```tsx
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger render={<Button variant="outline" />}>
+      Hover or focus
+    </TooltipTrigger>
+    <TooltipContent>Save your changes</TooltipContent>
+  </Tooltip>
+</TooltipProvider>
+```
+
+## Basic
+
+A short label that appears on hover or keyboard focus of its trigger, and disappears the moment focus or the pointer leaves. Shown open here so the label is visible without hovering.
+
+<ComponentPreview name="tooltip-basic" />
+
+## With description
+
+`title` stacks a bold heading over a lighter description line, for a tooltip that explains rather than just labels, and `arrow` adds a small pointer back to the trigger.
+
+<ComponentPreview name="tooltip-with-description" />
+
+## Placement
+
+`side` sets which edge of the trigger the tooltip opens from. All four are shown open at once here so you can compare them side by side.
+
+<ComponentPreview name="tooltip-placement" />
+
+## Long content
+
+The tooltip wraps rather than stretching the full width of its description, so a longer explanation stays readable instead of spanning the screen.
+
+<ComponentPreview name="tooltip-long-content" />
+
+## API Reference
+
+### TooltipProvider
+
+| Prop    | Type     | Default |
+| ------- | -------- | ------- |
+| `delay` | `number` | `300`   |
+
+`delay` is how many milliseconds the pointer must rest on a trigger before its tooltip opens. Wrap the tooltips that should share this delay in one provider. All other props pass through to [Base UI's Tooltip Provider](https://base-ui.com/react/components/tooltip).
+
+### TooltipContent
+
+| Prop          | Type                                     | Default    |
+| ------------- | ---------------------------------------- | ---------- |
+| `title`       | `ReactNode`                              |            |
+| `description` | `ReactNode`                              |            |
+| `arrow`       | `boolean`                                | `false`    |
+| `side`        | `"top" \| "right" \| "bottom" \| "left"` | `"top"`    |
+| `sideOffset`  | `number`                                 | `6`        |
+| `align`       | `"start" \| "center" \| "end"`           | `"center"` |
+| `alignOffset` | `number`                                 | `0`        |
+
+`title` takes the place of `children` as the bold first line. `description` adds a lighter second line and gives the tooltip more vertical padding. `side`, `sideOffset`, `align` and `alignOffset` position the tooltip against its trigger. All other props pass through to [Base UI's Tooltip Popup](https://base-ui.com/react/components/tooltip).
+
+`Tooltip` and `TooltipTrigger` pass all props through to [Base UI's Tooltip](https://base-ui.com/react/components/tooltip).
