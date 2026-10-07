@@ -1,0 +1,70 @@
+<ComponentPreview name="pagination-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/pagination
+```
+
+## Usage
+
+```tsx
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
+```
+
+```tsx
+<Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious href="/page/1" />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="/page/1" isActive>
+        1
+      </PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext href="/page/2" />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>
+```
+
+The active page fills in, and the count below tracks it as you click through. Previous and next just stop changing the page once you reach either end, and pass `aria-disabled` to dim them there.
+
+## Ellipsis
+
+A run of dots stands in for the pages in between, and these links are rounded into pills instead of the default square shape.
+
+<ComponentPreview name="pagination-ellipsis" />
+
+## API Reference
+
+### PaginationLink
+
+| Prop       | Type                                                                                                      | Default     |
+| ---------- | --------------------------------------------------------------------------------------------------------- | ----------- |
+| `isActive` | `boolean`                                                                                                 | -           |
+| `size`     | `"xs" \| "sm" \| "default" \| "lg" \| "xl" \| "icon-xs" \| "icon-sm" \| "icon" \| "icon-lg" \| "icon-xl"` | `"icon-sm"` |
+
+`isActive` marks the current page with `aria-current="page"` and a filled background. `size` takes the sizes of [Button](/components/button). The link is a ghost Button rendered as an `a`, so all other props pass through to the anchor.
+
+### PaginationPrevious and PaginationNext
+
+| Prop   | Type     | Default                 |
+| ------ | -------- | ----------------------- |
+| `text` | `string` | `"Previous"` / `"Next"` |
+
+Both accept the props of `PaginationLink`. The text hides below the `sm` breakpoint, leaving only the arrow, and the arrow flips in right-to-left layouts.
+
+### Pagination, PaginationContent, PaginationItem and PaginationEllipsis
+
+These add no props of their own. They render a `nav`, a `ul`, an `li` and a `span`.

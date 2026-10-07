@@ -145,6 +145,20 @@
       ]
     },
     {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Page by page navigation with previous and next links, numbered pages, an active page indicator and an ellipsis for long runs. Use it under a list or table that is split across pages; the links render as anchors.",
+      "dependencies": ["@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "skeleton",
       "type": "registry:ui",
       "title": "Skeleton",
