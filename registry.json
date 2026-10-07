@@ -77,6 +77,34 @@
       ]
     },
     {
+      "name": "badge-group",
+      "type": "registry:ui",
+      "title": "Badge Group",
+      "description": "A tag paired with a short message beside it, for an announcement or update that needs more than a status word. Use it as a link at the top of a page or section; it has a light and a modern theme, two sizes, and can lead or trail with the tag.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/badge-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "A trail of links showing where the current page sits in the hierarchy, with the current page shown as plain text. Use it on pages nested two or more levels deep; a row of dots can stand in for crumbs that do not fit.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
@@ -178,6 +206,33 @@
       ]
     },
     {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "A centered icon, title and description for a list, search or panel that has nothing in it yet. Use it when a view is empty on purpose or because a search matched nothing, and add a button underneath when there is a next step.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "featured-icon",
+      "type": "registry:ui",
+      "title": "Featured Icon",
+      "description": "A small icon frame in six fills and five colors, for notices, empty states and list headers. Use it to give an icon more presence than a bare glyph, in a size from 32 to 56 pixels.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/featured-icon.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "hover-card",
       "type": "registry:ui",
       "title": "Hover Card",
@@ -246,6 +301,20 @@
       ]
     },
     {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Page by page navigation with previous and next links, numbered pages, an active page indicator and an ellipsis for long runs. Use it under a list or table that is split across pages; the links render as anchors.",
+      "dependencies": ["@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "popover",
       "type": "registry:ui",
       "title": "Popover",
@@ -260,6 +329,24 @@
       ]
     },
     {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "A bar or ring that fills to show how far a task has got, or pulses when there is nothing to measure yet. Use the bar for uploads and multi-step flows and the circle or half circle for a figure on a dashboard; a value of null shows the indeterminate state.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/progress.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/progress-circle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "radio-group",
       "type": "registry:ui",
       "title": "Radio Group",
@@ -269,6 +356,34 @@
       "files": [
         {
           "path": "registry/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Draggable panels that sit side by side or stacked, with an optional grip on the divider and panels that collapse when dragged below their minimum. Use it for split views such as a list beside a detail pane or an editor above its output.",
+      "dependencies": ["react-resizable-panels"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "A scrollable container with slim custom scrollbars in place of the browser's own. Use it to cap the height or width of a long list, log or row of cards; add a horizontal scrollbar when the content can overflow sideways.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/scroll-area.tsx",
           "type": "registry:ui"
         }
       ]
@@ -338,6 +453,19 @@
       "files": [
         {
           "path": "registry/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Rows and columns for structured data, with a header, an optional footer, a caption, selectable rows and a compact size. Reach for it when records share the same fields and readers compare them across rows; it scrolls sideways inside its own box when the columns do not fit.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/table.tsx",
           "type": "registry:ui"
         }
       ]

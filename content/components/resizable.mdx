@@ -1,0 +1,59 @@
+<ComponentPreview name="resizable-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/resizable
+```
+
+## Usage
+
+```tsx
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable"
+```
+
+```tsx
+<ResizablePanelGroup orientation="horizontal">
+  <ResizablePanel defaultSize="35%" minSize="20%">
+    One
+  </ResizablePanel>
+  <ResizableHandle withHandle />
+  <ResizablePanel>Two</ResizablePanel>
+</ResizablePanelGroup>
+```
+
+Drag the handle, or focus it and use the arrow keys. The folder list stops at a fifth of the width, and a double-click on the handle puts it back where it started.
+
+## Vertical
+
+Set `orientation` to `vertical` to stack the panels. The group takes its height from its parent. Without `withHandle` the handle is a bare line that still drags.
+
+<ComponentPreview name="resizable-vertical" />
+
+## Collapsible
+
+Drag the outline below its minimum and it snaps shut instead of stopping. Drag the handle back out to reopen it.
+
+<ComponentPreview name="resizable-collapsible" />
+
+## API Reference
+
+### ResizablePanelGroup
+
+`ResizablePanelGroup` adds no props of its own. It lays its panels out in a row, or in a column when `orientation` is `vertical`, and fills its parent. All props pass through to the `Group` of [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels).
+
+### ResizablePanel
+
+Sizes are strings such as `"35%"`. `defaultSize`, `minSize`, `maxSize` and `collapsible` are the props you will use most. All props pass through to the `Panel` of react-resizable-panels.
+
+### ResizableHandle
+
+| Prop         | Type      | Default |
+| ------------ | --------- | ------- |
+| `withHandle` | `boolean` | -       |
+
+`withHandle` shows a small grip on the line. The line is one pixel wide with a wider invisible area to grab, and it takes a focus ring from the keyboard. All other props pass through to the `Separator` of react-resizable-panels.
