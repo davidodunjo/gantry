@@ -618,6 +618,20 @@
       ]
     },
     {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "title": "Questionnaire",
+      "description": "A step-by-step form with progress, validation and keyboard shortcuts built in. Use it for onboarding, surveys and any multi-question flow where each answer is a single or multiple choice or a short text; it can run uncontrolled or with the current step held in state.",
+      "dependencies": ["@shadcn/react", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/questionnaire.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "radio-group",
       "type": "registry:ui",
       "title": "Radio Group",
