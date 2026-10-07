@@ -12,7 +12,7 @@ bunx shadcn@latest add davidodunjo/gantry/button
 
 This copies `button.tsx` into your `components/ui` folder and installs `@base-ui/react` and `class-variance-authority`. It also adds `cn` to `lib/utils` if your project doesn't have it. Components use the standard shadcn tokens (`--primary`, `--border` and the rest), so they pick up your existing theme.
 
-Button is the only component so far. [registry.json](registry.json) lists everything available.
+[registry.json](registry.json) lists every component, and each one has a page on the site.
 
 ## Setup
 
