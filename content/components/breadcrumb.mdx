@@ -1,0 +1,63 @@
+<ComponentPreview name="breadcrumb-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/breadcrumb
+```
+
+## Usage
+
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbEllipsis,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
+```
+
+```tsx
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Settings</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+Each earlier crumb is a link. The last one is plain text marked as the current page, so it cannot be clicked back to.
+
+## Collapsed
+
+A row of dots stands in for the crumbs that got cut, so a deep path still reads as one line.
+
+<ComponentPreview name="breadcrumb-collapsed" />
+
+## Right to left
+
+The separators are logical, not literal arrows, so they flip to keep pointing back toward the trail's start.
+
+<ComponentPreview name="breadcrumb-rtl" />
+
+## API Reference
+
+### Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbPage, BreadcrumbSeparator and BreadcrumbEllipsis
+
+These add no props of their own. `Breadcrumb` is a `nav` labelled "breadcrumb", `BreadcrumbList` an `ol`, `BreadcrumbItem` an `li`, `BreadcrumbPage` a `span` marked `aria-current="page"`, `BreadcrumbSeparator` an `li` that shows a chevron unless you pass `children`, and `BreadcrumbEllipsis` a `span` with a dots icon and a screen-reader label.
+
+### BreadcrumbLink
+
+| Prop     | Type                                             | Default |
+| -------- | ------------------------------------------------ | ------- |
+| `render` | `ReactElement \| (props, state) => ReactElement` | -       |
+
+`render` replaces the default `a`, so a router link can stand in for it. All other props pass through to the rendered element through Base UI's [useRender](https://base-ui.com/react/utils/use-render).

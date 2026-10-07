@@ -77,6 +77,20 @@
       ]
     },
     {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "A trail of links showing where the current page sits in the hierarchy, with the current page shown as plain text. Use it on pages nested two or more levels deep; a row of dots can stand in for crumbs that do not fit.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
