@@ -141,6 +141,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "A single button that stays pressed until something presses it again. Use it for an on or off choice such as bold, favourite or pin, in a default or outline style.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
