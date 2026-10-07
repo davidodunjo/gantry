@@ -200,6 +200,20 @@
       ]
     },
     {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "A searchable, keyboard-navigable list of commands, with groups, shortcuts and an optional dialog wrapper. Use it to build a command palette or quick-action menu where users type to filter and press Enter to run.",
+      "dependencies": ["cmdk", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/dialog"],
+      "files": [
+        {
+          "path": "registry/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "dialog",
       "type": "registry:ui",
       "title": "Dialog",
