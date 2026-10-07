@@ -16,6 +16,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "close-button",
+      "type": "registry:ui",
+      "title": "Close Button",
+      "description": "An icon-only button that shows an X, in four sizes and a light or dark theme. Use it to dismiss a banner, panel or any surface that has no built-in close control.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/close-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

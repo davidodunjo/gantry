@@ -1,0 +1,48 @@
+<ComponentPreview name="close-button-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/close-button
+```
+
+## Usage
+
+```tsx
+import { CloseButton } from "@/components/ui/close-button"
+```
+
+```tsx
+<CloseButton onClick={() => setOpen(false)} />
+```
+
+## Sizes
+
+Four sizes of square hit area. The icon grows with the button: 16px at extra small, 20px at small and medium, 24px at large.
+
+<ComponentPreview name="close-button-sizes" />
+
+## Themes
+
+`theme="light"` fits the page background and brightens from a muted icon to a muted fill on hover. `theme="dark"` is for dark surfaces, with a white icon and a translucent white fill, and a white focus ring.
+
+<ComponentPreview name="close-button-themes" />
+
+## Disabled
+
+A disabled close button drops to half opacity, shows a not-allowed cursor and ignores clicks.
+
+<ComponentPreview name="close-button-disabled" />
+
+## API Reference
+
+| Prop        | Type                           | Default   |
+| ----------- | ------------------------------ | --------- |
+| `label`     | `string`                       | `"Close"` |
+| `size`      | `"xs" \| "sm" \| "md" \| "lg"` | `"sm"`    |
+| `theme`     | `"light" \| "dark"`            | `"light"` |
+| `className` | `string`                       |           |
+
+`label` becomes the button's `aria-label`, so change it when the button closes something specific, such as "Dismiss banner". The icon is decorative and hidden from assistive technology.
+
+All other props pass through to [Base UI's Button](https://base-ui.com/react/components/button). `children` is not accepted because the icon is fixed.
