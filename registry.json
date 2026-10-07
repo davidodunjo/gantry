@@ -145,6 +145,20 @@
       ]
     },
     {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "A persistent horizontal bar of menus, like a desktop app's menu bar. Use it for the top-level File, Edit and View style commands of an application; arrow keys move between menus, and each menu supports shortcuts, checkbox and radio items, submenus and a destructive item style.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/dropdown-menu"],
+      "files": [
+        {
+          "path": "registry/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "skeleton",
       "type": "registry:ui",
       "title": "Skeleton",
