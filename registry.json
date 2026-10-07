@@ -141,6 +141,20 @@
       ]
     },
     {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "A month grid for picking one date, a range or a date decades back, with days disabled by rule. Use it for booking, scheduling and date-of-birth fields, on its own or inside a popover.",
+      "dependencies": ["react-day-picker", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "card",
       "type": "registry:ui",
       "title": "Card",

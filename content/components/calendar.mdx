@@ -1,0 +1,49 @@
+<ComponentPreview name="calendar-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/calendar
+```
+
+## Usage
+
+One date for a consultation slot. Today and every day before it are disabled, so the earliest pick is tomorrow.
+
+```tsx
+import { Calendar } from "@/components/ui/calendar"
+```
+
+```tsx
+<Calendar mode="single" selected={date} onSelect={setDate} />
+```
+
+## Range
+
+A hotel stay spans a start and an end date across two visible months, so a range crossing a month boundary stays on screen.
+
+<ComponentPreview name="calendar-range" />
+
+## Dropdown navigation
+
+A date of birth is decades back, so the caption becomes month and year dropdowns instead of one-month-at-a-time arrows.
+
+<ComponentPreview name="calendar-dropdown-navigation" />
+
+## Disabled dates
+
+Weekends and the office closure over Christmas are both disabled. Neither responds to a click or takes keyboard focus.
+
+<ComponentPreview name="calendar-disabled-dates" />
+
+## API Reference
+
+| Prop              | Type                                                             | Default   |
+| ----------------- | ---------------------------------------------------------------- | --------- |
+| `showOutsideDays` | `boolean`                                                        | `true`    |
+| `captionLayout`   | `"label" \| "dropdown" \| "dropdown-months" \| "dropdown-years"` | `"label"` |
+| `buttonVariant`   | Any [Button](/components/button) variant                         | `"ghost"` |
+
+`buttonVariant` styles the previous and next month buttons. The calendar picks up the current right-to-left direction and flips its arrows. All other props, including `mode`, `selected`, `onSelect`, `disabled`, `numberOfMonths`, `defaultMonth`, `startMonth` and `endMonth`, pass through to [React Day Picker](https://daypicker.dev/api/interfaces/PropsBase).
+
+`CalendarDayButton` is the button drawn for each day. It is exported for when you need to replace it through the `components` prop.
