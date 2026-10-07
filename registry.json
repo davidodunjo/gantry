@@ -32,6 +32,19 @@
       ]
     },
     {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "The name for a form control, with an optional required marker that picks up invalid and disabled states from its props or from a wrapper. Pair one with every input, checkbox, radio and switch.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "separator",
       "type": "registry:ui",
       "title": "Separator",
