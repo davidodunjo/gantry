@@ -1,0 +1,68 @@
+<ComponentPreview name="slider-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/slider
+```
+
+## Usage
+
+```tsx
+import { Slider } from "@/components/ui/slider"
+```
+
+```tsx
+<Slider aria-label="Brightness" defaultValue={60} />
+```
+
+One thumb on a track from 0 to 100. Drag it, click anywhere on the track, or focus it and use the arrow keys.
+
+## Range
+
+Two thumbs give a from and a to. This one steps in tens and keeps a gap of one step, so the thumbs cannot land on the same number.
+
+<ComponentPreview name="slider-range" />
+
+## Value label
+
+The number can ride along with the thumb. `bottom` sits it under the track; `top-floating` lifts it into a chip above, clear of the finger holding it.
+
+<ComponentPreview name="slider-value-label" />
+
+## Formatted
+
+The label reads as a percentage unless you say otherwise. Here `labelFormatter` turns the raw number into a price.
+
+<ComponentPreview name="slider-formatted" />
+
+## Controlled
+
+Hold the value in state and the buttons and the thumb move the same number, whichever one you touch.
+
+<ComponentPreview name="slider-controlled" />
+
+## Vertical
+
+A vertical slider fills the height it is given and runs from bottom to top. Arrow keys still work the way the track points.
+
+<ComponentPreview name="slider-vertical" />
+
+## Disabled
+
+A disabled slider fades out and ignores drags, clicks and keys, but still shows where the value sits.
+
+<ComponentPreview name="slider-disabled" />
+
+## API Reference
+
+| Prop             | Type                                      | Default                      |
+| ---------------- | ----------------------------------------- | ---------------------------- |
+| `labelPosition`  | `"default" \| "bottom" \| "top-floating"` | `"default"`                  |
+| `labelFormatter` | `(value: number) => string`               | `` (value) => `${value}%` `` |
+| `min`            | `number`                                  | `0`                          |
+| `max`            | `number`                                  | `100`                        |
+
+`labelPosition` shows each thumb's value under it or in a chip above it; `"default"` shows none. `labelFormatter` turns a thumb's number into the label text. A thumb is drawn for each number in `value` or `defaultValue`, so pass an array of two for a range.
+
+All other props, including `value`, `defaultValue`, `onValueChange`, `step`, `minStepsBetweenValues`, `orientation` and `disabled`, pass through to [Base UI's Slider](https://base-ui.com/react/components/slider).
