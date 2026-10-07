@@ -1,0 +1,87 @@
+<ComponentPreview name="attachment-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/attachment
+```
+
+## Usage
+
+```tsx
+import {
+  Attachment,
+  AttachmentContent,
+  AttachmentDescription,
+  AttachmentMedia,
+  AttachmentTitle,
+} from "@/components/ui/attachment"
+```
+
+```tsx
+<Attachment>
+  <AttachmentMedia>
+    <File01 aria-hidden />
+  </AttachmentMedia>
+  <AttachmentContent>
+    <AttachmentTitle>Q3-Board-Deck.pdf</AttachmentTitle>
+    <AttachmentDescription>2.4 MB</AttachmentDescription>
+  </AttachmentContent>
+</Attachment>
+```
+
+A typical attachment list: a finished PDF, an image with its own thumbnail, a file still uploading with a name too long to fit, and one that failed with the reason why.
+
+## Sizes
+
+Three heights, extra small through the default. The icon, text and padding scale together.
+
+<ComponentPreview name="attachment-sizes" />
+
+## Vertical
+
+Turn a row into a tile for a gallery-style layout. The thumbnail or icon fills the top and the name sits below it.
+
+<ComponentPreview name="attachment-vertical" />
+
+## In a group
+
+Attachments in a horizontal strip scroll together, the way a chat composer holds them. Removing one leaves the rest in place.
+
+<ComponentPreview name="attachment-in-a-group" />
+
+## API Reference
+
+### Attachment
+
+| Prop          | Type                                                         | Default        |
+| ------------- | ------------------------------------------------------------ | -------------- |
+| `state`       | `"idle" \| "uploading" \| "processing" \| "error" \| "done"` | `"done"`       |
+| `size`        | `"xs" \| "sm" \| "default"`                                  | `"default"`    |
+| `orientation` | `"horizontal" \| "vertical"`                                 | `"horizontal"` |
+
+`state` sets the border and the title. `idle` draws a dashed border, `error` a red one, and `uploading` and `processing` shimmer the title. All other props pass through to a `div`.
+
+### AttachmentMedia
+
+| Prop      | Type                | Default  |
+| --------- | ------------------- | -------- |
+| `variant` | `"icon" \| "image"` | `"icon"` |
+
+`image` fills the square with an `img`, dimmed to 60% unless the file is done or idle. All other props pass through to a `div`.
+
+### AttachmentAction
+
+A Button sized to sit inside the card. It takes the props of Button, with `variant` defaulting to `"ghost"` and `size` to `"icon-xs"`.
+
+### AttachmentTrigger
+
+A button that covers the whole card so the card can be clicked. Pass `render` to change the element it renders as, in the same way as Base UI's `render` prop. All other props pass through to the button.
+
+### AttachmentGroup
+
+A horizontal strip that scrolls and snaps each attachment into place. All other props pass through to a `div`.
+
+### AttachmentContent, AttachmentTitle, AttachmentDescription and AttachmentActions
+
+Layout parts of the card. The title truncates on one line and the description sits beneath it in muted text. Each takes the props of its element, a `div` for the content and actions and a `span` for the title and description.
