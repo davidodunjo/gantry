@@ -1,0 +1,62 @@
+<ComponentPreview name="command-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/command
+```
+
+## Usage
+
+The list filters as you type. A disabled row stays visible but cannot be selected, and Ctrl K shows the shortcut for search without needing a mouse.
+
+```tsx
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command"
+```
+
+```tsx
+<Command>
+  <CommandInput placeholder="Type a command or search" />
+  <CommandList>
+    <CommandEmpty>No results found.</CommandEmpty>
+    <CommandGroup heading="Workspace">
+      <CommandItem onSelect={() => {}}>Profile</CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>
+```
+
+## Grouped
+
+A separator splits recent items from actions, so the two groups read as different kinds of results even while the list is being filtered together.
+
+<ComponentPreview name="command-grouped" />
+
+## API Reference
+
+### Command
+
+Every part except `CommandDialog` and `CommandShortcut` is a thin, styled wrapper around the matching part of [cmdk](https://cmdk.paco.me), and passes all of its props through. `CommandItem` takes `onSelect`, `value`, `keywords` and `disabled`. `CommandGroup` takes `heading`.
+
+### CommandDialog
+
+Shows a command palette in a dialog. It takes the props of the [Dialog](/components/dialog) component, plus the following.
+
+| Prop              | Type      | Default                            |
+| ----------------- | --------- | ---------------------------------- |
+| `title`           | `string`  | `"Command Palette"`                |
+| `description`     | `string`  | `"Search for a command to run..."` |
+| `showCloseButton` | `boolean` | `false`                            |
+
+The title and description are visually hidden but read out by screen readers.
+
+### CommandShortcut
+
+A right-aligned key hint inside an item. It takes the props of a `span`.

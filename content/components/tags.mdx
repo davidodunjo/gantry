@@ -1,0 +1,101 @@
+<ComponentPreview name="tags-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/tags
+```
+
+## Usage
+
+```tsx
+import { Tag, TagGroup } from "@/components/ui/tags"
+```
+
+```tsx
+<TagGroup label="Topics" selectionMode="multiple">
+  <Tag id="design">Design</Tag>
+  <Tag id="engineering">Engineering</Tag>
+</TagGroup>
+```
+
+A tag on its own is a static chip. Put tags in a `TagGroup` with a `selectionMode` to make them selectable, or give a tag `onRemove` to add a close control.
+
+## Sizes
+
+Three heights, from a tag sitting in a dense table row up to one heading a list of filters.
+
+<ComponentPreview name="tags-sizes" />
+
+## Content
+
+A leading dot for a live state, an avatar for who the tag belongs to, or a count for how many items share it.
+
+<ComponentPreview name="tags-content" />
+
+## Removable
+
+Skills the user added to their profile, each with its own close control. Remove every one and the row is empty until they are restored.
+
+<ComponentPreview name="tags-removable" />
+
+## Selectable
+
+Tags inside a group act as a multi-select. Each one toggles a checkmark and its own pressed state instead of firing a remove.
+
+<ComponentPreview name="tags-selectable" />
+
+## Disabled
+
+A locked tag keeps its place in the list but stops responding to clicks, and its close control stops responding too.
+
+<ComponentPreview name="tags-disabled" />
+
+## Keyboard removal
+
+Focus a removable tag and press Backspace or Delete to remove it without reaching for the close control.
+
+<ComponentPreview name="tags-keyboard-removal" />
+
+## People
+
+An avatar tag stands for a person, most often an assignee filter or someone tagged into a thread.
+
+<ComponentPreview name="tags-people" />
+
+## API Reference
+
+### TagGroup
+
+| Prop                  | Type                               | Default  |
+| --------------------- | ---------------------------------- | -------- |
+| `label`               | `string`                           | required |
+| `size`                | `"sm" \| "md" \| "lg"`             | `"sm"`   |
+| `selectionMode`       | `"none" \| "single" \| "multiple"` | `"none"` |
+| `selectedIds`         | `string[]`                         |          |
+| `defaultSelectedIds`  | `string[]`                         | `[]`     |
+| `onSelectedIdsChange` | `(ids: string[]) => void`          |          |
+
+`label` is read out by screen readers as the group's legend. Pass `selectedIds` to control the selection, or `defaultSelectedIds` to let the group keep it. Tags inherit `size` and `selectionMode` from the group. All other props pass through to the `fieldset`.
+
+### Tag
+
+| Prop            | Type                               | Default                         |
+| --------------- | ---------------------------------- | ------------------------------- |
+| `id`            | `string`                           | required                        |
+| `size`          | `"sm" \| "md" \| "lg"`             | the group's size, else `"sm"`   |
+| `selectionMode` | `"none" \| "single" \| "multiple"` | the group's mode, else `"none"` |
+| `selected`      | `boolean`                          | from the group                  |
+| `onSelect`      | `(id: string) => void`             | the group's handler             |
+| `onRemove`      | `(id: string) => void`             |                                 |
+| `disabled`      | `boolean`                          | `false`                         |
+| `dot`           | `boolean`                          | `false`                         |
+| `dotClassName`  | `string`                           |                                 |
+| `count`         | `number`                           |                                 |
+| `avatar`        | `TagAvatarProps`                   |                                 |
+
+`onRemove` adds a close control that also responds to Backspace and Delete. `avatar` takes the props of an `img`, plus `fallback` for what shows when there is no `src` or it fails to load. All other props pass through to the wrapping `div`.
+
+### TagAvatar
+
+A small round image on its own. It takes the props of an `img`, plus `fallback`, which defaults to a person icon.

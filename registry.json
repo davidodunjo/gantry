@@ -59,6 +59,28 @@
       ]
     },
     {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "A round or square photo that stands for a person, with initials or an icon when the photo is missing, plus status, verified, count and company badges. Use it wherever someone appears; it also ships a group stack, an add button, a name-and-subtitle label group and a large profile photo.",
+      "dependencies": ["@base-ui/react", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/tooltip"],
+      "files": [
+        {
+          "path": "registry/ui/avatar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/avatar-label-group.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/avatar-profile-photo.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",
@@ -133,6 +155,20 @@
       ]
     },
     {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "A month grid for picking one date, a range or a date decades back, with days disabled by rule. Use it for booking, scheduling and date-of-birth fields, on its own or inside a popover.",
+      "dependencies": ["react-day-picker", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "card",
       "type": "registry:ui",
       "title": "Card",
@@ -192,6 +228,20 @@
       ]
     },
     {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "A searchable, keyboard-navigable list of commands, with groups, shortcuts and an optional dialog wrapper. Use it to build a command palette or quick-action menu where users type to filter and press Enter to run.",
+      "dependencies": ["cmdk", "@untitledui/icons"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/dialog"],
+      "files": [
+        {
+          "path": "registry/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "context-menu",
       "type": "registry:ui",
       "title": "Context Menu",
@@ -215,6 +265,19 @@
       "files": [
         {
           "path": "registry/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction",
+      "description": "A provider that sets left-to-right or right-to-left behaviour for every Base UI component beneath it, plus a hook that reads the current direction. Wrap a right-to-left page in it, together with a dir attribute, so sliders, tabs and keyboard navigation follow the reading direction.",
+      "dependencies": ["@base-ui/react"],
+      "files": [
+        {
+          "path": "registry/ui/direction.tsx",
           "type": "registry:ui"
         }
       ]
@@ -514,6 +577,23 @@
       ]
     },
     {
+      "name": "rating",
+      "type": "registry:ui",
+      "title": "Rating",
+      "description": "A row of stars that fills to a fractional value, plus a compact rating badge with laurel wreaths for social proof. Use the stars to show a score such as 4.8 out of 5 on a product or review, and the badge for award-style marks.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/rating-stars.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/rating-badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "resizable",
       "type": "registry:ui",
       "title": "Resizable",
@@ -666,6 +746,24 @@
       ]
     },
     {
+      "name": "tags",
+      "type": "registry:ui",
+      "title": "Tags",
+      "description": "A removable chip the user attaches themselves, with optional dot, avatar and count. Use it to show applied filters, tagged people or chosen topics; group tags in a tag group to make them selectable, or give one a remove handler.",
+      "dependencies": [
+        "@base-ui/react",
+        "@untitledui/icons",
+        "class-variance-authority"
+      ],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/tags.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "textarea",
       "type": "registry:ui",
       "title": "Textarea",
@@ -731,6 +829,20 @@
       "files": [
         {
           "path": "registry/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "utility-button",
+      "type": "registry:ui",
+      "title": "Utility Button",
+      "description": "A small icon-only button for toolbars and panel headers that carries its label in a tooltip. Use it for quiet actions such as copy, edit or download; it comes as a raised secondary chip or a bare tertiary icon, in two sizes, and shows no tooltip while disabled.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/tooltip"],
+      "files": [
+        {
+          "path": "registry/ui/utility-button.tsx",
           "type": "registry:ui"
         }
       ]

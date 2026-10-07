@@ -1,0 +1,37 @@
+<ComponentPreview name="direction-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/direction
+```
+
+## Usage
+
+```tsx
+import { DirectionProvider, useDirection } from "@/components/ui/direction"
+```
+
+```tsx
+<DirectionProvider direction="rtl">
+  <div dir="rtl">{children}</div>
+</DirectionProvider>
+```
+
+The provider changes how components behave, such as which way a slider fills and what the arrow keys do. The `dir` attribute on a wrapper flips the layout. A page that reads right to left needs both.
+
+`useDirection` returns the direction of the nearest provider, so your own components can adapt to it.
+
+## API Reference
+
+### DirectionProvider
+
+| Prop        | Type             | Default |
+| ----------- | ---------------- | ------- |
+| `direction` | `"ltr" \| "rtl"` | `"ltr"` |
+
+### useDirection
+
+Returns `"ltr"` or `"rtl"`.
+
+Both are re-exports from [Base UI's DirectionProvider](https://base-ui.com/react/utils/direction-provider).

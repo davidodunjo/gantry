@@ -1,0 +1,68 @@
+<ComponentPreview name="utility-button-demo" />
+
+## Installation
+
+```bash
+bunx shadcn@latest add davidodunjo/gantry/utility-button
+```
+
+## Usage
+
+```tsx
+import { UtilityButton } from "@/components/ui/utility-button"
+```
+
+```tsx
+<UtilityButton label="Copy" icon={<Copy01 />} />
+```
+
+## Colours
+
+Secondary gives each icon its own raised chip. Tertiary drops the chip and the ring, so the icon only gains a background when you hover it. Both show their label as a tooltip.
+
+<ComponentPreview name="utility-button-colours" />
+
+## Sizes
+
+Two sizes only. The small default is 32px with a 20px icon; extra small drops to 28px with a 16px icon for dense toolbars.
+
+<ComponentPreview name="utility-button-sizes" />
+
+## Tooltip
+
+Hover or focus each button to see where its label lands. The placement is set per button, so a toolbar pinned to the top of a panel can point its labels downwards.
+
+<ComponentPreview name="utility-button-tooltip" />
+
+## Disabled
+
+A disabled button dims to half opacity and loses its tooltip, because a label you cannot act on is noise. The middle button works but keeps quiet: its tooltip is turned off while its label stays available to screen readers.
+
+<ComponentPreview name="utility-button-disabled" />
+
+## Close button
+
+The matching dismiss control, in four sizes. The dark theme swaps to white so it stays visible on a photo or a solid panel.
+
+<ComponentPreview name="utility-button-close-button" />
+
+## In a notice
+
+What these buttons are for: a quiet action and a dismiss sitting at the end of a row without competing with the message.
+
+<ComponentPreview name="utility-button-in-a-notice" />
+
+## API Reference
+
+| Prop               | Type                                     | Default       |
+| ------------------ | ---------------------------------------- | ------------- |
+| `label`            | `string`                                 | required      |
+| `icon`             | `ReactNode`                              | required      |
+| `size`             | `"xs" \| "sm"`                           | `"sm"`        |
+| `color`            | `"secondary" \| "tertiary"`              | `"secondary"` |
+| `tooltip`          | `boolean`                                | `true`        |
+| `tooltipPlacement` | `"top" \| "bottom" \| "left" \| "right"` | `"top"`       |
+
+`label` becomes the button's `aria-label` and the tooltip text. A disabled button never shows a tooltip.
+
+All other props pass through to [Base UI's Button](https://base-ui.com/react/components/button).
