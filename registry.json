@@ -34,6 +34,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A bordered surface that groups related content, built from optional header, title, description, action, content and footer parts. Reach for it to frame a self-contained block such as an invoice, a settings panel or a dashboard figure; it comes in a default and a compact size.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

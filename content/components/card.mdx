@@ -1,0 +1,63 @@
+<ComponentPreview name="card-demo" />
+
+## Installation
+
+```bash
+bunx --bun shadcn@latest add davidodunjo/gantry/card
+```
+
+## Usage
+
+```tsx
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+```
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>Invoice INV-1042</CardTitle>
+    <CardDescription>Northwind Studio, due 14 October</CardDescription>
+    <CardAction>Unpaid</CardAction>
+  </CardHeader>
+  <CardContent>...</CardContent>
+  <CardFooter>...</CardFooter>
+</Card>
+```
+
+The preview above is the basic card: a header with a title, a description and an action pinned to the top corner, then the body, then a footer set apart by a rule.
+
+## Sizes
+
+The default card pads its content by 24 pixels. Size `sm` tightens that to 16 and drops the title to body size, for denser grids.
+
+<ComponentPreview name="card-sizes" />
+
+## Content only
+
+Every part is optional. With just the content, a card is a plain surface, which is all a row of dashboard figures needs.
+
+<ComponentPreview name="card-content-only" />
+
+## API Reference
+
+### Card
+
+| Prop   | Type                | Default     |
+| ------ | ------------------- | ----------- |
+| `size` | `"default" \| "sm"` | `"default"` |
+
+`size` sets the padding every part of the card shares. A footer removes the card's bottom padding so it can sit flush against the edge, and a leading image removes the top padding.
+
+All other props pass through to the underlying `div`.
+
+### CardHeader, CardTitle, CardDescription, CardAction, CardContent and CardFooter
+
+Each part accepts the props of a `div`. `CardAction` moves to the top corner of the header, beside the title and description. Add a `border-b` class to `CardHeader` to draw a rule under it and pad the space below.
