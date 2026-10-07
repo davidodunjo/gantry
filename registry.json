@@ -692,6 +692,36 @@
       ]
     },
     {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "A collapsible side panel of navigation groups, menus and nested items alongside the page content. Use it for an app's main navigation; it collapses to icons or closes, depending on the collapsible prop, and becomes a sheet on mobile.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "@untitledui/icons"
+      ],
+      "registryDependencies": [
+        "utils",
+        "davidodunjo/gantry/button",
+        "davidodunjo/gantry/input",
+        "davidodunjo/gantry/separator",
+        "davidodunjo/gantry/sheet",
+        "davidodunjo/gantry/skeleton",
+        "davidodunjo/gantry/tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/sidebar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
       "name": "skeleton",
       "type": "registry:ui",
       "title": "Skeleton",

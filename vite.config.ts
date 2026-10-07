@@ -21,6 +21,7 @@ export default defineConfig({
     alias: [
       { find: "@/components/ui", replacement: fromRoot("registry/ui") },
       { find: "@/lib", replacement: fromRoot("registry/lib") },
+      { find: "@/hooks", replacement: fromRoot("registry/hooks") },
       { find: "@", replacement: fromRoot("src") },
     ],
   },
