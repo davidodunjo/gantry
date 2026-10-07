@@ -40,11 +40,23 @@ import {
 
 A header row, a body and a footer for the total. Long customer names cut off with an ellipsis, and amounts align on the right so the digits line up.
 
+## Selection
+
+A checkbox column with a select-all box in the header. Selected rows take a grey fill, and the header box shows a dash while only some rows are ticked.
+
+<ComponentPreview name="table-selection" />
+
 ## Compact
 
 The `sm` size drops rows from 72 to 64 pixels and tightens the side padding. Compare it with the first table to see the difference.
 
 <ComponentPreview name="table-compact" />
+
+## With avatars
+
+Cells take any content. The default row height is sized for an avatar beside a name and an email, and a member without a photo falls back to initials.
+
+<ComponentPreview name="table-with-avatars" />
 
 ## Empty
 
