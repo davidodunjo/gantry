@@ -4,6 +4,20 @@
   "homepage": "https://github.com/davidodunjo/gantry",
   "items": [
     {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "A modal that blocks outside dismissal until the user picks one of its own actions. Use it to confirm a choice that cannot be undone, such as deleting data; for ordinary focused tasks, use a dialog.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "files": [
+        {
+          "path": "registry/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
