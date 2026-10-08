@@ -37,7 +37,7 @@
       "title": "Alert Dialog",
       "description": "A modal that blocks outside dismissal until the user picks one of its own actions. Use it to confirm a choice that cannot be undone, such as deleting data; for ordinary focused tasks, use a dialog.",
       "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "registryDependencies": ["utils", "@gantry/button"],
       "files": [
         {
           "path": "registry/ui/alert-dialog.tsx",
@@ -81,7 +81,7 @@
       "title": "Attachment",
       "description": "A file card for an upload or a message attachment, with a thumbnail or icon, a name, a description and actions. Use it for files that are uploading, processing, done or failed; it comes in three sizes, a vertical tile and a scrolling group.",
       "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "registryDependencies": ["utils", "@gantry/button"],
       "files": [
         {
           "path": "registry/ui/attachment.tsx",
@@ -95,7 +95,7 @@
       "title": "Avatar",
       "description": "A round or square photo that stands for a person, with initials or an icon when the photo is missing, plus status, verified, count and company badges. Use it wherever someone appears; it also ships a group stack, an add button, a name-and-subtitle label group and a large profile photo.",
       "dependencies": ["@base-ui/react", "@untitledui/icons"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/tooltip"],
+      "registryDependencies": ["utils", "@gantry/tooltip"],
       "files": [
         {
           "path": "registry/ui/avatar.tsx",
@@ -191,7 +191,7 @@
       "title": "Button Group",
       "description": "A row or column of related buttons, inputs and labels joined into one control with shared borders and rounded outer corners. Use it for a set of related actions, a label beside a field, or a segmented set of choices; it runs horizontally or vertically.",
       "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/separator"],
+      "registryDependencies": ["utils", "@gantry/separator"],
       "files": [
         {
           "path": "registry/ui/button-group.tsx",
@@ -205,7 +205,7 @@
       "title": "Calendar",
       "description": "A month grid for picking one date, a range or a date decades back, with days disabled by rule. Use it for booking, scheduling and date-of-birth fields, on its own or inside a popover.",
       "dependencies": ["react-day-picker", "@untitledui/icons"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "registryDependencies": ["utils", "@gantry/button"],
       "files": [
         {
           "path": "registry/ui/calendar.tsx",
@@ -232,7 +232,7 @@
       "title": "Carousel",
       "description": "A horizontal or vertical strip of slides moved with buttons, drag or arrow keys, one screenful at a time. Reach for it to show a set of related items, such as testimonials or project cards, in a space too small to show them all at once.",
       "dependencies": ["embla-carousel-react"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "registryDependencies": ["utils", "@gantry/button"],
       "files": [
         {
           "path": "registry/ui/carousel.tsx",
@@ -308,8 +308,8 @@
       "dependencies": ["@base-ui/react", "@untitledui/icons"],
       "registryDependencies": [
         "utils",
-        "davidodunjo/gantry/button",
-        "davidodunjo/gantry/input-group"
+        "@gantry/button",
+        "@gantry/input-group"
       ],
       "files": [
         {
@@ -324,7 +324,7 @@
       "title": "Command",
       "description": "A searchable, keyboard-navigable list of commands, with groups, shortcuts and an optional dialog wrapper. Use it to build a command palette or quick-action menu where users type to filter and press Enter to run.",
       "dependencies": ["cmdk", "@untitledui/icons"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/dialog"],
+      "registryDependencies": ["utils", "@gantry/dialog"],
       "files": [
         {
           "path": "registry/ui/command.tsx",
@@ -352,7 +352,7 @@
       "title": "Dialog",
       "description": "A modal window for a focused task, closed by its own close button, an outside click or escape. Use it for forms and detail views; for a decision that must not be dismissed by accident, use an alert dialog.",
       "dependencies": ["@base-ui/react", "@untitledui/icons"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "registryDependencies": ["utils", "@gantry/button"],
       "files": [
         {
           "path": "registry/ui/dialog.tsx",
@@ -434,11 +434,7 @@
       "title": "Field",
       "description": "A wrapper that pairs a control with its label, guidance and error, and shares its required, invalid and disabled state with all three. Use it for every row of a form; it lays out vertically, horizontally or responsively, and its parts build field sets, separators and choice cards.",
       "dependencies": ["class-variance-authority"],
-      "registryDependencies": [
-        "utils",
-        "davidodunjo/gantry/label",
-        "davidodunjo/gantry/separator"
-      ],
+      "registryDependencies": ["utils", "@gantry/label", "@gantry/separator"],
       "files": [
         {
           "path": "registry/ui/field.tsx",
@@ -512,9 +508,9 @@
       "dependencies": ["class-variance-authority"],
       "registryDependencies": [
         "utils",
-        "davidodunjo/gantry/button",
-        "davidodunjo/gantry/input",
-        "davidodunjo/gantry/textarea"
+        "@gantry/button",
+        "@gantry/input",
+        "@gantry/textarea"
       ],
       "files": [
         {
@@ -543,7 +539,7 @@
       "title": "Item",
       "description": "A flexible row that groups media, text and actions, and can render as a link or a button. Use it for lists of files, settings, people or results; it comes in three variants and three sizes, with optional header and footer lines.",
       "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/separator"],
+      "registryDependencies": ["utils", "@gantry/separator"],
       "files": [
         {
           "path": "registry/ui/item.tsx",
@@ -597,7 +593,7 @@
       "title": "Menubar",
       "description": "A persistent horizontal bar of menus, like a desktop app's menu bar. Use it for the top-level File, Edit and View style commands of an application; arrow keys move between menus, and each menu supports shortcuts, checkbox and radio items, submenus and a destructive item style.",
       "dependencies": ["@base-ui/react", "@untitledui/icons"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/dropdown-menu"],
+      "registryDependencies": ["utils", "@gantry/dropdown-menu"],
       "files": [
         {
           "path": "registry/ui/menubar.tsx",
@@ -624,7 +620,7 @@
       "title": "Message Scroller",
       "description": "A scrolling viewport for a conversation that stays pinned to the newest item and offers a jump button when you scroll away. Use it for chat threads and live feeds that grow over time; wrap each entry in an item with a messageId so you can scroll to it.",
       "dependencies": ["@shadcn/react", "@untitledui/icons"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "registryDependencies": ["utils", "@gantry/button"],
       "files": [
         {
           "path": "registry/ui/message-scroller.tsx",
@@ -640,9 +636,9 @@
       "dependencies": ["@base-ui/react", "@untitledui/icons"],
       "registryDependencies": [
         "utils",
-        "davidodunjo/gantry/button",
-        "davidodunjo/gantry/avatar",
-        "davidodunjo/gantry/combobox"
+        "@gantry/button",
+        "@gantry/avatar",
+        "@gantry/combobox"
       ],
       "files": [
         {
@@ -703,7 +699,7 @@
       "title": "Pagination",
       "description": "Page by page navigation with previous and next links, numbered pages, an active page indicator and an ellipsis for long runs. Use it under a list or table that is split across pages; the links render as anchors.",
       "dependencies": ["@untitledui/icons"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "registryDependencies": ["utils", "@gantry/button"],
       "files": [
         {
           "path": "registry/ui/pagination.tsx",
@@ -749,7 +745,7 @@
       "title": "Questionnaire",
       "description": "A step-by-step form with progress, validation and keyboard shortcuts built in. Use it for onboarding, surveys and any multi-question flow where each answer is a single or multiple choice or a short text; it can run uncontrolled or with the current step held in state.",
       "dependencies": ["@shadcn/react", "@untitledui/icons"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "registryDependencies": ["utils", "@gantry/button"],
       "files": [
         {
           "path": "registry/ui/questionnaire.tsx",
@@ -850,7 +846,7 @@
       "title": "Sheet",
       "description": "A side panel that slides in from any edge for forms and settings, opened and closed by clicking, with no drag gesture. Use it for longer editing tasks that should keep the page visible; for a touch-first panel dismissed by dragging, use a drawer.",
       "dependencies": ["@base-ui/react", "@untitledui/icons"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "registryDependencies": ["utils", "@gantry/button"],
       "files": [
         {
           "path": "registry/ui/sheet.tsx",
@@ -870,12 +866,12 @@
       ],
       "registryDependencies": [
         "utils",
-        "davidodunjo/gantry/button",
-        "davidodunjo/gantry/input",
-        "davidodunjo/gantry/separator",
-        "davidodunjo/gantry/sheet",
-        "davidodunjo/gantry/skeleton",
-        "davidodunjo/gantry/tooltip"
+        "@gantry/button",
+        "@gantry/input",
+        "@gantry/separator",
+        "@gantry/sheet",
+        "@gantry/skeleton",
+        "@gantry/tooltip"
       ],
       "files": [
         {
@@ -921,7 +917,7 @@
       "type": "registry:ui",
       "title": "Social Buttons",
       "description": "Sign-in buttons for six providers, in monochrome, colour-logo and full brand treatments. Use them for provider sign-in or account linking, with labels or accessible icon-only buttons.",
-      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "registryDependencies": ["utils", "@gantry/button"],
       "files": [
         {
           "path": "registry/ui/social-logos.tsx",
@@ -1025,7 +1021,7 @@
       "title": "Toast",
       "description": "A temporary notification that stacks in the corner of the screen and clears itself after a few seconds. Mount Toaster once, then call toast.add from anywhere to confirm an action or report a result; it supports success, info, warning, error and loading types, an action button and in-place updates.",
       "dependencies": ["@base-ui/react", "@untitledui/icons"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/button"],
+      "registryDependencies": ["utils", "@gantry/button"],
       "files": [
         {
           "path": "registry/ui/toast.tsx",
@@ -1053,7 +1049,7 @@
       "title": "Toggle Group",
       "description": "A set of toggle buttons sharing one value, either one at a time or several at once. Use it for alignment, text-style or view-mode controls; set spacing to zero for a joined segmented look, and orientation to vertical for a stack.",
       "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/toggle"],
+      "registryDependencies": ["utils", "@gantry/toggle"],
       "files": [
         {
           "path": "registry/ui/toggle-group.tsx",
@@ -1081,7 +1077,7 @@
       "title": "Utility Button",
       "description": "A small icon-only button for toolbars and panel headers that carries its label in a tooltip. Use it for quiet actions such as copy, edit or download; it comes as a raised secondary chip or a bare tertiary icon, in two sizes, and shows no tooltip while disabled.",
       "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["utils", "davidodunjo/gantry/tooltip"],
+      "registryDependencies": ["utils", "@gantry/tooltip"],
       "files": [
         {
           "path": "registry/ui/utility-button.tsx",
